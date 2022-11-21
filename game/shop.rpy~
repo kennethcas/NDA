@@ -1,0 +1,36 @@
+# shop! if you need multiple shops, duplicate this all and be sure to do the same to mapshop in custom_screens.
+label shop:
+    scene bg shop
+    $ renpy.show_screen("mapshop")
+    $ renpy.pause ()
+
+label shoptalk:
+    $ renpy.hide_screen("mapshop")
+    $ rand = renpy.random.randint(1, 3)
+    if (rand == 1):
+        c "You'll make a bit more money if you're a little more charismatic."
+    elif (rand == 2):
+        c "We could use more help around the shop, I guess."
+    else:
+        c "Hey! Are you gonna buy something, or what?"
+    jump shop
+    
+label shopwork:
+    if (HP >= 20):
+        $ HP -= 20
+        $ gold += 15
+        $ gold += charm
+    else:
+        $ renpy.hide_screen("mapshop")
+        "You don't have enough HP for that!"
+    jump shop
+    
+# giftprice and curgift are set in the mapshop screen, and store the item you clicked on and its price.
+label shopbuy:
+    if (gold >= giftprice):
+        $ gold -= giftprice
+        $ globals()[curgift] += 1
+    else:
+        $ renpy.hide_screen("mapshop")
+        "You can't afford that!"
+    jump shop

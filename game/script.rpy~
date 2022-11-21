@@ -1,0 +1,45 @@
+﻿# Define your characters here.
+init:
+    $ pName = "Alexis"
+    
+    define c = Character("Casey")
+    define m = Character("[pName]")
+
+label start:
+    $ renpy.show_screen("nameinput")
+    
+label intro:
+    # this populates the mini-gallery feature with images, if you don't intend to use it you can delete this, just remember to set "usegallery" to False in the gallery script
+    call makegal
+    
+    ## you can replace this with your own games intro, or delete it to jump straight into the gameplay.
+    
+    scene bg park with dissolve
+    
+    #using this custom layer allows the mc's image to be visible over all text as well as during choices, but if you dont want this just pretend it doesnt exist
+    show side mc onlayer mcsprite at midleft
+    
+    m "...Well, here I am. In my very own dating sim protagonist experience."
+    m "Boy, I hope someone shows up to do all the talking for me, or this'll get awkward fast."
+    "???" "Hey, you over there!"
+    m "..!"
+    show casey with dissolve
+    c "Hey, my name's Casey. You're here to make a Dating Sim, right? Let me go over how things work."
+    show bg map with dissolve
+    c "In a minute, you'll be sent to the main map, where you can choose a location."
+    c "In this little example project, there's three; your home, a shop, and the park."
+    show bg home with dissolve
+    c "At home, you can rest to regain your HP (you have 50 each day), or make cookies to raise your charm. (It will also give you cookies.)"
+    show bg shop with dissolve
+    c "The shop is pretty self explanatory. You can buy items, work to make money, or chat with the shopkeep (also me)."
+    show bg park with dissolve
+    c "And the park, technically, is where we are right now!"
+    c "That's where I hang out. If you want to interact with me properly, just come on by. You'll need to do that to get closer to me."
+    c "I think that's about all you need to know right now, so get on out there! The game will end on day 31, so look out for that."
+    c "See you around!"
+    hide casey with dissolve
+    hide side mc onlayer mcsprite
+    
+    $ canwarp = True
+    $ renpy.show_screen("statusbar")
+    jump map

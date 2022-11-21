@@ -1,0 +1,62 @@
+label endA:
+    $ canwarp = False
+    show side mc at midleft onlayer mcsprite
+    c "Hey, [pName]... Is it really true? Today is the last day of the game?"
+    menu:
+        "It's true.":
+            c "I see... Then, this is the last time I'll see you."
+        "I hadn't heard.":
+            c "Haha, you're always so distant. That's a joke, right?"
+    c "You know, time has really flown. I almost didn't think there'd be an ending."
+    c "But, in the end..."
+    
+    if (Arel == "Stranger"):
+        c "...I wish we could have spent more time together."
+        c "I feel like I barely know you."
+        c " I suppose there's always next time, though. I wish you well, wherever you're going."
+        
+        hide side mc
+        scene white with dissolve
+        
+        "You got Casey's Bad Ending! Maybe you should have gotten a little bit closer."
+        "That's all for now. Have fun making games!"
+        
+    elif (Arel != "Soulmate"):
+        c "...I'm going to miss you, [pName]. We had some really great times together."
+        c "Like that time I called you soulless and vacant. Or that time you made me cookies for three days straight."
+        c "...Yeah. It's gonna be hard to say goodbye. But that's just how it goes sometimes."
+        c "Promise me you'll remember me, okay [pName]?"
+        
+        hide side mc
+        scene white with dissolve
+        
+        "You got Casey's Neutral Ending! Good going! But you can do a little better than that."
+        "That's all for now. Have fun making games!"
+        
+    else:
+        c "...I..."
+        c "I wish this wasn't goodbye."
+        c "I know we've only known each other for an in-game month, but it feels like forever."
+        c "I know I'm going to be thinking about you for a long time."
+        c "But we don't have time for me to spend forever crying about it. You have to move on to other games."
+        c "The next time you use this file, I might not even be here anymore. That's the whole point."
+        c "...Remember me, okay? And make something really good out of my ashes."
+        c "Goodbye, [pName]."
+        
+        hide side mc
+        scene white with dissolve
+        
+        "You got Casey's Good Ending! Congrats!"
+        "That's all for now. Have fun making games!"
+
+    $ MainMenu(confirm=False)()
+    
+label badend:
+    $ canwarp = False
+    $ renpy.hide_screen("maphome")
+    scene white with dissolve
+    
+    "You sleep away the days, and slowly the game fades to a close."
+    "You got the worst ending! Great going!"
+    "That's all for now. Have fun making games!"
+    $ MainMenu(confirm=False)()

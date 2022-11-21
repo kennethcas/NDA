@@ -1,0 +1,194 @@
+# In order to use this without customization, the bare minimum youll need to do is replace all the graphics 
+# with your own and edit your story/dialogue into the following .rpy files:
+## - script
+## - interact
+## - dates
+## - endings
+## - shop
+
+# If your artwork doesn't line up one-to-one with the placement of the template images, youll need to edit the 
+# xpos and ypos of the buttons in question. All screens made for this template can be found in the following files:
+## - custom_screens
+## - textinputscreen
+
+# This template has a built in mini-gallery that shows in-game, rather than in the menu. If you want to disable it, 
+# set "usegallery" to False at the start of the game. If you do want to use it, you'll need to edit the following 
+# files to contain your images:
+## - gallery
+## - custom_screens (maphome, at the bottom)
+
+
+# for the sake of further customization, ill go over each rpy file in more detail here.
+
+
+## -- SCRIPT --
+# The init section only contains character variables, including the variable containing the player's name. 
+# These can be moved anywhere, though "pName" needs to still exist.
+
+# The script itself contains the labels "start" and "intro", and the content in intro can be replaced. 
+
+# Make sure to keep or move the "call makegal" if you're using the gallery, and keep the three 
+# lines at the end of the script (from "canwarp" to "jump map").
+
+
+## -- SCREENS --
+# The only thing changed here from renpy's default is the placement of items in the "choice" and 
+# "say" screens. This is not necessary for the template to work and can be overwritten if you want.
+
+
+## -- STARTVARIABLES --
+# This is where most of the variables used in the template are stored. Each comes with a comment 
+# explaining its purpose, so check the file itself for more information. Everything in here is used in other 
+# files, so don't delete anything without being sure what it does.
+
+# This file also contains a few image definitions that can be used throughout the script. None are necessary 
+# if you don't want to use them, but here's a description of each:
+
+# -whiteflash: this just causes the screen to flash white; can be seen when taking a photo on a date.
+# -white: just a solid white screen.
+# -loveup & loveupbig: these are animations that show a little heart + up arrow fading in and then out again, 
+#                                   just above where the textbox would end. These can be used to indicate that a choice 
+#                                   the player made was liked by the love interest.
+# -midleft: can be used to show images at a certain point, like left/center/right. It's just a little shy of left; 
+#               approximately where a side image might appear over dialogue.
+
+
+## -- GALLERY --
+# This file contains both the variables used in the mini-gallery, as well as the code that populates images into it. 
+# It does not contain the code for displaying those images, however -- that's in custom_screens.
+
+# The variables Ad8 etc. are True/False conditions that unlock the images attached to them. 
+# They should be turned on in the script when the player reaches the moment that unlocks them, 
+# or replaced if you prefer a different unlock method.
+
+# All you need to do here is replace the filenames of the images listed with your own. If you have 
+# more or less than 8, however, you will need to modify the code in custom_screens as well.
+
+
+## -- MAPHOME --
+# This file contains both the main map (a very short label that does nothing but show the map screen itself) 
+# and the bedroom location + associated tasks.
+
+# The "bedsleep" label handles sleeping to restore HP, and contains a jump to a "bad end" if the player 
+# tries to sleep on the final day. You can easily replace this with dialogue barring the action, if you want.
+
+# The "bedstudy" label currently allows the player to spend 20 HP to gain 5 charm and 1 cookie, but 
+# this can be replaced with any other stat train ability, changed entirely, or removed.
+
+
+## -- SHOP --
+# This file contains both the shop label itself (a short label that just pulls up the shop screen) 
+# and all associated shop functions.
+
+# "shoptalk" is called when you choose to talk to the shopkeep, and contains generic randomized dialogue. 
+# You should edit this to contain your own. 
+
+# "shopwork" allows the player to spend HP to get money. As a default, how much money is made depends 
+# on the player's charm stat. The amounts can be personalized for your own game.
+
+# "shopbuy" takes the variables passed from the shop screen in order to remove the correct amount 
+# of gold from the player and give them the item they chose.
+
+
+## -- INTERACT --
+# This template assumes that each love interest stays at one location, and this file holds everything related to that. 
+# It also houses all the dialogue for your date, but if your characters are especially chatty it'll probably be best to move it to a separate file.
+
+# The label "park" holds very little code, only a check to see if the game is ending, and a call to 
+# the label that processes relationship upgrades. If you want to have multiple love interests in the 
+# same location, this is where you should put whatever logic dictates who the player sees each time.
+
+# "parkA" is and should be unique to one character, because it sets all the date variables to match that 
+# character. So that the date screen can be reused by anyone, this label saves all the LI's information to 
+# temporary variables. It also resets the date mood and counters, so that each date you enter has a clean slate. 
+# The final thing it does is show the "mapchat" screen, allowing the player to interact.
+
+# "relAcheck" is another label that should be unique to one character. All it does is check whether the player 
+# is ready to advance to the next relationship stage, and then play a cutscene. 
+# All the dialogue should be replaced with your own.
+
+# "chattalk" is called when the player talks to the LI, and should contain all the dialogue. This label itself 
+# is not unique to each character, but if you have multiple LIs you should split each into a new label and 
+# use this to jump to the correct one.
+
+# "chatgift" is called when the player gives the LI an item. It first checks if the player is close enough to give gifts 
+# (if you want them to accept gifts indiscriminately just remove the check), then removes the item in question and raises affection 
+# for the LI. The variable holding the gift name is "curgift", if you want to have LIs respond better to some gifts than others.
+
+# "chatdate" is essentially a transition between the interact screen and the date itself. It's called when the player clicks the 
+# date button, checks whether you're actually ready for a date, and then sends you to the appropriate location.
+
+
+## -- DATES --
+# All labels relating to the date feature are contained in this file. Label "dateA" contains only an 
+# image statement and a line to show the date screen, so it can easily be used for multiple 
+# characters (just add a conditional to determine what image to show).
+
+# "datetalk" contains the dialogue triggered by selecting "talk" on a date. It should be reused for all LIs. 
+# Each time it's called it raises the mood and ticks down the "talkcount" variable, allowing you to view it 
+# only a set number of times before the LI loses interest.
+
+# "dategift" functions the same as the gift label in "interact", except rather than raising affection it raises 
+# the date's mood. It also ticks down a variable limiting how much you can do this.
+
+# "datephoto" is the result of choosing "photo" on a date, and all it does is flash the screen white and raise 
+# the date mood. (It, too, is limited by a variable.) This could be replaced with a different date activity of your choice.
+
+# "datekiss" is the successful ending of the date. Here you could put a CG of your characters together, 
+# as a reward (at current all it does is flash the screen white.) It also raises the LI's affection by a lot, 
+# and unlocks an image in the mini-gallery.
+
+# "dateexit" is triggered when you hit the back button, and cancels the date early. This might be necessary 
+# if you begin a date with no items, or if you have date activities that can fail. There's a brief interaction 
+# with the LI, and then it takes you back to where you were before the date.
+
+
+## -- ENDINGS --
+# This file contains the endings, and nothing else. It should be entirely replaced by your own story. 
+
+
+## -- TEXTINPUTSCREEN --
+# This screen is not crucial to the main gameplay at all, so can easily be replaced by a simple text input 
+# or removed altogether to have a player character with a set name. Its main features are a name input 
+# that is active when hovered over, a stat point distribution system (starting with 15 points and 
+# 3 stats to spend them on), and a submit button that will start the game.
+
+## -- CUSTOM_SCREENS --
+# This file contains every other custom screen made for the template, so I'll go over them one by one.
+
+# statusbar: This is a window constantly on screen in the upper right corner, which shows your character's 
+# HP, gold, what day it is, and a picture of the character. It also has buttons that jump directly to the "bedroom" 
+# location and the main "map", as well as buttons that open the preferences menu and a custom made stats screen. 
+# The ability to jump to different locations is disabled when "canwarp" is False, which should be set during cutscenes or lengthy dialogue.
+
+# statsmenu: This is the custom menu linked in the former screen. It contains an inventory (which comes with 4 items pre-filled, 
+# but has room for 12 without redesign), a section that shows your player's stats, and a relationship section that shows your status 
+# with each LI. The relationship section can be set to show either a relationship label or numerical affection value, by setting the 
+# "pointsonly" variable to True or False elsewhere.
+
+# townmap: This is a simple map containing only imagebuttons that lead to various locations. By default it contains buttons for 
+# the player's bedroom, a shop, and one location where a LI can hang out. You'll need to add more buttons as needed, if you need more locations.
+
+# mapchat: This is the screen for interacting with a LI. It has text showing their name and relationship status, a bar showing how close they are 
+# to a relationship upgrade, and buttons to talk, give a gift, or go on a date. There is also a back button to take you back to the map.
+
+# date: This screen is for the actual dates. There's a mood bar that the player must fill to succeed. There are buttons to talk, give a gift, or take a photo 
+# (each will fill the mood a bit), and a "kiss" button that is locked until the mood is full. There's also a back button to leave the date. 
+
+# giftdate: This is a small inventory window that appears when you give a gift on a date. There are buttons for each item the player could possess 
+# (only clickable if they have at least one), and a back button that closes the window. Each item button saves the name of the item in a variable, 
+# so that the information can be used in the label it jumps to.
+
+# chatgift: This is identical to giftdate, but without the date-specific calls and window toggles. 
+# The item buttons here will jump to to the "chatgift" label in "interact", instead.
+
+# mapshop: This screen has buttons to talk to a shopkeeper if desired, work for money, or purchase items. 
+# Currently there are 3 possible items, but you can duplicate them to make as many as you like. Each button, when clicked, 
+# saves both the name of the item and the price to the "curgift" and "giftprice" variables, to ensure the right variables are 
+# changed when it jumps to the "shopbuy" label. It also has a back button that takes you to the map.
+
+# maphome: This is the player's bedroom. It has a button to sleep and restore HP, a button that can be used to train a stat, 
+# and a back button. It also contains the game's mini-gallery, which can be disabled with the "usegallery" variable elsewhere. 
+# The code for the gallery consists of a button for each potential gallery photo containing the filenames for small thumbnails. 
+# It also has a section that adds a small "pin" image for each photo not unlocked, which i added purely as an alternative way 
+# to show how many photos there are total. This is not necessary for the gallery to function, so it can be deleted easily.
