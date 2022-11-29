@@ -19,7 +19,7 @@ label start:
 
     # DIALOGUE. ---
 
-    "(DATE AND TIME.)"
+    "OCTOBER 31, 1983 \nNEW YORK"
     q "..."
     q "...{w=1.0}Y-you..."
     q "{i}...{w=1.0}Is this not what you wanted?{/i}"
@@ -45,6 +45,7 @@ label intro_convo:
     # music: jazzy? lowkey?
 
     # DIALOGUE. ---
+    "OCTOBER 21, 1983 \nNEW YORK"
 
     db "...Come on, kitty. Let's have a {i}good time,{/i} yeah?"
     s "{color=#6b091b}...I want to retch.{/color}"
@@ -169,6 +170,7 @@ label Vincent_N1:
             "He doesn't reply."
 
         "Do you need something, sir?":
+            "He nods."
     "The man leans in, his voice low."
     qb "I need to talk to you. Come with me."
     s "You need to pay-{w=2.0}{nw}"
