@@ -128,7 +128,7 @@ label CW2_N1:
     "I usually have to wait {i}after{/i} the fun behind closed doors starts.
     So being able to keep my hands clean is definitely a plus."
 
-    $ N1_Wallet = true
+    $ N1_Wallet = True
     jump N1_Menu
 
 label Vincent_N1:
