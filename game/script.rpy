@@ -4,6 +4,8 @@ define s = Character("Sachi")
 define v = Character("Vincent")
 define q = Character("???")
 define db = Character("Drunk Businessman")
+define qb = Character("Quiet Businessman")
+define h = Character("Hostess")
 
 $ N1_Wallet = false
 
@@ -128,7 +130,7 @@ label CW2_N1:
     "I usually have to wait {i}after{/i} the fun behind closed doors starts.
     So being able to keep my hands clean is definitely a plus."
 
-    $ N1_Wallet = True
+    $ N1_Wallet = true
     jump N1_Menu
 
 label Vincent_N1:
@@ -151,9 +153,48 @@ label Vincent_N1:
 
     menu:
         "Keep Staring":
-            return
+            "I stare him straight in the eye. He isn't phased."
+
         "Look Away":
-            return
+            "There's something...strangely intense about the way he's staring."
+            "It isn't the same type of sleazy eyefuck you get from most guys
+            here."
+            "He's...cold. Almost Machiavellian."
+    "He gets up and starts to make his way towards me."
 
+    "Upon closer inspection, he seems younger than most clientele, probably in
+    his mid-twenties or so."
+    menu:
+        "Hey, handsome.":
+            "He doesn't reply."
 
+        "Do you need something, sir?":
+    "The man leans in, his voice low."
+    qb "I need to talk to you. Come with me."
+    s "You need to pay-{w=2.0}{nw}"
+    qb "That's taken care of."
+    menu:
+        "Go with him":
+            jump n1_transition
+        "Object":
+            s "I...will check with the front first."
+            qb "It's urgent. I don't have a lot of time."
+            s "I'm sorry, sir. {w=1.0}Protocol."
+            "He nods, frowning."
+            qb "...Fine. Make it quick."
+            "I walk up to the hostess and point at him."
+            s "...Did he ask for me?"
+            h "H-huh? Oh, did he?"
+            s "...Can you check?"
+            h "Sure. Hm...that's...{i}oh.{/i}"
+            h "He's...a {i}special guest{/i}."
+            s "What do you-{w=2.0}{nw}"
+            "The hostess shakes her head."
+            h "Can't tell you. Client confidentiality."
+            h "But I would...do what he asks."
+            jump n1_transition
+
+label n1_transition:
+    #black
+    "I follow him into one of the backrooms."
     return
