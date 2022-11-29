@@ -169,6 +169,8 @@ label Vincent_N1:
             "He doesn't reply."
 
         "Do you need something, sir?":
+            #FINISH
+            return
     "The man leans in, his voice low."
     qb "I need to talk to you. Come with me."
     s "You need to pay-{w=2.0}{nw}"
