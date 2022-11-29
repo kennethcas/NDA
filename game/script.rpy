@@ -7,7 +7,7 @@ define db = Character("Drunk Businessman")
 define qb = Character("Quiet Businessman")
 define h = Character("Hostess")
 
-$ N1_Wallet = false
+$ N1_Wallet = False
 
 # ---GAME START---
 
@@ -47,7 +47,7 @@ label intro_convo:
     # DIALOGUE. ---
 
     db "...Come on, kitty. Let's have a {i}good time,{/i} yeah?"
-    s "{color=#6b091b}...I want to wretch.{/color}"
+    s "{color=#6b091b}...I want to retch.{/color}"
 
     menu:
         "You don't even know my name.":
@@ -128,9 +128,9 @@ label CW2_N1:
     ask me."
 
     "I usually have to wait {i}after{/i} the fun behind closed doors starts.
-    So being able to keep my hands clean is definitely a plus."
+    So being able to keep my dignity is definitely a plus."
 
-    $ N1_Wallet = true
+    $ N1_Wallet = True
     jump N1_Menu
 
 label Vincent_N1:
@@ -169,8 +169,6 @@ label Vincent_N1:
             "He doesn't reply."
 
         "Do you need something, sir?":
-            #FINISH
-            return
     "The man leans in, his voice low."
     qb "I need to talk to you. Come with me."
     s "You need to pay-{w=2.0}{nw}"
