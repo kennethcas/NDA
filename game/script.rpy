@@ -151,7 +151,9 @@ label Vincent_N1:
 
     menu:
         "Keep Staring":
-        "Look Away:"
+            return
+        "Look Away":
+            return
 
 
     return
