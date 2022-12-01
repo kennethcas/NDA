@@ -88,7 +88,7 @@ label chattalk:
 
         show side mc at midleft onlayer mcsprite
 
-        if (Trust = 0):
+        if (Trust == 0):
             s "T1"
             s "T2"
 
@@ -103,30 +103,30 @@ label chattalk:
 
                 "DIALOGUE CHOICE 1":
                     c "bad answer"
-            else if (Trust = 1):
-                menu:
-                    "DIALOGUE CHOICE 1":
+        elif (Trust == 1):
+            menu:
+                "DIALOGUE CHOICE 1":
 
-                        c "good answer"
-                        $ Trust += 1
-                        show loveup
+                    c "good answer"
+                    $ Trust += 1
+                    show loveup
 
-                    "DIALOGUE CHOICE 1":
-                        c "bad answer"
-            else if (Trust = 2):
-                menu:
-                    "DIALOGUE CHOICE 1":
+                "DIALOGUE CHOICE 1":
+                    c "bad answer"
+        elif (Trust == 2):
+            menu:
+                "DIALOGUE CHOICE 1":
 
-                        c "good answer"
-                        $ Trust += 1
-                        show loveup
+                    c "good answer"
+                    $ Trust += 1
+                    show loveup
 
-                    "DIALOGUE CHOICE 1":
-                        c "bad answer"
-            else:
-                jump n1_part2
+                "DIALOGUE CHOICE 1":
+                    c "bad answer"
+        else:
+            jump n1_part2
 
-            hide side mc onlayer mcsprite
+        hide side mc onlayer mcsprite
 
 
     else:
