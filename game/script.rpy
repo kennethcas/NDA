@@ -2,6 +2,7 @@
 
 define s = Character("Sachi")
 define v = Character("Vincent")
+define c = Character("Vincent")
 define q = Character("???")
 define db = Character("Drunk Businessman")
 define qb = Character("Quiet Businessman")
@@ -199,4 +200,4 @@ label Vincent_N1:
 label n1_transition:
     #black
     "I follow him into one of the backrooms."
-    return
+    jump park
