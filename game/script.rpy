@@ -201,3 +201,47 @@ label n1_transition:
     #black
     "I follow him into one of the backrooms."
     jump park
+
+label n1_part2:
+    jump map
+
+label client1minigame:
+    jump park
+label client2minigame:
+    jump park
+label client3minigame:
+    jump park
+
+label n3_intro_and_selection:
+    #FINISH
+    return
+
+label n4_intro:
+    #FINISH
+    return
+
+label minigame2:
+    jump park
+
+label unsuccessful2A:
+    return
+label unsuccessful2B:
+    return
+
+label ending1:
+    return
+label ending2:
+    return
+label ending3:
+    return
+
+label minigame3:
+    jump park
+
+label successful3A:
+    #FINISH
+    return
+label unsuccessful3B:
+    #FINISH
+    return
+

@@ -1,5 +1,6 @@
 # each location is designed to hold one love interest, so "park" and "parkA" should be duplicated or edited to fit your own needs.
-    
+
+
 label park:
     scene bg park
     show casey
