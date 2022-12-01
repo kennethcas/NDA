@@ -38,6 +38,7 @@ init:
     # each love interest should have their own version of Alove and Arel. duplicate them as many times as needed.
     $ Alove = 0
     $ Arel = "Stranger"
+    $ Trust = 0
     $ pointsonly = False
     
     
