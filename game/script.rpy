@@ -1,5 +1,5 @@
 ﻿# --- NDA SCRIPT ---
-
+#THIS IS A TESTING LINE
 define s = Character("Sachi")
 define v = Character("Vincent")
 define c = Character("Vincent")
@@ -11,6 +11,7 @@ define h = Character("Hostess")
 $ N1_Wallet = False
 
 # ---GAME START---
+# testt
 
 label start:
 
