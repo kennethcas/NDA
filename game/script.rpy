@@ -11,6 +11,7 @@ define h = Character("Hostess")
 $ N1_Wallet = False
 
 # ---GAME START---
+# testt
 
 label start:
 
