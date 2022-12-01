@@ -136,22 +136,25 @@ label chattalk:
 
 
 label chatgift:
-    $ renpy.hide_screen("chatgift")
-    if (currel == "Stranger"):
+    $ renpy.hide_screen("mapchat")
+    $ canwarp = False
+    if (HP >= 10):
+        $ HP -= 10
 
-        if (curdate == "Casey"):
-            c "Um, you're nice, [pName], but I don't think I'm comfortable with you buying me stuff just yet."
-            jump parkA
+        show side mc at midleft onlayer mcsprite
+        s "T1"
+        s "T2"
+        "We drink."
+        $ Alove += 10
+
+        hide side mc onlayer mcsprite
+
 
     else:
-        $ globals()[curgift] -= 1
+        "You don't have enough HP for that!"
+    $ canwarp = True
+    jump parkA
 
-        if (curdate == "Casey"):
-            $ Alove += 10
-            show loveup
-
-            c "Oh! Thank you, [pName], this is great!"
-            jump parkA
 
 
 label chatdate:
