@@ -1,10 +1,9 @@
 # each location is designed to hold one love interest, so "park" and "parkA" should be duplicated or edited to fit your own needs.
 
-
 label park:
     scene bg park
     show casey
-    
+
     # this checks if youre at the end of the game (by default set to day 31), and sends you to the ending with the specified character.
     if (day > lastDay):
         $ renpy.hide_screen("townmap")
@@ -14,26 +13,26 @@ label park:
                 jump endA
             "No":
                 jump map
-    
+
     call relAcheck from _call_relAcheck
     jump parkA
-    
-    
+
+
 # this is separate from park so that the relationship upgrade scene doesnt replay when it shouldnt.
 label parkA:
     scene bg park
     show casey
-    
+
     # reset date tallies to default in case we end up going on one
     $ mood = 0
     $ talkcount = talkcountmax
     $ giftcount = giftcountmax
     $ photocount = photocountmax
-    
+
     # these calculations determine the date variables. curbar uses the relationship status to determine progress to next date, assuming it takes 100 points to reach each stage.
     $ curdate = "Casey"
     $ currel = Arel
-    
+
     if (currel == "Stranger"):
         $ curnext = pointsfriend
         $ curbar = min(Alove, pointsfriend)
@@ -46,104 +45,131 @@ label parkA:
     if (currel == "Soulmate"):
         $ curnext = 100
         $ curbar = 100
-    
+
     $ renpy.show_screen("mapchat")
     $ renpy.pause ()
-    
-    
+
+
 # a simple little label that will handle the relationship upgrades when youre close enough. each LI should have their own version of this label.
 label relAcheck:
     $ canwarp = False
     $ renpy.hide_screen("townmap")
     if (Alove >= pointsfriend) and (Arel == "Stranger"):
         $ Arel = "Friend"
-        
+
         # put your own dialogue here
-        
+
         "You are now 'Friends' with Casey. You can now give her gifts."
-        
+
     if (Alove >= pointslove) and (Arel == "Friend"):
         $ Arel = "Lover"
-        
+
         # put your own dialogue here
-        
+
         "You are now dating Casey! You can now go on dates."
-        
+
     if (Alove >= pointssoul) and (Arel == "Lover"):
         $ Arel = "Soulmate"
-        
+
         # put your own dialogue here
-        
+
         "You and Casey are now soulmates. Stick around until day 31 to get a special ending with her!"
-        
+
     $ canwarp = True
     return
-    
-    
+
+
 # if you have multiple love interests you can add an "if (curdate == ??)" to this label too, but if you have a lot of potential dialogue itll likely be more efficient to put each character in a new label and use this to jump to the right one.
 label chattalk:
     $ renpy.hide_screen("mapchat")
     $ canwarp = False
     if (HP >= 10):
         $ HP -= 10
-        
+
         show side mc at midleft onlayer mcsprite
-        c "Hey! You're looking as soulless and vacant as usual. While I have you here... Are you free for a date on Tuesday? There's a really nice new coffee shop."
-        
-        menu:
-            "Sure, I'll go out with you.":
-                
-                # 'loveup' is a small animation that shows the player theyve made a good choice.
-                $ Alove += 10
-                show loveup
-                
-                c "Wait, really? I thought you'd just brush me off! I'll make sure my schedule is free, then."
-                
-            "I'm busy Tuesday. And Wednesday. My schedule is pretty full.":
-                c "Oh. Okay. Yeah, that's... fine, I guess. I'll ask you another time."
-                
-        hide side mc onlayer mcsprite
+
+        if (Trust = 0):
+            s "T1"
+            s "T2"
+
+            menu:
+                "DIALOGUE CHOICE 1":
+
+                    # 'loveup' is a small animation that shows the player theyve made a good choice.
+                    $ Trust += 1
+                    show loveup
+
+                    c "good answer"
+
+                "DIALOGUE CHOICE 1":
+                    c "bad answer"
+            else if (Trust = 1):
+                menu:
+                    "DIALOGUE CHOICE 1":
+
+                        c "good answer"
+                        $ Trust += 1
+                        show loveup
+
+                    "DIALOGUE CHOICE 1":
+                        c "bad answer"
+            else if (Trust = 2):
+                menu:
+                    "DIALOGUE CHOICE 1":
+
+                        c "good answer"
+                        $ Trust += 1
+                        show loveup
+
+                    "DIALOGUE CHOICE 1":
+                        c "bad answer"
+            else:
+                jump n1_part2
+
+            hide side mc onlayer mcsprite
+
+
     else:
         "You don't have enough HP for that!"
     $ canwarp = True
     jump parkA
-    
-    
+
+
 label chatgift:
     $ renpy.hide_screen("chatgift")
     if (currel == "Stranger"):
-        
+
         if (curdate == "Casey"):
             c "Um, you're nice, [pName], but I don't think I'm comfortable with you buying me stuff just yet."
             jump parkA
-            
+
     else:
         $ globals()[curgift] -= 1
-        
+
         if (curdate == "Casey"):
             $ Alove += 10
             show loveup
-            
+
             c "Oh! Thank you, [pName], this is great!"
             jump parkA
-    
+
 
 label chatdate:
     $ renpy.hide_screen("mapchat")
     if (currel == "Stranger") or (currel == "Friend"):
-        
+
         if (curdate == "Casey"):
             c "Um... Sorry, I don't think today is a good day."
             jump parkA
-            
+
     else:
         if (HP >= 50):
             $ HP -= 50
-            
+
             if (curdate == "Casey"):
                 c "H-Huh? You really want to? Great! Let's head out, then."
                 jump dateA
-                
+
         else:
             "You don't have enough HP for that!"
             jump parkA
