@@ -5,7 +5,7 @@ define v = Character("Vincent")
 define c = Character("Vincent")
 define q = Character("???")
 define db = Character("Drunk Businessman")
-define qb = Character("Quiet Businessman")
+define qb = Character("Sober Businessman")
 define h = Character("Hostess")
 
 $ N1_Wallet = False
@@ -63,7 +63,7 @@ label intro_convo:
         "Pay up first.":
             "{color=#6b091b}I swat away his hand, which was inching dangerously
             close to my thigh.{/color}"
-            s "Pay up in the front if you want a private show."
+            s "Pay up in the front if you want a private room."
             db "Aw, come on baby. I just wanted to buy you a drink."
             jump intro_expos
 
@@ -192,10 +192,8 @@ label Vincent_N1:
             s "...Can you check?"
             h "Sure. Hm...that's...{i}oh.{/i}"
             h "He's...a {i}special guest{/i}."
-            s "What do you-{w=2.0}{nw}"
-            "The hostess shakes her head."
-            h "Can't tell you. Client confidentiality."
-            h "But I would...do what he asks."
+            "…Explains the mask."
+            h "I would...do what he asks."
             jump n1_transition
 
 label n1_transition:
@@ -245,4 +243,3 @@ label successful3A:
 label unsuccessful3B:
     #FINISH
     return
-
