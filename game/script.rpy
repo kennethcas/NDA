@@ -20,6 +20,11 @@ label start:
     # music: tense, ominous
 
     # DIALOGUE. ---
+    menu:
+        "SKIP INTRO, GO TO MINIGAME":
+            jump park
+        "PLAY GAME FROM BEGINNING":
+            "THE GAME WILL START NOW."
 
     "OCTOBER 31, 1983 \nNEW YORK"
     q "..."
