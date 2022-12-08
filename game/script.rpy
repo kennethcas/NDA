@@ -21,7 +21,7 @@ label start:
     # DIALOGUE. ---
     menu:
         "SKIP INTRO, GO TO MINIGAME":
-            jump park
+            jump vincentMinigame
         "PLAY GAME FROM BEGINNING":
             "THE GAME WILL START NOW."
 
@@ -183,7 +183,7 @@ label Vincent_N1:
     qb "That's taken care of."
     menu:
         "Go with him":
-            jump n1_transition
+            jump vincentMinigame
         "Object":
             s "I...will check with the front first."
             qb "It's urgent. I don't have a lot of time."

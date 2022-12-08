@@ -134,10 +134,10 @@ label chattalk:
             "Why me?":
                 qb "bad answer"
             "What kind of help do you need?":
-                "." 
+                "."
 
     else:
-        jump n1_part2
+        jump vincentMinigameIntro
 
         hide side mc onlayer mcsprite
 
@@ -160,7 +160,7 @@ label chatgift:
         s "T1"
         s "T2"
         "We drink."
-        $ drunk += 10
+        $ Alove += 10
         # 'loveup' is a small animation that shows the player theyve made a good choice.
         show loveup
 
@@ -179,7 +179,7 @@ label chatdate:
     if (currel == "Stranger") or (currel == "Friend"):
 
         if (curdate == "Casey"):
-            c "Um... Sorry, I don't think today is a good day."
+            qb "Um... Sorry, I don't think today is a good day."
             jump parkA
 
     else:
@@ -187,7 +187,7 @@ label chatdate:
             $ HP -= 50
 
             if (curdate == "Casey"):
-                c "H-Huh? You really want to? Great! Let's head out, then."
+                qb "H-Huh? You really want to? Great! Let's head out, then."
                 jump dateA
 
         else:
