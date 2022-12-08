@@ -87,7 +87,7 @@ label chattalk:
     $ talkTurns += 1
 
 <<<<<<< HEAD
-    show side mc at midleft onlayer mcsprite
+    show side mc at left onlayer mcsprite
 =======
         show side mc at left onlayer mcsprite
 >>>>>>> 77db540c9f448f6631f4e672e6392a45693316a7
@@ -159,7 +159,7 @@ label chatgift:
     if (HP >= 10):
         $ HP -= 10
 
-        show side mc at midleft onlayer mcsprite
+        show side mc at left onlayer mcsprite
         s "T1"
         s "T2"
         "We drink."
