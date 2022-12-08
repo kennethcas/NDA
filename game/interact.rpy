@@ -1,6 +1,6 @@
 # each location is designed to hold one love interest, so "park" and "parkA" should be duplicated or edited to fit your own needs.
 # hi hihihi
-label park:
+label vincentMinigame:
     scene bg park
     show casey
 
@@ -83,56 +83,70 @@ label relAcheck:
 label chattalk:
     $ renpy.hide_screen("mapchat")
     $ canwarp = False
-    if (HP >= 10):
-        $ HP -= 10
+    $ turns += 1
+    $ talkTurns += 1
 
-        show side mc at midleft onlayer mcsprite
+    show side mc at midleft onlayer mcsprite
 
-        if (Trust == 0):
-            s "T1"
-            s "T2"
+        if (turns == 1):
+            "Clients knowing personal information…is never a good thing."
+
+            "Especially when its someone like {i}him.{/i} The last thing I
+                need right now is someone more powerful than even the richest,
+                sleaziest Wall Street bankers on my tail right now."
+
+            "If I play my cards right—nudge them in the right direction while
+                telling him what he wants to hear—I can make him fold easy."
+            qb "Your real name…is Sachi Kaur, is it not?"
 
             menu:
-                "DIALOGUE CHOICE 1":
+                "Yes.":
 
-                    # 'loveup' is a small animation that shows the player theyve made a good choice.
-                    $ Trust += 1
-                    show loveup
+                    qb "good answer"
 
-                    c "good answer"
-
-                "DIALOGUE CHOICE 1":
-                    c "bad answer"
-        elif (Trust == 1):
+                "You have the wrong girl.":
+                    qb "bad answer"
+                "Why?"
+                    qb ""
+        elif (talkTurns == 2):
             menu:
-                "DIALOGUE CHOICE 1":
+                "What do you want from me?":
+                    qb "good answer"
 
-                    c "good answer"
-                    $ Trust += 1
-                    show loveup
+                "How do you know who I am?":
+                    qb "bad answer"
 
-                "DIALOGUE CHOICE 1":
-                    c "bad answer"
-        elif (Trust == 2):
+        elif (talkTurns == 3):
             menu:
-                "DIALOGUE CHOICE 1":
+                "How do you know my father?":
 
-                    c "good answer"
-                    $ Trust += 1
-                    show loveup
+                    qb "good answer"
 
-                "DIALOGUE CHOICE 1":
-                    c "bad answer"
+                "Why me?":
+                    qb "bad answer"
+                "What kind of help do you need?":
+        elif (talkTurns == 4):
+            menu:
+                "You have no proof.":
+
+                    qb "good answer"
+
+                "Why me?":
+                    qb "bad answer"
+                "What kind of help do you need?":
+
         else:
             jump n1_part2
 
         hide side mc onlayer mcsprite
 
-
-    else:
-        "You don't have enough HP for that!"
-    $ canwarp = True
-    jump parkA
+label vincentEvidence1:
+label vincentEvidence2:
+label vincentEvidence3:
+label vincentEvidence4A:
+label vincentEvidence4B:
+label vincentEvidence5A:
+label vincentEnd:
 
 
 label chatgift:
@@ -145,7 +159,9 @@ label chatgift:
         s "T1"
         s "T2"
         "We drink."
-        $ Alove += 10
+        $ drunk += 10
+        # 'loveup' is a small animation that shows the player theyve made a good choice.
+        show loveup
 
         hide side mc onlayer mcsprite
 

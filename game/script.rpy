@@ -2,7 +2,6 @@
 #THIS IS A TESTING LINE
 define s = Character("Sachi")
 define v = Character("Vincent")
-define c = Character("Vincent")
 define q = Character("???")
 define db = Character("Drunk Businessman")
 define qb = Character("Sober Businessman")
@@ -199,22 +198,28 @@ label Vincent_N1:
             h "He's...a {i}special guest{/i}."
             "…Explains the mask."
             h "I would...do what he asks."
-            jump n1_transition
+            jump vincentMinigameIntro
 
-label n1_transition:
+label vincentMinigameIntro:
     #black
     "I follow him into one of the backrooms."
-    jump park
+    #scene backroom
+    s "You wanted to {color=#6b091b}ask me something?{/color}"
+    qb "…That’s correct."
+    qb "Your real name…is {color=#6b091b}Sachi Kaur{/color}, is it not?"
+    #(music pause, sfx surprised)
+    "...Uh-oh."
+    jump vincentMinigame
 
 label n1_part2:
     jump map
 
 label client1minigame:
-    jump park
+    jump vincentMinigame
 label client2minigame:
-    jump park
+    jump vincentMinigame
 label client3minigame:
-    jump park
+    jump vincentMinigame
 
 label n3_intro_and_selection:
     #FINISH
@@ -225,7 +230,7 @@ label n4_intro:
     return
 
 label minigame2:
-    jump park
+    jump vincentMinigame
 
 label unsuccessful2A:
     return
@@ -240,7 +245,7 @@ label ending3:
     return
 
 label minigame3:
-    jump park
+    jump vincentMinigame
 
 label successful3A:
     #FINISH

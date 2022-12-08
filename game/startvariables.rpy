@@ -1,11 +1,12 @@
-init: 
+init:
     ## CUSTOMISABLE VARIABLES
     # these are the point values the player needs to reach each relationship stage with a LI. if you dont plan to use relationship stages, you can ignore these or set "pointsfriend" to the maximum affection you can get.
     $ pointsfriend = 100
     $ pointslove = 200
     $ pointssoul = 300
-    
-    # these are date variables. to succeed on a date, you have to do at least as many activities as indicated in "maxmood". the variables in "count" are how many times you can do each activity. adjust these however you like. 
+    $ pointsdrunk = 100
+
+    # these are date variables. to succeed on a date, you have to do at least as many activities as indicated in "maxmood". the variables in "count" are how many times you can do each activity. adjust these however you like.
     $ maxmood = 5
     $ mood = 0
     $ talkcountmax = 3
@@ -14,17 +15,17 @@ init:
     $ talkcount = talkcountmax
     $ giftcount = giftcountmax
     $ photocount = photocountmax
-    
+
     # turn this to False if you don't want to use the built-in mini-gallery (represented as date photos in your bedroom)
     $ usegallery = True
-        
+
     # required mechanic variables such as HP, money, and day. you can set these to start at any number you want
     $ maxHP = 50
     $ HP = 50
     $ gold = 100
     $ day = 1
     $ lastDay = 30
-    
+
     # these are the starting stats of the player. you dont need to use the same names for stats, but these variable names are used in screens and template logic. you should set a maximum the player can train it to here.
     $ charm = 0
     $ intel = 0
@@ -32,23 +33,36 @@ init:
     $ maxcharm = 99
     $ maxintel = 99
     $ maxcreate = 99
-    
-    
+
+
     # love interest variables. Alove is the numerical value of affection (for character 'A')  Arel is the phase the relationship is in. 'pointsonly' is a True/False variable that determines which of the former shows in the stats menu.
     # each love interest should have their own version of Alove and Arel. duplicate them as many times as needed.
     $ Alove = 0
     $ Arel = "Stranger"
-    $ Trust = 0
+    $ drunk = 0
+    $ sus = 0
+    $ turns = 0
+    $ talkTurns = 0
+    $ flirtTurns = 0
+    $ drinkTurns = 0
+
+    $ v1Ev1 = False
+    $ v1Ev2 = False
+    $ v1Ev3 = False
+    $ v1Ev4a = False
+    $ v1Ev4b = False
+    $ v1Ev5a = False
+    $ v1Ev5b = False
     $ pointsonly = False
-    
-    
+
+
     # these are all item variables, which increase when you make or buy an item.
     $ cookies = 0
     $ games = 0
     $ bouquets = 0
     $ teddies = 0
-    
-    
+
+
     ## NON-CUSTOMISABLE VARIABLES
     # these are all adaptable variables that hold temporary information used in the dates, shops, and other screens. leave these alone.
     $ curdate = "None"
@@ -59,17 +73,17 @@ init:
     $ giftprice = 0
     $ workHP = 0
     $ workpay = 0
-        
+
     # this variable should be turned off during cutscenes, to prevent the user from jumping to another room during dialogue using the status window
     $ canwarp = True
-    
+
     # used so that pixel art reads clear
     define config.nearest_neighbor = True
-    
+
     # this adds an additional layer for the purpose of showing the characters sprite over dialogue without relying on side images. this is aesthetic, so not necessary.
     define config.layers = [ 'master', 'transient', 'say', 'mcsprite', 'screens', 'overlay']
     define config.say_layer = "say"
-    
+
     # rolling back past screens can sometimes cause unexpected behaviour, so it's been disabled. You can re-enable it; it shouldn't be game-breaking, just annoying.
     define config.rollback_enabled = False
 
@@ -79,10 +93,10 @@ init:
         alpha 0.0
         linear 0.25 alpha 0.8
         linear 0.75 alpha 0.0
-        
+
     image white:
         Solid("#fff")
-        
+
     image loveupbig:
         "UI/UI love up big.png"
         xpos 1180
@@ -91,7 +105,7 @@ init:
         linear 0.40 alpha 1.0
         pause 1.0
         linear 0.75 alpha 0.0
-    
+
     image loveup:
         "UI/UI love up small.png"
         xpos 1180
@@ -100,10 +114,10 @@ init:
         linear 0.40 alpha 1.0
         pause 0.6
         linear 0.75 alpha 0.0
-        
+
     transform midleft:
         xalign 0.065 yalign 1.0
-        
+
 
 define gui.about = _p("""
     Sim Date Template made by HeeCawRoo.
