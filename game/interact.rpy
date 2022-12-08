@@ -86,7 +86,7 @@ label chattalk:
     if (HP >= 10):
         $ HP -= 10
 
-        show side mc at midleft onlayer mcsprite
+        show side mc at left onlayer mcsprite
 
         if (Trust == 0):
             s "T1"
