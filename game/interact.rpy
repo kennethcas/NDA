@@ -88,55 +88,56 @@ label chattalk:
 
     show side mc at left onlayer mcsprite
 
-        if (turns == 1):
-            "Clients knowing personal information…is never a good thing."
+    if (turns == 1):
+        "Clients knowing personal information…is never a good thing."
 
-            "Especially when its someone like {i}him.{/i} The last thing I
-                need right now is someone more powerful than even the richest,
-                sleaziest Wall Street bankers on my tail right now."
+        "Especially when its someone like {i}him.{/i} The last thing I
+            need right now is someone more powerful than even the richest,
+            sleaziest Wall Street bankers on my tail right now."
 
-            "If I play my cards right—nudge them in the right direction while
-                telling him what he wants to hear—I can make him fold easy."
-            qb "Your real name…is Sachi Kaur, is it not?"
+        "If I play my cards right—nudge them in the right direction while
+            telling him what he wants to hear—I can make him fold easy."
+        qb "Your real name…is Sachi Kaur, is it not?"
 
-            menu:
-                "Yes.":
+        menu:
+            "Yes.":
 
-                    qb "good answer"
+                qb "good answer"
 
-                "You have the wrong girl.":
-                    qb "bad answer"
-                "Why?"
-                    qb ""
-        elif (talkTurns == 2):
-            menu:
-                "What do you want from me?":
-                    qb "good answer"
+            "You have the wrong girl.":
+                qb "bad answer"
+            "Why?":
+                qb "."
+    elif (talkTurns == 2):
+        menu:
+            "What do you want from me?":
+                qb "good answer"
 
-                "How do you know who I am?":
-                    qb "bad answer"
+            "How do you know who I am?":
+                qb "bad answer"
 
-        elif (talkTurns == 3):
-            menu:
-                "How do you know my father?":
+    elif (talkTurns == 3):
+        menu:
+            "How do you know my father?":
 
-                    qb "good answer"
+                qb "good answer"
 
-                "Why me?":
-                    qb "bad answer"
-                "What kind of help do you need?":
-        elif (talkTurns == 4):
-            menu:
-                "You have no proof.":
+            "Why me?":
+                qb "bad answer"
+            "What kind of help do you need?":
+                ""
+    elif (talkTurns == 4):
+        menu:
+            "You have no proof.":
+                qb "good answer"
 
-                    qb "good answer"
+            "Why me?":
+                qb "bad answer"
+            "What kind of help do you need?":
+                "." 
 
-                "Why me?":
-                    qb "bad answer"
-                "What kind of help do you need?":
-
-        else:
-            jump n1_part2
+    else:
+        jump n1_part2
 
         hide side mc onlayer mcsprite
 
