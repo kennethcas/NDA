@@ -86,7 +86,11 @@ label chattalk:
     $ turns += 1
     $ talkTurns += 1
 
+<<<<<<< HEAD
     show side mc at midleft onlayer mcsprite
+=======
+        show side mc at left onlayer mcsprite
+>>>>>>> 77db540c9f448f6631f4e672e6392a45693316a7
 
         if (turns == 1):
             "Clients knowing personal information…is never a good thing."
