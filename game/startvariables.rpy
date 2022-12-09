@@ -1,10 +1,11 @@
 init:
     ## CUSTOMISABLE VARIABLES
     # these are the point values the player needs to reach each relationship stage with a LI. if you dont plan to use relationship stages, you can ignore these or set "pointsfriend" to the maximum affection you can get.
-    $ pointsfriend = 100
-    $ pointslove = 200
-    $ pointssoul = 300
+    #$ pointsfriend = 100
+    #$ pointslove = 200
+    #$ pointssoul = 300
     $ pointsdrunk = 100
+    $ pointssus = 100
 
     # these are date variables. to succeed on a date, you have to do at least as many activities as indicated in "maxmood". the variables in "count" are how many times you can do each activity. adjust these however you like.
     $ maxmood = 5
@@ -34,33 +35,28 @@ init:
     $ maxintel = 99
     $ maxcreate = 99
 
-
-    # love interest variables. Alove is the numerical value of affection (for character 'A')  Arel is the phase the relationship is in. 'pointsonly' is a True/False variable that determines which of the former shows in the stats menu.
-    # each love interest should have their own version of Alove and Arel. duplicate them as many times as needed.
-    $ Alove = 0
-    $ Arel = "Stranger"
     $ drunk = 0
     $ sus = 0
     $ turns = 0
-    $ talkTurns = 0
-    $ flirtTurns = 0
-    $ drinkTurns = 0
+    $ talk_turns = 0
+    $ flirt_turns = 0
+    $ drink_turns = 0
 
-    $ v1Ev1 = False
-    $ v1Ev2 = False
-    $ v1Ev3 = False
-    $ v1Ev4a = False
-    $ v1Ev4b = False
-    $ v1Ev5a = False
-    $ v1Ev5b = False
+    $ v1_ev_1 = False
+    $ v1_ev_2 = False
+    $ v1_ev_3 = False
+    $ v1_ev_4a = False
+    $ v1_ev_4b = False
+    $ v1_ev_5a = False
+    $ v1_ev_5b = False
     $ pointsonly = False
 
 
     # these are all item variables, which increase when you make or buy an item.
-    $ cookies = 0
-    $ games = 0
-    $ bouquets = 0
-    $ teddies = 0
+    #$ cookies = 0
+    #$ games = 0
+    #$ bouquets = 0
+    #$ teddies = 0
 
 
     ## NON-CUSTOMISABLE VARIABLES

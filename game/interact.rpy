@@ -1,90 +1,28 @@
 # each location is designed to hold one love interest, so "park" and "parkA" should be duplicated or edited to fit your own needs.
 # hi hihihi
-label vincentMinigame:
+label vincent_minigame:
     scene bg park
     show casey
-
-    # this checks if youre at the end of the game (by default set to day 31), and sends you to the ending with the specified character.
-    if (day > lastDay):
-        $ renpy.hide_screen("townmap")
-        "End game with Casey?"
-        menu:
-            "Yes":
-                jump endA
-            "No":
-                jump map
-
-    call relAcheck from _call_relAcheck
-    jump parkA
-
-
-# this is separate from park so that the relationship upgrade scene doesnt replay when it shouldnt.
-label parkA:
-    scene bg park
-    show casey
-
-    # reset date tallies to default in case we end up going on one
-    $ mood = 0
-    $ talkcount = talkcountmax
-    $ giftcount = giftcountmax
-    $ photocount = photocountmax
-
-    # these calculations determine the date variables. curbar uses the relationship status to determine progress to next date, assuming it takes 100 points to reach each stage.
-    $ curdate = "Casey"
-    $ currel = Arel
-
-    if (currel == "Stranger"):
-        $ curnext = pointsfriend
-        $ curbar = min(Alove, pointsfriend)
-    if (currel == "Friend"):
-        $ curnext = pointslove - pointsfriend
-        $ curbar = min(Alove - pointsfriend, pointslove - pointsfriend)
-    if (currel == "Lover"):
-        $ curnext = pointssoul - pointslove
-        $ curbar = min(Alove - pointslove, pointssoul - pointslove)
-    if (currel == "Soulmate"):
-        $ curnext = 100
-        $ curbar = 100
-
+    $ curbar = min(drunk, pointsdrunk)
     $ renpy.show_screen("mapchat")
     $ renpy.pause ()
 
+label points_check:
+    if (turns <= 5 && drunk < 100 && sus < 100):
+        #add other minigames
+        jump vincent_minigame
+    elif (drunk >= 100):
+        jump drunk_full
+    elif (sus >= 100):
+        jump sus_full
+    elif (turns > 5):
+        jump n1_part2
 
-# a simple little label that will handle the relationship upgrades when youre close enough. each LI should have their own version of this label.
-label relAcheck:
-    $ canwarp = False
-    $ renpy.hide_screen("townmap")
-    if (Alove >= pointsfriend) and (Arel == "Stranger"):
-        $ Arel = "Friend"
-
-        # put your own dialogue here
-
-        "You are now 'Friends' with Casey. You can now give her gifts."
-
-    if (Alove >= pointslove) and (Arel == "Friend"):
-        $ Arel = "Lover"
-
-        # put your own dialogue here
-
-        "You are now dating Casey! You can now go on dates."
-
-    if (Alove >= pointssoul) and (Arel == "Lover"):
-        $ Arel = "Soulmate"
-
-        # put your own dialogue here
-
-        "You and Casey are now soulmates. Stick around until day 31 to get a special ending with her!"
-
-    $ canwarp = True
-    return
-
-
-# if you have multiple love interests you can add an "if (curdate == ??)" to this label too, but if you have a lot of potential dialogue itll likely be more efficient to put each character in a new label and use this to jump to the right one.
 label chattalk:
     $ renpy.hide_screen("mapchat")
     $ canwarp = False
     $ turns += 1
-    $ talkTurns += 1
+    $ talk_turns += 1
 
     show side mc at left onlayer mcsprite
 
@@ -108,7 +46,7 @@ label chattalk:
                 qb "bad answer"
             "Why?":
                 qb "."
-    elif (talkTurns == 2):
+    elif (talk_turns == 2):
         menu:
             "What do you want from me?":
                 qb "good answer"
@@ -116,7 +54,7 @@ label chattalk:
             "How do you know who I am?":
                 qb "bad answer"
 
-    elif (talkTurns == 3):
+    elif (talk_turns == 3):
         menu:
             "How do you know my father?":
 
@@ -126,7 +64,7 @@ label chattalk:
                 qb "bad answer"
             "What kind of help do you need?":
                 ""
-    elif (talkTurns == 4):
+    elif (talk_turns == 4):
         menu:
             "You have no proof.":
                 qb "good answer"
@@ -137,59 +75,76 @@ label chattalk:
                 "."
 
     else:
-        jump vincentMinigameIntro
+        jump points_check
 
         hide side mc onlayer mcsprite
 
 label vincentEvidence1:
+    $ v1_ev_1 = True;
+    jump points_check
 label vincentEvidence2:
-label vincentEvidence3:
-label vincentEvidence4A:
-label vincentEvidence4B:
-label vincentEvidence5A:
-label vincentEnd:
+    $ v1_ev_2 = True;
+    jump points_check
 
+label vincentEvidence3:
+    $ v1_ev_3 = True;
+    jump points_check
+
+label vincentEvidence4A:
+    $ v1_ev_4a = True;
+    jump points_check
+
+label vincentEvidence4B:
+    $ v1_ev_4b = True;
+    jump points_check
+
+label vincentEvidence5A:
+    $ v1_ev_5a = True;
+    jump points_check
+
+label vincentEnd:
+    $ v1_ev_5b = True;
+    jump points_check
 
 label chatgift:
     $ renpy.hide_screen("mapchat")
     $ canwarp = False
-    if (HP >= 10):
-        $ HP -= 10
+    $ turns += 1
+    $ drunk_turns += 1
 
-        show side mc at left onlayer mcsprite
-        s "T1"
-        s "T2"
-        "We drink."
-        $ Alove += 10
-        # 'loveup' is a small animation that shows the player theyve made a good choice.
-        show loveup
+    show side mc at left onlayer mcsprite
+    s "T1"
+    s "T2"
+    "We drink."
 
-        hide side mc onlayer mcsprite
-
-
-    else:
-        "You don't have enough HP for that!"
+    $ drunk += 25
+    hide side mc onlayer mcsprite
     $ canwarp = True
-    jump parkA
+
+    jump points_check
 
 
 
 label chatdate:
     $ renpy.hide_screen("mapchat")
-    if (currel == "Stranger") or (currel == "Friend"):
+    $ canwarp = False
+    $ turns += 1
+    $ flirt_turns += 1
 
-        if (curdate == "Casey"):
-            qb "Um... Sorry, I don't think today is a good day."
-            jump parkA
+    if (flirt_turns < 2):
+        show side mc at left onlayer mcsprite
+        s "T1"
+        s "T2"
+        "We drink."
+        $ sus -= 2
+        hide side mc onlayer mcsprite
+    if (flirt_turns > 2):
+        "."
+        "."
 
-    else:
-        if (HP >= 50):
-            $ HP -= 50
+    $ canwarp = True
 
-            if (curdate == "Casey"):
-                qb "H-Huh? You really want to? Great! Let's head out, then."
-                jump dateA
+    jump points_check
 
-        else:
-            "You don't have enough HP for that!"
-            jump parkA
+label drunk_full:
+label sus_full:

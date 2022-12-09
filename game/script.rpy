@@ -21,7 +21,7 @@ label start:
     # DIALOGUE. ---
     menu:
         "SKIP INTRO, GO TO MINIGAME":
-            jump vincentMinigame
+            jump vincent_minigame
         "PLAY GAME FROM BEGINNING":
             "THE GAME WILL START NOW."
 
@@ -183,7 +183,7 @@ label Vincent_N1:
     qb "That's taken care of."
     menu:
         "Go with him":
-            jump vincentMinigame
+            jump vincent_minigame
         "Object":
             s "I...will check with the front first."
             qb "It's urgent. I don't have a lot of time."
@@ -198,9 +198,9 @@ label Vincent_N1:
             h "He's...a {i}special guest{/i}."
             "…Explains the mask."
             h "I would...do what he asks."
-            jump vincentMinigameIntro
+            jump vincent_minigameIntro
 
-label vincentMinigameIntro:
+label vincent_minigame_intro:
     #black
     "I follow him into one of the backrooms."
     #scene backroom
@@ -209,17 +209,17 @@ label vincentMinigameIntro:
     qb "Your real name…is {color=#6b091b}Sachi Kaur{/color}, is it not?"
     #(music pause, sfx surprised)
     "...Uh-oh."
-    jump vincentMinigame
+    jump vincent_minigame
 
 label n1_part2:
     jump map
 
 label client1minigame:
-    jump vincentMinigame
+    jump vincent_minigame
 label client2minigame:
-    jump vincentMinigame
+    jump vincent_minigame
 label client3minigame:
-    jump vincentMinigame
+    jump vincent_minigame
 
 label n3_intro_and_selection:
     #FINISH
@@ -230,7 +230,7 @@ label n4_intro:
     return
 
 label minigame2:
-    jump vincentMinigame
+    jump vincent_minigame
 
 label unsuccessful2A:
     return
@@ -245,7 +245,7 @@ label ending3:
     return
 
 label minigame3:
-    jump vincentMinigame
+    jump vincent_minigame
 
 label successful3A:
     #FINISH
