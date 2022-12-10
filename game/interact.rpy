@@ -3,12 +3,13 @@
 label vincent_minigame:
     scene bg park
     show casey
-    $ curbar = min(drunk, pointsdrunk)
     $ renpy.show_screen("mapchat")
     $ renpy.pause ()
+    $ drunk = pointsdrunk
+    $ sus = pointssus
 
 label points_check:
-    if (turns <= 5 && drunk < 100 && sus < 100):
+    if (turns <= 5 and drunk < 100 and sus < 100):
         #add other minigames
         jump vincent_minigame
     elif (drunk >= 100):
@@ -110,7 +111,7 @@ label chatgift:
     $ renpy.hide_screen("mapchat")
     $ canwarp = False
     $ turns += 1
-    $ drunk_turns += 1
+    $ drink_turns += 1
 
     show side mc at left onlayer mcsprite
     s "T1"
@@ -147,4 +148,6 @@ label chatdate:
     jump points_check
 
 label drunk_full:
+    s "please work please please please"
+    jump vincent_minigame
 label sus_full:
