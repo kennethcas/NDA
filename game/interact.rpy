@@ -1,7 +1,5 @@
-# each location is designed to hold one love interest, so "park" and "parkA" should be duplicated or edited to fit your own needs.
-# hi hihihi
 label vincent_minigame:
-    scene bg park
+    scene bg private room
     show casey
     $ renpy.show_screen("mapchat")
     $ renpy.pause ()
@@ -150,4 +148,6 @@ label chatdate:
 label drunk_full:
     s "please work please please please"
     jump vincent_minigame
+
 label sus_full:
+    return
