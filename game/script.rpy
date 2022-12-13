@@ -183,7 +183,7 @@ label Vincent_N1:
     qb "That's taken care of."
     menu:
         "Go with him":
-            jump vincent_minigame
+            jump chattalk
         "Object":
             s "I...will check with the front first."
             qb "It's urgent. I don't have a lot of time."
@@ -209,17 +209,17 @@ label vincent_minigame_intro:
     qb "Your real name…is {color=#6b091b}Sachi Kaur{/color}, is it not?"
     #(music pause, sfx surprised)
     "...Uh-oh."
-    jump vincent_minigame
+    jump chattalk
 
 label n1_part2:
     jump map
 
 label client1minigame:
-    jump vincent_minigame
+    jump chattalk
 label client2minigame:
-    jump vincent_minigame
+    jump chattalk
 label client3minigame:
-    jump vincent_minigame
+    jump chattalk
 
 label n3_intro_and_selection:
     #FINISH
@@ -230,7 +230,7 @@ label n4_intro:
     return
 
 label minigame2:
-    jump vincent_minigame
+    jump chattalk
 
 label unsuccessful2A:
     return
@@ -245,7 +245,7 @@ label ending3:
     return
 
 label minigame3:
-    jump vincent_minigame
+    jump chattalk
 
 label successful3A:
     #FINISH
