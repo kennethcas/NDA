@@ -43,71 +43,160 @@ label chattalk:
         menu:
             "Yes.":
 
-                qb "good answer"
+                jump vincent_ev_1
 
             "You have the wrong girl.":
-                qb "bad answer"
+                jump vincent_ev_2
             "Why?":
-                qb "."
+                jump vincent_ev_3
+
     elif (talk_turns == 2):
         menu:
             "What do you want from me?":
-                qb "good answer"
+                if (vincent_ev_1 == true):
+                    jump vincent_ev_3
+                if (vincent_ev_2 == true):
+                    jump vincent_ev_3
+                if (vincent_ev_3 == true):
+                    jump vincent_ev_1
 
             "How do you know who I am?":
-                qb "bad answer"
+                if (vincent_ev_1 == true):
+                    jump vincent_ev_2
+                if (vincent_ev_2 == true):
+                    jump vincent_ev_1
+                if (vincent_ev_3 == true):
+                    jump vincent_ev_1
 
     elif (talk_turns == 3):
         menu:
-            "How do you know my father?":
+            if (vincent_ev_1 == true):
+                "How do you know my father?":
+                jump vincent_ev_4a
 
-                qb "good answer"
+            if (vincent_ev_2 == true):
+                "Why me?":
+                jump vincent_ev_5a
 
-            "Why me?":
-                qb "bad answer"
-            "What kind of help do you need?":
-                ""
+            if (vincent_ev_3 == true):
+                "What kind of {i}help{/i} do you need?":
+                jump vincent_1_end
+
     elif (talk_turns == 4):
         menu:
-            "You have no proof.":
-                qb "good answer"
+            if (vincent_ev_4a == true):
+                "How long have you been working at Carmine?":
+                jump vincent_ev_4b
 
-            "Why me?":
-                qb "bad answer"
-            "What kind of help do you need?":
-                "."
+            if (vincent_ev_5a == true):
+                “You have no proof.”:
+                jump vincent_ev_5b
+
+            if (vincent_1_end == true):
+                "What kind of {i}help{/i} do you need?":
+                jump vincent_1_end
+
 
     else:
-        jump points_check
+        if (vincent_ev_5a == true):
+            “You have no proof.”:
+            jump vincent_ev_5b
 
-        hide side mc onlayer mcsprite
+        if (vincent_1_end == true):
+            "What kind of {i}help{/i} do you need?":
+            jump vincent_1_end
 
-label vincentEvidence1:
+    hide side mc onlayer mcsprite
+
+label vincent_ev_1:
+
     $ v1_ev_1 = True;
+
+    s "…How did you know?"
+    qb "I’ve been looking for you. You’re {color=#6b091b}Rahul Kaur{/color}’s daughter."
+    #surprise sfx
+    qb "…I wonder what he’d think now of your…er…profession. And {color=#6b091b}exploits{/color}, for that matter…"
+    s "…Well isn’t {i}he{/i} a delight."
+
     jump points_check
-label vincentEvidence2:
+
+label vincent_ev_2:
     $ v1_ev_2 = True;
+    if (talk_turns <= 1):
+
+        "He shakes his head."
+    qb "…I’ve been hearing lots of back alley talk about mysterious maxed out
+        credit cards, incriminating pictures mailed to wives and kids, thousands of
+        dollars of jewelry mysteriously going missing…"
+    s "I’m surprised someone of your…{i}esteemed status{/i} keeps up with
+        {i}back-alley talk{/i}."
+    qb "My…{i}esteemed status{/i}?"
+    s "…Your mask."
+    s "The only clients who wear masks are people in the public eye. For
+        uh…pretty obvious reasons. Not getting caught by the press and all…"
+    qb "…Well, I have my sources."
+
     jump points_check
 
-label vincentEvidence3:
+label vincent_ev_3:
+
     $ v1_ev_3 = True;
+
+    qb "I need your help."
+    s "My…{i}help{/i}?"
+
     jump points_check
 
-label vincentEvidence4A:
+label vincent_ev_4a:
     $ v1_ev_4a = True;
+
+    qb "..."
+    qb "...He used to work under me. To an extent."
+    s "…"
+    "So he used to work at Carmine. A white-collar investment firm that I’m all
+    too familiar with."
+    "No, scratch that…he’s a bigwig at Carmine."
+
+
     jump points_check
 
-label vincentEvidence4B:
+label vincent_ev_4b:
     $ v1_ev_4b = True;
+
+    qb "…Around {color=#6b091b}five years{/color} now."
+        "{i}Five years?{/i} That’s way too soon for such a big promotion…"
+    s "You’re…Antony Carmine’s son."
+    qb "…"
+
     jump points_check
 
-label vincentEvidence5A:
+label vincent_ev_5a:
     $ v1_ev_5a = True;
+
+    qb "Those who have been scammed, blackmailed, and otherwise victimized
+        in some shape and form all had one thing in common."
+    qb "…They visited The Scarlet Cabaret on a
+        {color=#6b091b}Friday night{/color} after {color=#6b091b}June 1985{/color}."
+    qb "Currently, there are {color=#6b091b}ten women{/color} who work on
+        Fridays. Each of you wear a different {color=#6b091b}animal
+        mask{/color}, correct?"
+    qb "Coincidentally, my…{i}sources{/i} began to report seeing a
+        {color=#6b091b}girl with a cat mask{/color} around that time."
+        "..."
+
     jump points_check
 
-label vincentEnd:
+label vincent_ev_5b:
     $ v1_ev_5b = True;
+
+    qb "Believe me. If I wanted you behind bars, I could easily find a way."
+    qb "…I think we could be useful to one another."
+
     jump points_check
+
+label vincent_1_end:
+    qb "..."
+    qb "...Revenge."
 
 label chatgift:
     $ renpy.hide_screen("mapchat")
