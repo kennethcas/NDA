@@ -198,7 +198,7 @@ label Vincent_N1:
             h "He's...a {i}special guest{/i}."
             "…Explains the mask."
             h "I would...do what he asks."
-            jump vincent_minigameIntro
+            jump vincent_minigame_intro
 
 label vincent_minigame_intro:
     #black
