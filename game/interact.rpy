@@ -1,8 +1,6 @@
-# each location is designed to hold one love interest, so "park" and "parkA" should be duplicated or edited to fit your own needs.
-# hi hihihi
 label vincent_minigame:
-    scene bg park
-    show casey
+    scene bg private room
+    show vincent fullbody
     $ renpy.show_screen("mapchat")
     $ renpy.pause ()
     $ drunk = pointsdrunk
@@ -25,7 +23,7 @@ label chattalk:
     $ turns += 1
     $ talk_turns += 1
 
-    show side mc at left onlayer mcsprite
+    show sachi mask at left onlayer mcsprite
 
     if (turns == 1):
         "Clients knowing personal information…is never a good thing."
@@ -36,7 +34,11 @@ label chattalk:
 
         "If I play my cards right—nudge them in the right direction while
             telling him what he wants to hear—I can make him fold easy."
+        hide sachi mask at left onlayer mcsprite
+        show vincent mask at left onlayer mcsprite
         qb "Your real name…is Sachi Kaur, is it not?"
+        hide vincent mask at left onlayer mcsprite
+        show sachi mask at left onlayer mcsprite
 
         menu:
             "Yes.":
@@ -150,4 +152,6 @@ label chatdate:
 label drunk_full:
     s "please work please please please"
     jump vincent_minigame
+
 label sus_full:
+    return
