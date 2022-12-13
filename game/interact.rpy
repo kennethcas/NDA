@@ -42,9 +42,7 @@ label chattalk:
 
         menu:
             "Yes.":
-
                 jump vincent_ev_1
-
             "You have the wrong girl.":
                 jump vincent_ev_2
             "Why?":
@@ -70,41 +68,25 @@ label chattalk:
 
     elif (talk_turns == 3):
         menu:
-            if (vincent_ev_1 == true):
-                "How do you know my father?":
+            "How do you know my father?" if vincent_ev_1 == true:
                 jump vincent_ev_4a
 
-            if (vincent_ev_2 == true):
-                "Why me?":
+            "Why me?" if vincent_ev_2 == true:
                 jump vincent_ev_5a
 
-            if (vincent_ev_3 == true):
-                "What kind of {i}help{/i} do you need?":
+            "What kind of {i}help{/i} do you need?" if vincent_ev_3 == true:
                 jump vincent_1_end
 
     elif (talk_turns == 4):
         menu:
-            if (vincent_ev_4a == true):
-                "How long have you been working at Carmine?":
+            "How long have you been working at Carmine?" if vincent_ev_4a == true:
                 jump vincent_ev_4b
 
-            if (vincent_ev_5a == true):
-                “You have no proof.”:
+            "You have no proof." if vincent_ev_5a == true:
                 jump vincent_ev_5b
 
-            if (vincent_1_end == true):
-                "What kind of {i}help{/i} do you need?":
+            "What kind of {i}help{/i} do you need?" if vincent_1_end == true:
                 jump vincent_1_end
-
-
-    else:
-        if (vincent_ev_5a == true):
-            “You have no proof.”:
-            jump vincent_ev_5b
-
-        if (vincent_1_end == true):
-            "What kind of {i}help{/i} do you need?":
-            jump vincent_1_end
 
     hide side mc onlayer mcsprite
 
@@ -122,8 +104,8 @@ label vincent_ev_1:
 
 label vincent_ev_2:
     $ v1_ev_2 = True;
+    $ sus += 20
     if (talk_turns <= 1):
-
         "He shakes his head."
     qb "…I’ve been hearing lots of back alley talk about mysterious maxed out
         credit cards, incriminating pictures mailed to wives and kids, thousands of
@@ -141,6 +123,7 @@ label vincent_ev_2:
 label vincent_ev_3:
 
     $ v1_ev_3 = True;
+    $ sus += 20
 
     qb "I need your help."
     s "My…{i}help{/i}?"
@@ -149,6 +132,7 @@ label vincent_ev_3:
 
 label vincent_ev_4a:
     $ v1_ev_4a = True;
+    $ sus += 20
 
     qb "..."
     qb "...He used to work under me. To an extent."
@@ -162,9 +146,10 @@ label vincent_ev_4a:
 
 label vincent_ev_4b:
     $ v1_ev_4b = True;
+    $ sus += 20
 
     qb "…Around {color=#6b091b}five years{/color} now."
-        "{i}Five years?{/i} That’s way too soon for such a big promotion…"
+    "{i}Five years?{/i} That’s way too soon for such a big promotion…"
     s "You’re…Antony Carmine’s son."
     qb "…"
 
@@ -172,6 +157,7 @@ label vincent_ev_4b:
 
 label vincent_ev_5a:
     $ v1_ev_5a = True;
+    $ sus += 20
 
     qb "Those who have been scammed, blackmailed, and otherwise victimized
         in some shape and form all had one thing in common."
@@ -182,12 +168,13 @@ label vincent_ev_5a:
         mask{/color}, correct?"
     qb "Coincidentally, my…{i}sources{/i} began to report seeing a
         {color=#6b091b}girl with a cat mask{/color} around that time."
-        "..."
+    "..."
 
     jump points_check
 
 label vincent_ev_5b:
     $ v1_ev_5b = True;
+    $ sus += 20
 
     qb "Believe me. If I wanted you behind bars, I could easily find a way."
     qb "…I think we could be useful to one another."
@@ -225,14 +212,15 @@ label chatdate:
 
     if (flirt_turns < 2):
         show side mc at left onlayer mcsprite
-        s "T1"
+        s " …He’s had around four glasses now."
         s "T2"
         "We drink."
-        $ sus -= 2
+        $ sus -= 20
         hide side mc onlayer mcsprite
     if (flirt_turns > 2):
         "."
         "."
+        $ sus -= 20
 
     $ canwarp = True
 
