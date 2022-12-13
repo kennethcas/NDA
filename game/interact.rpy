@@ -1,6 +1,6 @@
 label vincent_minigame:
     scene bg private room
-    show casey
+    show vincent fullbody
     $ renpy.show_screen("mapchat")
     $ renpy.pause ()
     $ drunk = pointsdrunk
@@ -23,7 +23,7 @@ label chattalk:
     $ turns += 1
     $ talk_turns += 1
 
-    show side mc at left onlayer mcsprite
+    show sachi mask at left onlayer mcsprite
 
     if (turns == 1):
         "Clients knowing personal information…is never a good thing."
@@ -34,7 +34,11 @@ label chattalk:
 
         "If I play my cards right—nudge them in the right direction while
             telling him what he wants to hear—I can make him fold easy."
+        hide sachi mask at left onlayer mcsprite
+        show vincent mask at left onlayer mcsprite
         qb "Your real name…is Sachi Kaur, is it not?"
+        hide vincent mask at left onlayer mcsprite
+        show sachi mask at left onlayer mcsprite
 
         menu:
             "Yes.":
