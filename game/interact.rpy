@@ -25,7 +25,7 @@ label chattalk:
 
     show sachi mask at left onlayer mcsprite
 
-    if (turns == 1):
+    if (talk_turns == 1):
         "Clients knowing personal information…is never a good thing."
 
         "Especially when its someone like {i}him.{/i} The last thing I
@@ -185,6 +185,7 @@ label vincent_1_end:
     qb "..."
     qb "...Revenge."
 
+# DRINK MECHANIC --------
 label chatgift:
     $ renpy.hide_screen("mapchat")
     $ canwarp = False
@@ -192,17 +193,20 @@ label chatgift:
     $ drink_turns += 1
 
     show side mc at left onlayer mcsprite
-    s "T1"
-    s "T2"
-    "We drink."
 
+    if drink turns == 1:
+        "My secret weapon: alcohol. I hand him a glass of Whiskey on the rocks."
+        qb "…I prefer bourbon. But thank you."
+
+    "He takes a small sip and puts it on the table."
     $ drunk += 25
+
     hide side mc onlayer mcsprite
     $ canwarp = True
 
     jump points_check
 
-
+# FLIRT MECHANIC ---------
 
 label chatdate:
     $ renpy.hide_screen("mapchat")
@@ -210,25 +214,54 @@ label chatdate:
     $ turns += 1
     $ flirt_turns += 1
 
-    if (flirt_turns < 2):
+    if (flirt_turns <= 2):
+        $ sus -= 20
+
+    if (flirt_turns == 1):
         show side mc at left onlayer mcsprite
-        s " …He’s had around four glasses now."
-        s "T2"
-        "We drink."
+
+        s " Y’know, our customers aren’t usually too easy on the eyes."
+        s "Men like you are hard to come by."
+        "I wink at him."
+        qb "..."
+        "He must be shy…"
         $ sus -= 20
+
         hide side mc onlayer mcsprite
-    if (flirt_turns > 2):
-        "."
-        "."
-        $ sus -= 20
+
+    if (flirt_turns >=2):
+        s "So…do you {i}just{/i} want to talk? "
+        s "I mean, you have me all night. Might as well make the most of it."
+        qb "..."
+        qb "Are you trying to seduce me?"
+        qb "I don’t have any ulterior motives with you, Miss Kaur. Believe me."
 
     $ canwarp = True
 
     jump points_check
 
 label drunk_full:
-    s "please work please please please"
+
+    show side mc at left onlayer mcsprite
+
+     "…He’s had around four glasses now. "
+     "And yet…he seems as focused as ever. Strange."
+     "He doesn’t look like {i}that{/i} much of a heavyweight."
+     qb "…You haven’t touched your glass."
+     s "Huh? Yes I have. You saw me."
+     "He shakes his head."
+     qb "You’re pretending. Your glass hasn’t gone down one bit. "
+     "Yeah. Except {i}you’re{/i} supposed to be drunk enough not to notice."
+     "I plaster on a smile and take a sip—a real one. It’s…bubbly and sweet?"
+     s "…This is coke."
+     qb "I’m glad you noticed. I replaced it before you came."
+     s "…"
+     qb "…I know your tricks, Miss Kaur."
+
+     hide side mc onlayer mcsprite
+
     jump vincent_minigame
 
 label sus_full:
     return
+label points_reset:
