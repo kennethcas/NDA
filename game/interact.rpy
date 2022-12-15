@@ -26,11 +26,12 @@ label chattalk:
     $ canwarp = False
     $ turns += 1
     $ talk_turns += 1
+    show vincent fullbody
 
     if (talk_turns == 1):
-        hide vincent mask icon
-        show sachi mask icon
-        show vincent fullbody
+        hide vincent mask icon at left onlayer mcsprite
+        hide sachi mask icon at left onlayer mcsprite
+        
         "Clients knowing personal information…is never a good thing."
 
         "Especially when its someone like {i}him.{/i} The last thing I
@@ -40,11 +41,11 @@ label chattalk:
         "If I play my cards right—nudge them in the right direction while
             telling him what he wants to hear—I can make him fold easy."
 
-        hide sachi mask icon
+        hide sachi mask icon at left onlayer mcsprite
         show vincent mask icon at left onlayer mcsprite
 
         qb "Your real name…is Sachi Kaur, is it not?"
-
+        hide vincent mask icon at left onlayer mcsprite
         show sachi mask icon at left onlayer mcsprite
 
         menu:
@@ -103,15 +104,15 @@ label vincent_ev_1:
 
     show sachi mask icon at left onlayer mcsprite
     s "…How did you know?"
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
 
     show vincent mask icon at left onlayer mcsprite
     qb "I’ve been looking for you. You’re {color=#6b091b}Rahul Kaur{/color}’s daughter."
     qb "…I wonder what he’d think now of your…er…profession. And {color=#6b091b}exploits{/color}, for that matter…"
-    hide vincent mask icon
-
+    hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
     s "…Well isn’t {i}he{/i} a delight."
+    hide sachi mask icon at left onlayer mcsprite
 
     jump points_check
 
