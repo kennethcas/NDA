@@ -213,17 +213,17 @@ label vincent_minigame_intro:
 
 label n1_part2:
     s "Hm. So..."
-    if (v1_ev_4a==true):
+    if (v1_ev_4a==True):
         s "Should I call you {i}Mr. Carmine{/i}? Or is that too informal…"
-    elif (v1_ev_1==true and v1_ev_4a==false):
+    elif (v1_ev_1==True and v1_ev_4a==False):
         s "ou knew my father while he used to work at-"
         qb "…Carmine. That’s correct."
     qb " …You can call me Vincent."
-    if (v1_ev_4a==true):
+    if (v1_ev_4a==True):
         s "But that’s-"
         v "I’d prefer it if you {i}didn’t{/i} call me by my last name,
             actually. "
-    elif (v1_ev_1==false and v1_ev_4a==false):
+    elif (v1_ev_1==False and v1_ev_4a==False):
         "{color=#6b091b}Vincent?{/color} …Why does that sound so familiar?"
         v "I knew your father while he used to work at Carmine. Before
             his passing."

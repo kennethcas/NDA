@@ -27,11 +27,10 @@ label chattalk:
     $ turns += 1
     $ talk_turns += 1
 
-    show vincent fullbody
-    hide sachi mask icon
-    hide vincent mask icon
-
     if (talk_turns == 1):
+        hide vincent mask icon
+        show sachi mask icon
+        show vincent fullbody
         "Clients knowing personal information…is never a good thing."
 
         "Especially when its someone like {i}him.{/i} The last thing I
@@ -40,13 +39,12 @@ label chattalk:
 
         "If I play my cards right—nudge them in the right direction while
             telling him what he wants to hear—I can make him fold easy."
-        
+
         hide sachi mask icon
         show vincent mask icon at left onlayer mcsprite
-    
+
         qb "Your real name…is Sachi Kaur, is it not?"
-        
-        hide vincent mask icon
+
         show sachi mask icon at left onlayer mcsprite
 
         menu:
@@ -104,31 +102,31 @@ label vincent_ev_1:
     $ v1_ev_1 = True;
 
     show sachi mask icon at left onlayer mcsprite
-
     s "…How did you know?"
     hide sachi mask icon
+
     show vincent mask icon at left onlayer mcsprite
     qb "I’ve been looking for you. You’re {color=#6b091b}Rahul Kaur{/color}’s daughter."
-    #surprise sfx
     qb "…I wonder what he’d think now of your…er…profession. And {color=#6b091b}exploits{/color}, for that matter…"
     hide vincent mask icon
+
     show sachi mask icon at left onlayer mcsprite
     s "…Well isn’t {i}he{/i} a delight."
 
     jump points_check
 
 label vincent_ev_2:
-    hide sachi mask icon
-    hide vincent mask icon
+
     $ v1_ev_2 = True;
     $ sus += 20
     if (talk_turns <= 1):
         "He shakes his head."
+
     show vincent mask icon at left onlayer mcsprite
     qb "…I’ve been hearing lots of back alley talk about mysterious maxed out
         credit cards, incriminating pictures mailed to wives and kids, thousands of
         dollars of jewelry mysteriously going missing…"
-    
+
     hide vincent mask icon
     show sachi mask icon at left onlayer mcsprite
     s "I’m surprised someone of your…{i}esteemed status{/i} keeps up with
@@ -144,7 +142,7 @@ label vincent_ev_2:
     hide sachi mask icon
     show vincent mask icon at left onlayer mcsprite
     qb "…Well, I have my sources."
-    
+
     hide vincent mask icon
     jump points_check
 
