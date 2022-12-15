@@ -27,7 +27,9 @@ label chattalk:
     $ turns += 1
     $ talk_turns += 1
 
-    show sachi mask icon at left onlayer mcsprite
+    show vincent fullbody
+    hide sachi mask icon
+    hide vincent mask icon
 
     if (talk_turns == 1):
         "Clients knowing personal information…is never a good thing."
@@ -39,9 +41,9 @@ label chattalk:
         "If I play my cards right—nudge them in the right direction while
             telling him what he wants to hear—I can make him fold easy."
         
-        hide sachi mask icon at left onlayer mcsprite
+        hide sachi mask icon
         show vincent mask icon at left onlayer mcsprite
-        
+    
         qb "Your real name…is Sachi Kaur, is it not?"
         
         hide vincent mask icon
