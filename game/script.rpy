@@ -212,14 +212,32 @@ label vincent_minigame_intro:
     jump chattalk
 
 label n1_part2:
-    s "5 turns"
-    jump map
+    s "Hm. So..."
+    if (v1_ev_4a==true):
+        s "Should I call you {i}Mr. Carmine{/i}? Or is that too informal…"
+    elif (v1_ev_1==true and v1_ev_4a==false):
+        s "ou knew my father while he used to work at-"
+        qb "…Carmine. That’s correct."
+    qb " …You can call me Vincent."
+    if (v1_ev_4a==true):
+        s "But that’s-"
+        v "I’d prefer it if you {i}didn’t{/i} call me by my last name,
+            actually. "
+    elif (v1_ev_1==false and v1_ev_4a==false):
+        "{color=#6b091b}Vincent?{/color} …Why does that sound so familiar?"
+        v "I knew your father while he used to work at Carmine. Before
+            his passing."
+        s "My-"
+        "Vincent…{i}Carmine{/i}…"
+        "…Oh my god."
 
-label client1minigame:
+    jump map
+label n2_intro:
+label gerard_intro:
     jump chattalk
-label client2minigame:
+label richard_intro:
     jump chattalk
-label client3minigame:
+label malcolm_intro:
     jump chattalk
 
 label n3_intro_and_selection:

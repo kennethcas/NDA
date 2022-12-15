@@ -260,12 +260,14 @@ label drunk_full:
 
     hide side mc onlayer mcsprite
 
-    jump vincent_minigame
+    jump n1_part2
 
 label sus_full:
-    #FINISH LATER
-    "THE SUSPICION BAR IS FULL"
-
-label points_reset:
-    #FINISH LATER
-    "THE POINTS HAVE BEEN RESET"
+    qb "…You seem to have a lot of questions."
+    qb "Do you not trust me?"
+    s "I-"
+    qb "You shouldn’t. You have no reason to."
+    qb "But if I was expecting, er…favors from you, I would grow impatient by now."
+    "…Thanks for telling me how to do my job."
+    "He’s right, though. I should try not to be too obvious…"
+    jump n1_part2
