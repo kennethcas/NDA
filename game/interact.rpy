@@ -51,41 +51,41 @@ label chattalk:
     elif (talk_turns == 2):
         menu:
             "What do you want from me?":
-                if (vincent_ev_1 == true):
+                if (vincent_ev_1 == True):
                     jump vincent_ev_3
-                if (vincent_ev_2 == true):
+                if (vincent_ev_2 == True):
                     jump vincent_ev_3
-                if (vincent_ev_3 == true):
+                if (vincent_ev_3 == True):
                     jump vincent_ev_1
 
             "How do you know who I am?":
-                if (vincent_ev_1 == true):
+                if (vincent_ev_1 == True):
                     jump vincent_ev_2
-                if (vincent_ev_2 == true):
+                if (vincent_ev_2 == True):
                     jump vincent_ev_1
-                if (vincent_ev_3 == true):
+                if (vincent_ev_3 == True):
                     jump vincent_ev_1
 
     elif (talk_turns == 3):
         menu:
-            "How do you know my father?" if vincent_ev_1 == true:
+            "How do you know my father?" if vincent_ev_1 == True:
                 jump vincent_ev_4a
 
-            "Why me?" if vincent_ev_2 == true:
+            "Why me?" if vincent_ev_2 == True:
                 jump vincent_ev_5a
 
-            "What kind of {i}help{/i} do you need?" if vincent_ev_3 == true:
+            "What kind of {i}help{/i} do you need?" if vincent_ev_3 == True:
                 jump vincent_1_end
 
     elif (talk_turns == 4):
         menu:
-            "How long have you been working at Carmine?" if vincent_ev_4a == true:
+            "How long have you been working at Carmine?" if vincent_ev_4a == True:
                 jump vincent_ev_4b
 
-            "You have no proof." if vincent_ev_5a == true:
+            "You have no proof." if vincent_ev_5a == True:
                 jump vincent_ev_5b
 
-            "What kind of {i}help{/i} do you need?" if vincent_1_end == true:
+            "What kind of {i}help{/i} do you need?" if vincent_1_end == True:
                 jump vincent_1_end
 
     hide side mc onlayer mcsprite
@@ -244,24 +244,30 @@ label drunk_full:
 
     show side mc at left onlayer mcsprite
 
-     "…He’s had around four glasses now. "
-     "And yet…he seems as focused as ever. Strange."
-     "He doesn’t look like {i}that{/i} much of a heavyweight."
-     qb "…You haven’t touched your glass."
-     s "Huh? Yes I have. You saw me."
-     "He shakes his head."
-     qb "You’re pretending. Your glass hasn’t gone down one bit. "
-     "Yeah. Except {i}you’re{/i} supposed to be drunk enough not to notice."
-     "I plaster on a smile and take a sip—a real one. It’s…bubbly and sweet?"
-     s "…This is coke."
-     qb "I’m glad you noticed. I replaced it before you came."
-     s "…"
-     qb "…I know your tricks, Miss Kaur."
+    "…He’s had around four glasses now. "
+    "And yet…he seems as focused as ever. Strange."
+    "He doesn’t look like {i}that{/i} much of a heavyweight."
+    qb "…You haven’t touched your glass."
+    s "Huh? Yes I have. You saw me."
+    "He shakes his head."
+    qb "You’re pretending. Your glass hasn’t gone down one bit. "
+    "Yeah. Except {i}you’re{/i} supposed to be drunk enough not to notice."
+    "I plaster on a smile and take a sip—a real one. It’s…bubbly and sweet?"
+    s "…This is coke."
+    qb "I’m glad you noticed. I replaced it before you came."
+    s "…"
+    qb "…I know your tricks, Miss Kaur."
 
-     hide side mc onlayer mcsprite
+    hide side mc onlayer mcsprite
 
     jump vincent_minigame
 
 label sus_full:
-    return
+    #EMPTY
+    #FINISH LATER
+    "THE SUSPICION BAR IS FULL"
+
 label points_reset:
+    #EMPTY
+    #FINISH LATER
+    "THE POINTS HAVE BEEN RESET"
