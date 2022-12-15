@@ -194,7 +194,7 @@ label chatgift:
 
     show side mc at left onlayer mcsprite
 
-    if drink turns == 1:
+    if drink_turns == 1:
         "My secret weapon: alcohol. I hand him a glass of Whiskey on the rocks."
         qb "…I prefer bourbon. But thank you."
 
@@ -263,11 +263,9 @@ label drunk_full:
     jump vincent_minigame
 
 label sus_full:
-    #EMPTY
     #FINISH LATER
     "THE SUSPICION BAR IS FULL"
 
 label points_reset:
-    #EMPTY
     #FINISH LATER
     "THE POINTS HAVE BEEN RESET"
