@@ -212,6 +212,7 @@ label vincent_minigame_intro:
     jump chattalk
 
 label n1_part2:
+    s "5 turns"
     jump map
 
 label client1minigame:

@@ -51,41 +51,41 @@ label chattalk:
     elif (talk_turns == 2):
         menu:
             "What do you want from me?":
-                if (vincent_ev_1 == True):
+                if (v1_ev_1 == True):
                     jump vincent_ev_3
-                if (vincent_ev_2 == True):
+                if (v1_ev_2 == True):
                     jump vincent_ev_3
-                if (vincent_ev_3 == True):
+                if (v1_ev_3 == True):
                     jump vincent_ev_1
 
             "How do you know who I am?":
-                if (vincent_ev_1 == True):
+                if (v1_ev_1 == True):
                     jump vincent_ev_2
-                if (vincent_ev_2 == True):
+                if (v1_ev_2 == True):
                     jump vincent_ev_1
-                if (vincent_ev_3 == True):
+                if (v1_ev_3 == True):
                     jump vincent_ev_1
 
     elif (talk_turns == 3):
         menu:
-            "How do you know my father?" if vincent_ev_1 == True:
+            "How do you know my father?" if v1_ev_1 == True:
                 jump vincent_ev_4a
 
-            "Why me?" if vincent_ev_2 == True:
+            "Why me?" if v1_ev_2 == True:
                 jump vincent_ev_5a
 
-            "What kind of {i}help{/i} do you need?" if vincent_ev_3 == True:
+            "What kind of {i}help{/i} do you need?" if v1_ev_3 == True:
                 jump vincent_1_end
 
     elif (talk_turns == 4):
         menu:
-            "How long have you been working at Carmine?" if vincent_ev_4a == True:
+            "How long have you been working at Carmine?" if v1_ev_4a == True:
                 jump vincent_ev_4b
 
-            "You have no proof." if vincent_ev_5a == True:
+            "You have no proof." if v1_ev_5a == True:
                 jump vincent_ev_5b
 
-            "What kind of {i}help{/i} do you need?" if vincent_1_end == True:
+            "What kind of {i}help{/i} do you need?":
                 jump vincent_1_end
 
     hide side mc onlayer mcsprite
