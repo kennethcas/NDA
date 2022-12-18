@@ -336,13 +336,13 @@ label chatdate:
         show sachi mask icon at left onlayer mcsprite
         s " Y’know, our customers aren’t usually too easy on the eyes."
         s "Men like you are hard to come by."
-        "I wink at him."
+        "{i}I wink at him."
         hide sachi mask icon at left onlayer mcsprite
         show vincent mask icon at left onlayer mcsprite
         qb "..."
         hide vincent mask icon at left onlayer mcsprite
         show sachi mask icon at left onlayer mcsprite
-        "He must be shy…"
+        "{i}He must be shy…"
         $ sus -= 20
 
         hide sachi mask icon onlayer mcsprite
