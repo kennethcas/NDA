@@ -5,7 +5,7 @@
 
 #SETTING SOME BOOLS AND VARIABLES---------------------------
 #$ hideIcons:
-    
+
 
 #if hideIcons: #HIDES ALL PORTRAITS
  #   hide vincent mask icon at left onlayer mcsprite
@@ -46,7 +46,6 @@ label vincent_minigame:
 
 label points_check:
     if (turns <= 5 and drunk < 100 and sus < 100):
-        #ADD OTHER MINIGAMES
         jump vincent_minigame
     elif (drunk >= 100):
         jump drunk_full
@@ -137,6 +136,19 @@ label chattalk:
 
             "What kind of {i}help{/i} do you need?":
                 jump vincent_1_end
+    hide sachi mask icon at left onlayer mcsprite
+
+    elif (talk_turns == 5):
+        show sachi mask icon at left onlayer mcsprite
+        menu:
+            "How long have you been working at Carmine?" if v1_ev_4a == True:
+                jump vincent_ev_4b
+
+            "You have no proof." if v1_ev_5a == True:
+                jump vincent_ev_5b
+
+            "What kind of {i}help{/i} do you need?":
+                jump vincent_1_end
 
     hide sachi mask icon at left onlayer mcsprite
 
@@ -172,7 +184,7 @@ label vincent_ev_2:
     show vincent mask icon at left onlayer mcsprite
     qb "…I’ve been hearing lots of back alley talk about mysterious maxed out
         credit cards, incriminating pictures mailed to wives and kids..."
-    qb "...thousands of dollars of jewelry mysteriously going missing…" 
+    qb "...thousands of dollars of jewelry mysteriously going missing…"
 
     hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
@@ -285,6 +297,7 @@ label vincent_ev_5b:
 label vincent_1_end:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
+    $ v1_end = True;
 
     show vincent mask icon at left onlayer mcsprite
     qb "..."
