@@ -177,7 +177,7 @@ label vincent_ev_2:
     hide sachi mask icon at left onlayer mcsprite
 
     $ v1_ev_2 = True;
-    $ sus += 20
+    $ sus += 33
     if (talk_turns <= 1):
         "{i}He shakes his head."
 
@@ -209,7 +209,7 @@ label vincent_ev_3:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_3 = True;
-    $ sus += 20
+    $ sus += 33
     show vincent mask icon at left onlayer mcsprite
     qb "I need your help."
     hide vincent mask icon at left onlayer mcsprite
@@ -223,7 +223,7 @@ label vincent_ev_4a:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_4a = True;
-    $ sus += 20
+    $ sus += 33
 
     show vincent mask icon at left onlayer mcsprite
     qb "..."
@@ -242,7 +242,7 @@ label vincent_ev_4b:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_4b = True;
-    $ sus += 20
+    $ sus += 33
     show vincent mask icon at left onlayer mcsprite
     qb "…Around {color=#6b091b}five years{/color} now."
     hide vincent mask icon at left onlayer mcsprite
@@ -261,7 +261,7 @@ label vincent_ev_5a:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_5a = True;
-    $ sus += 20
+    $ sus += 33
 
     show vincent mask icon at left onlayer mcsprite
     qb "Those who have been scammed, blackmailed, and otherwise victimized
@@ -284,7 +284,7 @@ label vincent_ev_5b:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_5b = True;
-    $ sus += 20
+    $ sus += 33
 
     show vincent mask icon at left onlayer mcsprite
     qb "Believe me. If I wanted you behind bars, I could easily find a way."
@@ -324,7 +324,7 @@ label chatgift:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     "{i}He takes a small sip and puts it on the table."
-    $ drunk += 25
+    $ drunk += 33
 
     hide sachi mask icon at left onlayer mcsprite
     hide vincent mask icon at left onlayer mcsprite
@@ -342,7 +342,7 @@ label chatdate:
     $ flirt_turns += 1
 
     if (flirt_turns <= 2):
-        $ sus -= 20
+        $ sus -= 33
 
     if (flirt_turns == 1):
 
@@ -356,7 +356,7 @@ label chatdate:
         hide vincent mask icon at left onlayer mcsprite
         show sachi mask icon at left onlayer mcsprite
         "{i}He must be shy…"
-        $ sus -= 20
+        $ sus -= 33
 
         hide sachi mask icon onlayer mcsprite
 

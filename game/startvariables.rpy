@@ -5,7 +5,7 @@ init:
     #$ pointslove = 200
     #$ pointssoul = 300
     $ pointsdrunk = 100
-    $ pointssus = 100
+    $ pointssus = 99
 
     # these are date variables. to succeed on a date, you have to do at least as many activities as indicated in "maxmood". the variables in "count" are how many times you can do each activity. adjust these however you like.
     $ maxmood = 5
