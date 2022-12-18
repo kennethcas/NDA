@@ -200,16 +200,22 @@ label vincent_ev_2:
     show sachi mask icon at left onlayer mcsprite
     s "I’m surprised someone of your…{i}esteemed status{/i} keeps up with
         {i}back-alley talk{/i}."
+
     hide sachi mask icon at left onlayer mcsprite
     show vincent mask icon at left onlayer mcsprite
+
     qb "My…{i}esteemed status{/i}?"
+
     hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
+
     s "…Your mask."
     s "The only clients who wear masks are people in the public eye. For
         uh…pretty obvious reasons. Not getting caught by the press and all…"
+
     hide sachi mask icon at left onlayer mcsprite
     show vincent mask icon at left onlayer mcsprite
+
     qb "…Well, I have my sources."
 
     hide vincent mask icon at left onlayer mcsprite
@@ -220,10 +226,13 @@ label vincent_ev_3:
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_3 = True;
     #$ sus += 20
+
     show vincent mask icon at left onlayer mcsprite
     qb "I need your help."
+
     hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
+
     s "My…{i}help{/i}?"
 
     hide sachi mask icon at left onlayer mcsprite
@@ -239,13 +248,14 @@ label vincent_ev_4a:
     qb "..."
     qb "...He used to work under me. To an extent."
     hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
     s "…"
     "{i}So he used to work at Carmine. A white-collar investment firm that I’m all
-    too familiar with.{/i}"
-    "{i}No, scratch that…he’s a bigwig at Carmine.{/i}"
-
+    too familiar with."
+    "{i}No, scratch that…he’s a bigwig at Carmine."
     hide sachi mask icon at left onlayer mcsprite
+
     jump points_check
 
 label vincent_ev_4b:
@@ -253,18 +263,22 @@ label vincent_ev_4b:
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_4b = True;
     #$ sus += 20
+
     show vincent mask icon at left onlayer mcsprite
     qb "…Around {color=#6b091b}five years{/color} now."
     hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
     "{i}Five years? That’s way too soon for such a big promotion…"
     s "You’re…Antony Carmine’s son."
     hide sachi mask icon at left onlayer mcsprite
+
     show vincent mask icon at left onlayer mcsprite
     qb "…"
 
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
+
     jump points_check
 
 label vincent_ev_5a:
@@ -284,10 +298,11 @@ label vincent_ev_5a:
     qb "Coincidentally, my…{i}sources{/i} began to report seeing a
         {color=#6b091b}girl with a cat mask{/color} around that time."
     hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
     s "..."
-
     hide sachi mask icon at left onlayer mcsprite
+
     jump points_check
 
 label vincent_ev_5b:
@@ -299,9 +314,8 @@ label vincent_ev_5b:
     show vincent mask icon at left onlayer mcsprite
     qb "Believe me. If I wanted you behind bars, I could easily find a way."
     qb "…I think we could be useful to one another."
-
     hide vincent mask icon at left onlayer mcsprite
-    hide sachi mask icon at left onlayer mcsprite
+    
     jump points_check
 
 label vincent_1_end:
@@ -312,6 +326,8 @@ label vincent_1_end:
     show vincent mask icon at left onlayer mcsprite
     qb "..."
     qb "...Revenge."
+    hide vincent mask icon at left onlayer mcsprite
+
     jump points_check
 
 # DRINK MECHANIC --------
@@ -323,17 +339,17 @@ label chatgift:
     $ turns += 1
     $ drink_turns += 1
 
-    show sachi mask icon at left onlayer mcsprite
-
     if drink_turns == 1:
+        show sachi mask icon at left onlayer mcsprite
         "{i}My secret weapon: alcohol. I hand him a glass of Whiskey on the rocks."
         hide sachi mask icon at left onlayer mcsprite
+
         show vincent mask icon at left onlayer mcsprite
         qb "…I prefer bourbon. But thank you."
+        hide vincent mask icon at left onlayer mcsprite
 
-    hide vincent mask icon at left onlayer mcsprite
-    hide sachi mask icon at left onlayer mcsprite
     "{i}He takes a small sip and puts it on the table."
+
     $ drunk += 20
 
     hide sachi mask icon at left onlayer mcsprite
@@ -360,12 +376,13 @@ label chatdate:
         s "Men like you are hard to come by."
         "{i}I wink at him."
         hide sachi mask icon at left onlayer mcsprite
+
         show vincent mask icon at left onlayer mcsprite
         qb "..."
         hide vincent mask icon at left onlayer mcsprite
+
         show sachi mask icon at left onlayer mcsprite
         "{i}He must be shy…"
-
         hide sachi mask icon onlayer mcsprite
 
     if (flirt_turns >=2):
@@ -373,10 +390,12 @@ label chatdate:
         s "So…do you {i}just{/i} want to talk? "
         s "I mean, you have me all night. Might as well make the most of it."
         hide sachi mask icon at left onlayer mcsprite
+
         show vincent mask icon at left onlayer mcsprite
         qb "..."
         qb "Are you trying to seduce me?"
         qb "I don’t have any ulterior motives with you, Miss Kaur. Believe me."
+        hide vincent mask icon at left onlayer mcsprite
 
     $ canwarp = True
     hide sachi mask icon at left onlayer mcsprite
@@ -388,36 +407,41 @@ label drunk_full:
     hide sachi mask icon at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
-
-    "…He’s had around four glasses now. "
-    "And yet…he seems as focused as ever. Strange."
-    "He doesn’t look like {i}that{/i} much of a heavyweight."
+    "{i}…He’s had around four glasses now. "
+    "{i}And yet…he seems as focused as ever. Strange."
+    "{i}He doesn’t look like {/i}that{i} much of a heavyweight."
     hide sachi mask icon at left onlayer mcsprite
+
     show vincent mask icon at left onlayer mcsprite
     qb "…You haven’t touched your glass."
     hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
     s "Huh? Yes I have. You saw me."
     hide sachi mask icon at left onlayer mcsprite
+
+    "{i}He shakes his head."
     show vincent mask icon at left onlayer mcsprite
-    "He shakes his head."
     qb "You’re pretending. Your glass hasn’t gone down one bit."
     hide vincent mask icon at left onlayer mcsprite
-    "Yeah. Except {i}you’re{/i} supposed to be drunk enough not to notice."
-    "I plaster on a smile and take a sip—a real one. It’s…bubbly and sweet?"
+
     show sachi mask icon at left onlayer mcsprite
+    "{i}Yeah. Except {/i}you’re{i} supposed to be drunk enough not to notice."
+    "{i}I plaster on a smile and take a sip—a real one. It’s…bubbly and sweet?"
     s "…This is coke."
     hide sachi mask icon at left onlayer mcsprite
+
     show vincent mask icon at left onlayer mcsprite
     qb "I’m glad you noticed. I replaced it before you came."
+    hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
     s "…"
     hide sachi mask icon at left onlayer mcsprite
+
     show vincent mask icon at left onlayer mcsprite
     qb "…I know your tricks, Miss Kaur."
-
-    hide sachi mask icon at left onlayer mcsprite
-    hide vincent mask icon at left onlayer mcsprite
+    hide vincent mask icon at left onlayer mcsprite    
 
     jump n1_part2
 
@@ -429,15 +453,18 @@ label sus_full:
     qb "…You seem to have a lot of questions."
     qb "Do you not trust me?"
     hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
     s "I-"
     hide sachi mask icon at left onlayer mcsprite
+
     show vincent mask icon at left onlayer mcsprite
     qb "You shouldn’t. You have no reason to."
     qb "But if I was expecting, er…favors from you, I would grow impatient by now."
-    "…Thanks for telling me how to do my job."
     hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
+    "{i}…Thanks for telling me how to do my job."
     "{i}He’s right, though. I should try not to be too obvious…{/i}"
     hide sachi mask icon at left onlayer mcsprite
     jump n1_part2

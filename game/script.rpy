@@ -245,26 +245,36 @@ label Vincent_N1:
 
             s "I'm sorry, sir. {w=1.0}Protocol."
             "{i}He nods, frowning."
+
             hide sachi mask icon at left onlayer mcsprite
             show vincent mask icon at left onlayer mcsprite
+
             qb "...Fine. Make it quick."
+
             hide vincent mask icon at left onlayer mcsprite
             hide vincent fullbody
             with fade
             show sachi mask icon at left onlayer mcsprite
+
             "{i}I walk up to the hostess and point at him."
             s "...Did he ask for me?"
+            hide sachi mask icon at left onlayer mcsprite
             #SHOW HOSTESS ICON !!!!!!!!!!!!
             h "H-huh? Oh, did he?"
+            show sachi mask icon at left onlayer mcsprite
             s "...Can you check?"
+            hide sachi mask icon at left onlayer mcsprite
             h "Sure. Hm...that's...{i}oh.{/i}"
             h "He's...a {i}special guest{/i}."
-            "…Explains the mask."
+            show sachi mask icon at left onlayer mcsprite
+            "{i}…Explains the mask."
+            hide sachi mask icon at left onlayer mcsprite
             h "I would...do what he asks."
+
             jump vincent_minigame_intro
 
 label vincent_minigame_intro:
-    "I follow him into one of the backrooms."
+    "{i}I follow him into one of the backrooms."
     show bg private room
     with fade
     #scene backroom
@@ -286,19 +296,28 @@ label n1_part2:
     show sachi mask icon at left onlayer mcsprite
     s "Hm. So..."
     hide sachi mask icon at left onlayer mcsprite
+
     if (v1_ev_4a==True):
         show sachi mask icon at left onlayer mcsprite
+
         s "Should I call you {i}Mr. Carmine{/i}? Or is that too informal…"
+
         hide sachi mask icon at left onlayer mcsprite
+
     elif (v1_ev_1==True and v1_ev_4a==False):
         show sachi mask icon at left onlayer mcsprite
         s "You knew my father while he used to work at-"
+
         hide sachi mask icon at left onlayer mcsprite
         show vincent mask icon at left onlayer mcsprite
+
         qb "…Carmine. That’s correct."
+
         hide vincent mask icon at left onlayer mcsprite
+
     show vincent mask icon at left onlayer mcsprite
     qb " …You can call me Vincent."
+    
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
