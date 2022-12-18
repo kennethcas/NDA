@@ -212,27 +212,55 @@ label vincent_minigame_intro:
     jump chattalk
 
 label n1_part2:
+    show sachi mask icon at left onlayer mcsprite
     s "Hm. So..."
+    hide sachi mask icon at left onlayer mcsprite
     if (v1_ev_4a==True):
+        show sachi mask icon at left onlayer mcsprite
         s "Should I call you {i}Mr. Carmine{/i}? Or is that too informal…"
+        hide sachi mask icon at left onlayer mcsprite
     elif (v1_ev_1==True and v1_ev_4a==False):
-        s "ou knew my father while he used to work at-"
+        show sachi mask icon at left onlayer mcsprite
+        s "You knew my father while he used to work at-"
+        hide sachi mask icon at left onlayer mcsprite
+        show vincent mask icon at left onlayer mcsprite
         qb "…Carmine. That’s correct."
+        hide vincent mask icon at left onlayer mcsprite
+    show vincent mask icon at left onlayer mcsprite
     qb " …You can call me Vincent."
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
+
     if (v1_ev_4a==True):
+        show sachi mask icon at left onlayer mcsprite
         s "But that’s-"
+        hide sachi mask icon at left onlayer mcsprite
+        show vincent mask icon at left onlayer mcsprite
         v "I’d prefer it if you {i}didn’t{/i} call me by my last name,
             actually. "
+        hide vincent mask icon at left onlayer mcsprite
     elif (v1_ev_1==False and v1_ev_4a==False):
-        "{color=#6b091b}Vincent?{/color} …Why does that sound so familiar?"
+        show sachi mask icon at left onlayer mcsprite
+        "{i}{color=#6b091b}Vincent?{/color} …Why does that sound so familiar?"
+        hide sachi mask icon at left onlayer mcsprite
+        show vincent mask icon at left onlayer mcsprite
         v "I knew your father while he used to work at Carmine. Before
             his passing."
+        hide vincent mask icon at left onlayer mcsprite
+        show sachi mask icon at left onlayer mcsprite
         s "My-"
+        hide sachi mask icon at left onlayer mcsprite
         "Vincent…{i}Carmine{/i}…"
+        show sachi mask icon at left onlayer mcsprite
         "…Oh my god."
 
-    jump map
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
+    jump n2_intro
+
 label n2_intro:
+    "testing testing"
+    return
 label gerard_intro:
     jump chattalk
 label richard_intro:

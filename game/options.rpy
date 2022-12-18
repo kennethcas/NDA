@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Sim Date Template")
+define config.name = _("NDA")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -30,6 +30,12 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+By Nayan Saha, Kenneth Castro, V Tucker, and Edikan Abia
+
+Our final project for our Intro to Narrative Design class at the NYU Game Center
+
+Created 2022
+
 """)
 
 
@@ -37,7 +43,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "SimDateTemplate"
+define build.name = "NDA"
 
 
 ## Sounds and music ############################################################
