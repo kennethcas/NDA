@@ -259,7 +259,8 @@ label n1_part2:
     jump n2_intro
 
 label n2_intro:
-    "NIGHT 2"
+    "testing testing"
+    return
 label gerard_intro:
     jump chattalk
 label richard_intro:
