@@ -57,37 +57,40 @@ label intro_convo:
     "OCTOBER 21, 1983 \nNEW YORK"
     show richard fullbody
     with fade
+
     show richard icon at left onlayer mcsprite
     db "...Come on, kitty. Let's have a {i}good time,{/i} yeah?"
     hide richard icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
-    s "{color=#6b091b}...I want to retch.{/color}"
+    s "{i}{color=#6b091b}...I want to retch.{/color}"
 
     menu:
         "You don't even know my name.":
             hide sachi mask icon at left onlayer mcsprite
+
             show richard icon at left onlayer mcsprite
             db "Well, it's not like you're gonna tell me, right?"
-            db "You all go by fake ones, anyway.{w=1.0} Not that I care or
-            anything."
+            db "You all go by fake ones, anyway.{w=1.0} Not that I care."
             db "I'm not here to wine and dine you, doll."
             hide richard icon at left onlayer mcsprite
+
             jump intro_expos
 
         "Pay up first.":
-            hide sachi mask icon at left onlayer mcsprite
-            "{color=#6b091b}I swat away his hand, which was inching dangerously
+            "{i}{color=#6b091b}I swat away his hand, which was inching dangerously
             close to my thigh.{/color}"
-            show sachi mask icon at left onlayer mcsprite
             s "Pay up in the front if you want a private room."
             hide sachi mask icon at left onlayer mcsprite
+
             show richard icon at left onlayer mcsprite
             db "Aw, come on baby. I just wanted to buy you a drink."
+            hide richard icon at left onlayer mcsprite
             jump intro_expos
 
         "(Ignore him.)":
             show sachi mask icon at left onlayer mcsprite
-            s "(sigh...)"
+            s "{i}(sigh...)"
 
             jump intro_expos
 
@@ -140,32 +143,36 @@ label N1_Menu:
 label CW2_N1:
     show richard fullbody
     with fade
+
     show richard icon at left onlayer mcsprite
     db "...Can...{p=1.0}
     Can't find my..."
     #realization sfx(?)
     db "'Ey! You! You take my wallet?!" #change formatting
-
     hide richard icon at left onlayer mcsprite
-    "I bat my eyes at him."
+
     show sachi mask icon at left onlayer mcsprite
+    "{i}I bat my eyes at him."
     s "Sorry?"
     hide sachi mask icon at left onlayer mcsprite
+
     show richard icon at left onlayer mcsprite
     db "What? Y'dunno English or something?"
     hide richard mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
     "{i}I motion to the bouncer, who nods and swiftly takes care of him. I slip
     out of the scene and into a dark corner."
+
     hide richard fullbody
     with dissolve
+
     "{i}Three hundred dollars in cash and a platinum AmEx. Not a bad haul if you
     ask me."
 
     "{i}I usually have to wait {i}after{/i} the fun behind closed doors starts.
     So being able to keep my dignity is definitely a plus."
     hide sachi mask icon at left onlayer mcsprite
-    hide richard icon at left onlayer mcsprite
 
     $ N1_Wallet = True
     jump N1_Menu
@@ -211,64 +218,63 @@ label Vincent_N1:
             "{i}He nods."
     "{i}The man leans in, his voice low."
     hide sachi mask icon at left onlayer mcsprite
-    show vincent mask icon at left onlayer mcsprite
 
+    show vincent mask icon at left onlayer mcsprite
     qb "I need to talk to you. Come with me."
-
     hide vincent mask icon at left onlayer mcsprite
-    show sachi mask icon at left onlayer mcsprite
 
+    show sachi mask icon at left onlayer mcsprite
     s "You need to pay-{w=2.0}{nw}"
-
     hide sachi mask icon at left onlayer mcsprite
+
     show vincent mask icon at left onlayer mcsprite
-
     qb "That's taken care of."
-
     hide vincent mask icon at left onlayer mcsprite
-    show sachi mask icon at left onlayer mcsprite
 
+    show sachi mask icon at left onlayer mcsprite
     menu:
         "Go with him":
             hide sachi mask icon at left onlayer mcsprite
             jump chattalk
         "Object":
             s "I...will check with the front first."
-            
             hide sachi mask icon at left onlayer mcsprite
+
             show vincent mask icon at left onlayer mcsprite
-
             qb "It's urgent. I don't have a lot of time."
-
             hide vincent mask icon at left onlayer mcsprite
-            show sachi mask icon at left onlayer mcsprite
 
+            show sachi mask icon at left onlayer mcsprite
             s "I'm sorry, sir. {w=1.0}Protocol."
             "{i}He nods, frowning."
-
             hide sachi mask icon at left onlayer mcsprite
+
             show vincent mask icon at left onlayer mcsprite
-
             qb "...Fine. Make it quick."
-
             hide vincent mask icon at left onlayer mcsprite
+
             hide vincent fullbody
             with fade
-            show sachi mask icon at left onlayer mcsprite
 
+            show sachi mask icon at left onlayer mcsprite
             "{i}I walk up to the hostess and point at him."
             s "...Did he ask for me?"
             hide sachi mask icon at left onlayer mcsprite
+
             #SHOW HOSTESS ICON !!!!!!!!!!!!
             h "H-huh? Oh, did he?"
+
             show sachi mask icon at left onlayer mcsprite
             s "...Can you check?"
             hide sachi mask icon at left onlayer mcsprite
+
             h "Sure. Hm...that's...{i}oh.{/i}"
             h "He's...a {i}special guest{/i}."
+
             show sachi mask icon at left onlayer mcsprite
             "{i}…Explains the mask."
             hide sachi mask icon at left onlayer mcsprite
+
             h "I would...do what he asks."
 
             jump vincent_minigame_intro
@@ -276,20 +282,23 @@ label Vincent_N1:
 label vincent_minigame_intro:
     "{i}I follow him into one of the backrooms."
     show bg private room
+    show vincent fullbody
     with fade
     #scene backroom
-    show vincent fullbody
+
     show sachi mask icon at left onlayer mcsprite
     s "You wanted to {color=#6b091b}ask me something?{/color}"
     hide sachi mask icon at left onlayer mcsprite
+
     show vincent mask icon at left onlayer mcsprite
     qb "…That’s correct."
-    qb "Your real name…is {color=#6b091b}Sachi Kaur{/color}, is it not?"
-    #(music pause, sfx surprised)
+    qb "Your real name…is {color=#6b091b}Sachi Kaur{/color}, is it not?"#(music pause, sfx surprised)
     hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
     "{i}...Uh-oh."
     hide sachi mask icon at left onlayer mcsprite
+
     jump chattalk
 
 label n1_part2:
@@ -299,53 +308,55 @@ label n1_part2:
 
     if (v1_ev_4a==True):
         show sachi mask icon at left onlayer mcsprite
-
         s "Should I call you {i}Mr. Carmine{/i}? Or is that too informal…"
-
         hide sachi mask icon at left onlayer mcsprite
 
     elif (v1_ev_1==True and v1_ev_4a==False):
         show sachi mask icon at left onlayer mcsprite
         s "You knew my father while he used to work at-"
-
         hide sachi mask icon at left onlayer mcsprite
+
         show vincent mask icon at left onlayer mcsprite
-
         qb "…Carmine. That’s correct."
-
         hide vincent mask icon at left onlayer mcsprite
 
     show vincent mask icon at left onlayer mcsprite
     qb " …You can call me Vincent."
-    
     hide vincent mask icon at left onlayer mcsprite
-    hide sachi mask icon at left onlayer mcsprite
 
     if (v1_ev_4a==True):
         show sachi mask icon at left onlayer mcsprite
         s "But that’s-"
         hide sachi mask icon at left onlayer mcsprite
+
         show vincent mask icon at left onlayer mcsprite
         v "I’d prefer it if you {i}didn’t{/i} call me by my last name,
             actually. "
         hide vincent mask icon at left onlayer mcsprite
+
     elif (v1_ev_1==False and v1_ev_4a==False):
         show sachi mask icon at left onlayer mcsprite
         "{i}{color=#6b091b}Vincent?{/color} …Why does that sound so familiar?"
         hide sachi mask icon at left onlayer mcsprite
+
         show vincent mask icon at left onlayer mcsprite
         v "I knew your father while he used to work at Carmine. Before
             his passing."
         hide vincent mask icon at left onlayer mcsprite
+        
         show sachi mask icon at left onlayer mcsprite
         s "My-"
         hide sachi mask icon at left onlayer mcsprite
+
         "Vincent…{i}Carmine{/i}…"
+
         show sachi mask icon at left onlayer mcsprite
         "…Oh my god."
+        hide sachi mask icon at left onlayer mcsprite
 
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
+    
     jump n2_intro
 
 label n2_intro:
