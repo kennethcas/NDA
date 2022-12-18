@@ -1,5 +1,4 @@
 ﻿# --- NDA SCRIPT ---
-#THIS IS A TESTING LINE
 define s = Character("Sachi")
 define v = Character("Vincent")
 define q = Character("???")
@@ -44,38 +43,55 @@ label start:
     jump intro_convo
 
 label intro_convo:
-    # scene scarletCaberetFront
-    # with fade # change transition?
-
+    scene bg lounge
+    with fade
     # ambience sfx: bar
     # music: jazzy? lowkey?
 
     # DIALOGUE. ---
     "OCTOBER 21, 1983 \nNEW YORK"
-
+    show richard fullbody
+    with fade
+    show richard icon at left onlayer mcsprite
     db "...Come on, kitty. Let's have a {i}good time,{/i} yeah?"
+    hide richard icon at left onlayer mcsprite
+    show sachi mask icon at left onlayer mcsprite
     s "{color=#6b091b}...I want to retch.{/color}"
 
     menu:
         "You don't even know my name.":
+            hide sachi mask icon at left onlayer mcsprite
+            show richard icon at left onlayer mcsprite
             db "Well, it's not like you're gonna tell me, right?"
             db "You all go by fake ones, anyway.{w=1.0} Not that I care or
             anything."
             db "I'm not here to wine and dine you, doll."
+            hide richard icon at left onlayer mcsprite
             jump intro_expos
 
         "Pay up first.":
+            hide sachi mask icon at left onlayer mcsprite
             "{color=#6b091b}I swat away his hand, which was inching dangerously
             close to my thigh.{/color}"
+            show sachi mask icon at left onlayer mcsprite
             s "Pay up in the front if you want a private room."
+            hide sachi mask icon at left onlayer mcsprite
+            show richard icon at left onlayer mcsprite
             db "Aw, come on baby. I just wanted to buy you a drink."
             jump intro_expos
 
         "(Ignore him.)":
+            show sachi mask icon at left onlayer mcsprite
             s "(sigh...)"
+
             jump intro_expos
 
 label intro_expos:
+    hide richard fullbody 
+    with fade
+
+    hide sachi mask icon at left onlayer mcsprite
+    hide richard icon at left onlayer mcsprite
 
     "A typical Friday night. The {i}Cabaret{/i} is busy as usual, full of
     drunk Wall Street dogs with coke addictions and housewives to cheat on."
@@ -118,80 +134,123 @@ label N1_Menu:
 
 #if you choose CW#2:
 label CW2_N1:
+    show richard fullbody
+    with fade
+    show richard icon at left onlayer mcsprite
     db "...Can...{p=1.0}
     Can't find my..."
     #realization sfx(?)
     db "'Ey! You! You take my wallet?!" #change formatting
 
+    hide richard icon at left onlayer mcsprite
     "I bat my eyes at him."
-
+    show sachi mask icon at left onlayer mcsprite
     s "Sorry?"
+    hide sachi mask icon at left onlayer mcsprite
+    show richard icon at left onlayer mcsprite
     db "What? Y'dunno English or something?"
-
-    "I motion to the bouncer, who nods and swiftly takes care of him. I slip
+    hide richard mask icon at left onlayer mcsprite
+    show sachi mask icon at left onlayer mcsprite
+    "{i}I motion to the bouncer, who nods and swiftly takes care of him. I slip
     out of the scene and into a dark corner."
-
-    "Three hundred dollars in cash and a platinum AmEx. Not a bad haul if you
+    hide richard fullbody
+    with dissolve
+    "{i}Three hundred dollars in cash and a platinum AmEx. Not a bad haul if you
     ask me."
 
-    "I usually have to wait {i}after{/i} the fun behind closed doors starts.
+    "{i}I usually have to wait {i}after{/i} the fun behind closed doors starts.
     So being able to keep my dignity is definitely a plus."
+    hide sachi mask icon at left onlayer mcsprite
+    hide richard icon at left onlayer mcsprite
 
     $ N1_Wallet = True
     jump N1_Menu
 
 label Vincent_N1:
-    "...{w=1.0}I feel like I'm being watched."
+    show sachi mask icon at left onlayer mcsprite
+    "{i}...{w=1.0}I feel like I'm being watched."
 
-    "It's not uncommon. Predators zone in before they kill."
+    "{i}It's not uncommon. Predators zone in before they kill."
 
-    "I look around in search for a perpetrator. And sure enough, I find him in
+    "{i}I look around in search for a perpetrator. And sure enough, I find him in
     seconds' time."
+    show vincent fullbody
+    with dissolve
+    "{i}He looks...out of place. Far too put together for a joint like this."
 
-    "He looks...out of place. Far too put together for a joint like this."
-
-    "The men here are well off, that's for sure...but he seems refined in a way
+    "{i}The men here are well off, that's for sure...but he seems refined in a way
     the others aren't."
 
-    "The other girls can tell too. I can see some of them eyeing him from afar."
+    "{i}The other girls can tell too. I can see some of them eyeing him from afar."
 
-    "Have I seen his face somewhere?{p=1.0}
+    "{i}Have I seen his face somewhere?{p=1.0}
     It's hard to tell with the mask..."
 
     menu:
         "Keep Staring":
-            "I stare him straight in the eye. He isn't phased."
+            "{i}I stare him straight in the eye. He isn't phased."
 
         "Look Away":
-            "There's something...strangely intense about the way he's staring."
-            "It isn't the same type of sleazy eyefuck you get from most guys
+            "{i}There's something...strangely intense about the way he's staring."
+            "{i}It isn't the same type of sleazy eyefuck you get from most guys
             here."
-            "He's...cold. Almost Machiavellian."
-    "He gets up and starts to make his way towards me."
+            "{i}He's...cold. Almost Machiavellian."
+    "{i}He gets up and starts to make his way towards me."
 
-    "Upon closer inspection, he seems younger than most clientele, probably in
+    "{i}Upon closer inspection, he seems younger than most clientele, probably in
     his mid-twenties or so."
     menu:
         "Hey, handsome.":
-            "He doesn't reply."
+            "{i}He doesn't reply."
 
         "Do you need something, sir?":
-            "He nods."
-    "The man leans in, his voice low."
+            "{i}He nods."
+    "{i}The man leans in, his voice low."
+    hide sachi mask icon at left onlayer mcsprite
+    show vincent mask icon at left onlayer mcsprite
+
     qb "I need to talk to you. Come with me."
+
+    hide vincent mask icon at left onlayer mcsprite
+    show sachi mask icon at left onlayer mcsprite
+
     s "You need to pay-{w=2.0}{nw}"
+
+    hide sachi mask icon at left onlayer mcsprite
+    show vincent mask icon at left onlayer mcsprite
+
     qb "That's taken care of."
+
+    hide vincent mask icon at left onlayer mcsprite
+    show sachi mask icon at left onlayer mcsprite
+
     menu:
         "Go with him":
+            hide sachi mask icon at left onlayer mcsprite
             jump chattalk
         "Object":
             s "I...will check with the front first."
+            
+            hide sachi mask icon at left onlayer mcsprite
+            show vincent mask icon at left onlayer mcsprite
+
             qb "It's urgent. I don't have a lot of time."
+
+            hide vincent mask icon at left onlayer mcsprite
+            show sachi mask icon at left onlayer mcsprite
+
             s "I'm sorry, sir. {w=1.0}Protocol."
-            "He nods, frowning."
+            "{i}He nods, frowning."
+            hide sachi mask icon at left onlayer mcsprite
+            show vincent mask icon at left onlayer mcsprite
             qb "...Fine. Make it quick."
-            "I walk up to the hostess and point at him."
+            hide vincent mask icon at left onlayer mcsprite
+            hide vincent fullbody
+            with fade
+            show sachi mask icon at left onlayer mcsprite
+            "{i}I walk up to the hostess and point at him."
             s "...Did he ask for me?"
+            #SHOW HOSTESS ICON !!!!!!!!!!!!
             h "H-huh? Oh, did he?"
             s "...Can you check?"
             h "Sure. Hm...that's...{i}oh.{/i}"
