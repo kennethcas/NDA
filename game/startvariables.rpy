@@ -1,4 +1,10 @@
 init:
+    #MUSIC
+    define profoundSadness = "audio/music/profoundSadness.mp3"
+    define caravan = "audio/music/caravan.mp3"
+    define susClub = "audio/music/susClub.mp3"
+
+
     ## CUSTOMISABLE VARIABLES
     # these are the point values the player needs to reach each relationship stage with a LI. if you dont plan to use relationship stages, you can ignore these or set "pointsfriend" to the maximum affection you can get.
     #$ pointsfriend = 100
@@ -116,7 +122,7 @@ init:
 
 
 define gui.about = _p("""
-    Sim Date Template made by HeeCawRoo.
+    NDA. Final project for Intro to Narrative Design.
 """)
 
 define config.default_show_empty_window = False

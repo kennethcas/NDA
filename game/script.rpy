@@ -6,16 +6,19 @@ define db = Character("Drunk Businessman")
 define qb = Character("Sober Businessman")
 define h = Character("Hostess")
 
+define config.default_music_volume = 0.7
+define config.default_sfx_volume = 0.7
+define config.default_voice_volume = 07
+
 $ N1_Wallet = False
 
 # ---GAME START---
-# testt
-
 label start:
 
     # scene black
 
     # music: tense, ominous
+    play music profoundSadness loop fadein 1.0
 
     # DIALOGUE. ---
     menu:
@@ -43,6 +46,8 @@ label start:
     jump intro_convo
 
 label intro_convo:
+    stop music fadeout 1.0
+    play music susClub loop fadein 1.0
     scene bg lounge
     with fade
     # ambience sfx: bar
@@ -88,10 +93,9 @@ label intro_convo:
 
 label intro_expos:
     hide richard fullbody 
-    with fade
-
     hide sachi mask icon at left onlayer mcsprite
     hide richard icon at left onlayer mcsprite
+    with fade
 
     "A typical Friday night. The {i}Cabaret{/i} is busy as usual, full of
     drunk Wall Street dogs with coke addictions and housewives to cheat on."
@@ -260,14 +264,22 @@ label Vincent_N1:
             jump vincent_minigame_intro
 
 label vincent_minigame_intro:
-    #black
     "I follow him into one of the backrooms."
+    show bg private room
+    with fade
     #scene backroom
+    show vincent fullbody
+    show sachi mask icon at left onlayer mcsprite
     s "You wanted to {color=#6b091b}ask me something?{/color}"
+    hide sachi mask icon at left onlayer mcsprite
+    show vincent mask icon at left onlayer mcsprite
     qb "…That’s correct."
     qb "Your real name…is {color=#6b091b}Sachi Kaur{/color}, is it not?"
     #(music pause, sfx surprised)
-    "...Uh-oh."
+    hide vincent mask icon at left onlayer mcsprite
+    show sachi mask icon at left onlayer mcsprite
+    "{i}...Uh-oh."
+    hide sachi mask icon at left onlayer mcsprite
     jump chattalk
 
 label n1_part2:
