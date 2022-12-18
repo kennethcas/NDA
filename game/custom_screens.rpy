@@ -97,14 +97,19 @@ screen mapchat:
     # this tag ensures that only one map location can be seen at a time
     tag map
 
-    # DRUNK SUS BARS ------------ this bar will show the name of the date and current relationship, as well as a bar showing how close you are to a relationship upgrade. if you only use numerical values, this can be removed
-    
+
+    #DISPLAYS NAME
     if soberBusinessmanScreen == True:
-        text "Sober Businessman" xpos 70 ypos 35 color "#ffffff" bold True size 24 outlines [ (absolute(2), "#000000", absolute(0), absolute(0)) ]
+        text "SOBER BUSINESSMAN" xpos 70 ypos 35 color "#ffffff" bold True size 24 outlines [ (absolute(2), "#000000", absolute(0), absolute(0)) ]
     else:
         text "Firstname Lastname" xpos 70 ypos 35 color "#ffffff" bold True size 24 outlines [ (absolute(2), "#000000", absolute(0), absolute(0)) ]
+
+    # DRUNK SUS BARS -----------
     bar value drunk range pointsdrunk xpos 70 ypos 80 xsize 250 ysize 30
     bar value sus range pointssus xpos 70 ypos 120 xsize 250 ysize 30
+
+    add "UI/DrunkBarIcon.png" xpos 7 ypos 45
+    add "UI/SusBarIcon.png" xpos 7 ypos 80
     # text currel xpos 212 ypos 166 color "#ffffff" outlines [ (absolute(2), "#000000", absolute(0), absolute(0)) ]
 
     # these buttons allow you to interact with your date
