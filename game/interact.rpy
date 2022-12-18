@@ -147,7 +147,7 @@ label vincent_ev_1:
     $ v1_ev_1 = True;
 
     show sachi mask icon at left onlayer mcsprite
-    s "…How did you know?"
+    s "…How did you know my name?"
     hide sachi mask icon at left onlayer mcsprite
 
     show vincent mask icon at left onlayer mcsprite
