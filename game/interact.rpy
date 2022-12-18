@@ -10,7 +10,7 @@
 #if hideIcons: #HIDES ALL PORTRAITS
  #   hide vincent mask icon at left onlayer mcsprite
   #  hide sachi mask icon at left onlayer mcsprite
-
+$ just_talked = False
 $ showSachiMask = False
 if showSachiMask:
     hide vincent mask icon at left onlayer mcsprite
@@ -45,11 +45,12 @@ label vincent_minigame:
     $ sus = pointssus
 
 label points_check:
-    if (turns <= 5 and drunk < 100 and sus < 100):
+    $ just_talked = False
+    if (turns <= 5 and drunk < 80 and sus < 60):
         jump vincent_minigame
-    elif (drunk >= 100):
+    elif (drunk >= 80):
         jump drunk_full
-    elif (sus >= 100):
+    elif (sus >= 60):
         jump sus_full
     elif (turns > 5):
         jump n1_part2
@@ -59,6 +60,16 @@ label chattalk:
     $ canwarp = False
     $ turns += 1
     $ talk_turns += 1
+    $ just_talked = True
+
+    if (drunk <= 20):
+        $ sus += 20
+    elif (drunk > 20 and <= 40):
+        $ sus += 15
+    elif (drunk > 40 and <= 80):
+        $ sus += 10
+    else:
+        $ sus += 5
 
     show vincent fullbody
 
@@ -136,7 +147,6 @@ label chattalk:
 
             "What kind of {i}help{/i} do you need?":
                 jump vincent_1_end
-    hide sachi mask icon at left onlayer mcsprite
 
     elif (talk_turns == 5):
         show sachi mask icon at left onlayer mcsprite
@@ -177,7 +187,7 @@ label vincent_ev_2:
     hide sachi mask icon at left onlayer mcsprite
 
     $ v1_ev_2 = True;
-    $ sus += 33
+    #$ sus += 20
     if (talk_turns <= 1):
         "{i}He shakes his head."
 
@@ -209,7 +219,7 @@ label vincent_ev_3:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_3 = True;
-    $ sus += 33
+    #$ sus += 20
     show vincent mask icon at left onlayer mcsprite
     qb "I need your help."
     hide vincent mask icon at left onlayer mcsprite
@@ -223,7 +233,7 @@ label vincent_ev_4a:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_4a = True;
-    $ sus += 33
+    #$ sus += 20
 
     show vincent mask icon at left onlayer mcsprite
     qb "..."
@@ -242,7 +252,7 @@ label vincent_ev_4b:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_4b = True;
-    $ sus += 33
+    #$ sus += 20
     show vincent mask icon at left onlayer mcsprite
     qb "…Around {color=#6b091b}five years{/color} now."
     hide vincent mask icon at left onlayer mcsprite
@@ -261,7 +271,7 @@ label vincent_ev_5a:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_5a = True;
-    $ sus += 33
+    #$ sus += 20
 
     show vincent mask icon at left onlayer mcsprite
     qb "Those who have been scammed, blackmailed, and otherwise victimized
@@ -284,7 +294,7 @@ label vincent_ev_5b:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_5b = True;
-    $ sus += 33
+    #$ sus += 20
 
     show vincent mask icon at left onlayer mcsprite
     qb "Believe me. If I wanted you behind bars, I could easily find a way."
@@ -324,7 +334,7 @@ label chatgift:
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
     "{i}He takes a small sip and puts it on the table."
-    $ drunk += 33
+    $ drunk += 20
 
     hide sachi mask icon at left onlayer mcsprite
     hide vincent mask icon at left onlayer mcsprite
@@ -340,12 +350,11 @@ label chatdate:
     $ canwarp = False
     $ turns += 1
     $ flirt_turns += 1
-
+#CHANGE
     if (flirt_turns <= 2):
-        $ sus -= 33
+        $ sus -= 20
 
     if (flirt_turns == 1):
-
         show sachi mask icon at left onlayer mcsprite
         s " Y’know, our customers aren’t usually too easy on the eyes."
         s "Men like you are hard to come by."
@@ -356,7 +365,6 @@ label chatdate:
         hide vincent mask icon at left onlayer mcsprite
         show sachi mask icon at left onlayer mcsprite
         "{i}He must be shy…"
-        $ sus -= 33
 
         hide sachi mask icon onlayer mcsprite
 
