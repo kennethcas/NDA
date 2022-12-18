@@ -77,7 +77,7 @@ init:
     define config.nearest_neighbor = True
 
     # this adds an additional layer for the purpose of showing the characters sprite over dialogue without relying on side images. this is aesthetic, so not necessary.
-    define config.layers = [ 'master', 'transient', 'say', 'mcsprite', 'screens', 'overlay']
+    define config.layers = [ 'master', 'transient', 'say', 'screens', 'mcsprite', 'overlay']
     define config.say_layer = "say"
 
     # rolling back past screens can sometimes cause unexpected behaviour, so it's been disabled. You can re-enable it; it shouldn't be game-breaking, just annoying.

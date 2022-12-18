@@ -30,6 +30,12 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+By Nayan Saha, Kenneth Castro, V Tucker, and Edikan Abia
+
+Our final project for our Intro to Narrative Design class at the NYU Game Center
+
+Created 2022
+
 """)
 
 

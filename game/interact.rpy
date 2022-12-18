@@ -1,9 +1,43 @@
+#init python:
+#    def hideIcons():
+#        hide vincent mask icon at left onlayer mcsprite
+#        hide sachi mask icon at left onlayer mcsprite
+
+#SETTING SOME BOOLS AND VARIABLES---------------------------
+#$ hideIcons:
+    
+
+#if hideIcons: #HIDES ALL PORTRAITS
+ #   hide vincent mask icon at left onlayer mcsprite
+  #  hide sachi mask icon at left onlayer mcsprite
+
+$ showSachiMask = False
+if showSachiMask:
+    hide vincent mask icon at left onlayer mcsprite
+    show sachi mask icon at left onlayer mcsprite
+    $ hideIcons == False
+else:
+    hide sachi mask icon at left onlayer mcsprite
+
+$ showVincentMask = False
+if showVincentMask:
+    hide sachi mask icon at left onlayer mcsprite
+    show vincent mask icon at left onlayer mcsprite
+    $ hideIcons == False
+else:
+    hide vincent mask icon at left onlayer mcsprite
+
+
+#START VINCENT MINIGAME ------------------------------------
 label vincent_minigame:
     scene bg private room
     show vincent fullbody
 
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
+
+    #VARIABLE FOR CHECKING WHAT NAME TO PRINT ON SCREEN
+    $ soberBusinessmanScreen = True
 
     $ renpy.show_screen("mapchat")
     $ renpy.pause ()
@@ -12,7 +46,7 @@ label vincent_minigame:
 
 label points_check:
     if (turns <= 5 and drunk < 100 and sus < 100):
-        #add other minigames
+        #ADD OTHER MINIGAMES
         jump vincent_minigame
     elif (drunk >= 100):
         jump drunk_full
@@ -26,28 +60,33 @@ label chattalk:
     $ canwarp = False
     $ turns += 1
     $ talk_turns += 1
+
     show vincent fullbody
 
+    #$ hideIcons = True
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
+
     if (talk_turns == 1):
-        hide vincent mask icon at left onlayer mcsprite
-        hide sachi mask icon at left onlayer mcsprite
-        
-        "Clients knowing personal information…is never a good thing."
+        show sachi mask icon at left onlayer mcsprite
+        """
+        {i}Clients knowing personal information…is never a good thing.
 
-        "Especially when its someone like {i}him.{/i} The last thing I
+        {i}Especially when its someone like {/i}him.{i} The last thing I
             need right now is someone more powerful than even the richest,
-            sleaziest Wall Street bankers on my tail right now."
+            sleaziest Wall Street bankers on my tail right now.
 
-        "If I play my cards right—nudge them in the right direction while
-            telling him what he wants to hear—I can make him fold easy."
+        {i}If I play my cards right—nudge them in the right direction while
+            telling him what he wants to hear—I can make him fold easy.{/i}
+        """
 
         hide sachi mask icon at left onlayer mcsprite
         show vincent mask icon at left onlayer mcsprite
 
         qb "Your real name…is Sachi Kaur, is it not?"
         hide vincent mask icon at left onlayer mcsprite
-        show sachi mask icon at left onlayer mcsprite
 
+        show sachi mask icon at left onlayer mcsprite
         menu:
             "Yes.":
                 jump vincent_ev_1
@@ -57,6 +96,7 @@ label chattalk:
                 jump vincent_ev_3
 
     elif (talk_turns == 2):
+        show sachi mask icon at left onlayer mcsprite
         menu:
             "What do you want from me?":
                 if (v1_ev_1 == True):
@@ -75,6 +115,7 @@ label chattalk:
                     jump vincent_ev_1
 
     elif (talk_turns == 3):
+        show sachi mask icon at left onlayer mcsprite
         menu:
             "How do you know my father?" if v1_ev_1 == True:
                 jump vincent_ev_4a
@@ -86,6 +127,7 @@ label chattalk:
                 jump vincent_1_end
 
     elif (talk_turns == 4):
+        show sachi mask icon at left onlayer mcsprite
         menu:
             "How long have you been working at Carmine?" if v1_ev_4a == True:
                 jump vincent_ev_4b
@@ -96,9 +138,11 @@ label chattalk:
             "What kind of {i}help{/i} do you need?":
                 jump vincent_1_end
 
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
 
 label vincent_ev_1:
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
 
     $ v1_ev_1 = True;
 
@@ -117,91 +161,93 @@ label vincent_ev_1:
     jump points_check
 
 label vincent_ev_2:
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
 
     $ v1_ev_2 = True;
     $ sus += 20
     if (talk_turns <= 1):
-        "He shakes his head."
+        "{i}He shakes his head."
 
     show vincent mask icon at left onlayer mcsprite
     qb "…I’ve been hearing lots of back alley talk about mysterious maxed out
-        credit cards, incriminating pictures mailed to wives and kids, thousands of
-        dollars of jewelry mysteriously going missing…"
+        credit cards, incriminating pictures mailed to wives and kids..."
+    qb "...thousands of dollars of jewelry mysteriously going missing…" 
 
-    hide vincent mask icon
+    hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
     s "I’m surprised someone of your…{i}esteemed status{/i} keeps up with
         {i}back-alley talk{/i}."
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
     show vincent mask icon at left onlayer mcsprite
     qb "My…{i}esteemed status{/i}?"
-    hide vincent mask icon
+    hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
     s "…Your mask."
     s "The only clients who wear masks are people in the public eye. For
         uh…pretty obvious reasons. Not getting caught by the press and all…"
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
     show vincent mask icon at left onlayer mcsprite
     qb "…Well, I have my sources."
 
-    hide vincent mask icon
+    hide vincent mask icon at left onlayer mcsprite
     jump points_check
 
 label vincent_ev_3:
-    hide vincent mask icon
-    hide sachi mask icon
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_3 = True;
     $ sus += 20
     show vincent mask icon at left onlayer mcsprite
     qb "I need your help."
-    hide vincent mask icon
+    hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
     s "My…{i}help{/i}?"
 
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
     jump points_check
 
 label vincent_ev_4a:
-    hide vincent mask icon
-    hide sachi mask icon
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_4a = True;
     $ sus += 20
 
     show vincent mask icon at left onlayer mcsprite
     qb "..."
     qb "...He used to work under me. To an extent."
-    hide vincent mask icon
+    hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
     s "…"
-    "So he used to work at Carmine. A white-collar investment firm that I’m all
-    too familiar with."
-    "No, scratch that…he’s a bigwig at Carmine."
+    "{i}So he used to work at Carmine. A white-collar investment firm that I’m all
+    too familiar with.{/i}"
+    "{i}No, scratch that…he’s a bigwig at Carmine.{/i}"
 
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
     jump points_check
 
 label vincent_ev_4b:
-    hide vincent mask icon
-    hide sachi mask icon
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_4b = True;
     $ sus += 20
     show vincent mask icon at left onlayer mcsprite
     qb "…Around {color=#6b091b}five years{/color} now."
-    hide vincent mask icon
-    "{i}Five years?{/i} That’s way too soon for such a big promotion…"
+    hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
+    "{i}Five years? That’s way too soon for such a big promotion…"
     s "You’re…Antony Carmine’s son."
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
     show vincent mask icon at left onlayer mcsprite
     qb "…"
 
-    hide vincent mask icon
-    hide sachi mask icon
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
     jump points_check
 
 label vincent_ev_5a:
-    hide vincent mask icon
-    hide sachi mask icon
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_5a = True;
     $ sus += 20
 
@@ -215,16 +261,16 @@ label vincent_ev_5a:
         mask{/color}, correct?"
     qb "Coincidentally, my…{i}sources{/i} began to report seeing a
         {color=#6b091b}girl with a cat mask{/color} around that time."
-    hide vincent mask icon
+    hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
     s "..."
 
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
     jump points_check
 
 label vincent_ev_5b:
-    hide vincent mask icon
-    hide sachi mask icon
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
     $ v1_ev_5b = True;
     $ sus += 20
 
@@ -232,11 +278,14 @@ label vincent_ev_5b:
     qb "Believe me. If I wanted you behind bars, I could easily find a way."
     qb "…I think we could be useful to one another."
 
-    hide vincent mask icon
-    hide sachi mask icon
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
     jump points_check
 
 label vincent_1_end:
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
+
     show vincent mask icon at left onlayer mcsprite
     qb "..."
     qb "...Revenge."
@@ -244,6 +293,8 @@ label vincent_1_end:
 
 # DRINK MECHANIC --------
 label chatgift:
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
     $ renpy.hide_screen("mapchat")
     $ canwarp = False
     $ turns += 1
@@ -253,23 +304,25 @@ label chatgift:
 
     if drink_turns == 1:
         "My secret weapon: alcohol. I hand him a glass of Whiskey on the rocks."
-        hide sachi mask icon
+        hide sachi mask icon at left onlayer mcsprite
         show vincent mask icon at left onlayer mcsprite
         qb "…I prefer bourbon. But thank you."
 
-    hide vincent mask icon
+    hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
     "He takes a small sip and puts it on the table."
     $ drunk += 25
 
-    hide sachi mask icon
-    hide vincent mask icon
+    hide sachi mask icon at left onlayer mcsprite
+    hide vincent mask icon at left onlayer mcsprite
     $ canwarp = True
 
     jump points_check
 
 # FLIRT MECHANIC ---------
 label chatdate:
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
     $ renpy.hide_screen("mapchat")
     $ canwarp = False
     $ turns += 1
@@ -284,10 +337,10 @@ label chatdate:
         s " Y’know, our customers aren’t usually too easy on the eyes."
         s "Men like you are hard to come by."
         "I wink at him."
-        hide sachi mask icon
+        hide sachi mask icon at left onlayer mcsprite
         show vincent mask icon at left onlayer mcsprite
         qb "..."
-        hide vincent mask icon
+        hide vincent mask icon at left onlayer mcsprite
         show sachi mask icon at left onlayer mcsprite
         "He must be shy…"
         $ sus -= 20
@@ -298,59 +351,72 @@ label chatdate:
         show sachi mask icon at left onlayer mcsprite
         s "So…do you {i}just{/i} want to talk? "
         s "I mean, you have me all night. Might as well make the most of it."
-        hide sachi mask icon
+        hide sachi mask icon at left onlayer mcsprite
         show vincent mask icon at left onlayer mcsprite
         qb "..."
         qb "Are you trying to seduce me?"
         qb "I don’t have any ulterior motives with you, Miss Kaur. Believe me."
 
     $ canwarp = True
-    hide sachi mask icon
-    hide vincent mask icon
+    hide sachi mask icon at left onlayer mcsprite
+    hide vincent mask icon at left onlayer mcsprite
     jump points_check
 
 label drunk_full:
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
 
     "…He’s had around four glasses now. "
     "And yet…he seems as focused as ever. Strange."
     "He doesn’t look like {i}that{/i} much of a heavyweight."
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
     show vincent mask icon at left onlayer mcsprite
     qb "…You haven’t touched your glass."
-    hide vincent mask icon
+    hide vincent mask icon at left onlayer mcsprite
     show sachi mask icon at left onlayer mcsprite
     s "Huh? Yes I have. You saw me."
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
     show vincent mask icon at left onlayer mcsprite
     "He shakes his head."
     qb "You’re pretending. Your glass hasn’t gone down one bit."
-    hide vincent mask icon
+    hide vincent mask icon at left onlayer mcsprite
     "Yeah. Except {i}you’re{/i} supposed to be drunk enough not to notice."
     "I plaster on a smile and take a sip—a real one. It’s…bubbly and sweet?"
     show sachi mask icon at left onlayer mcsprite
     s "…This is coke."
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
     show vincent mask icon at left onlayer mcsprite
     qb "I’m glad you noticed. I replaced it before you came."
     show sachi mask icon at left onlayer mcsprite
     s "…"
-    hide sachi mask icon
+    hide sachi mask icon at left onlayer mcsprite
     show vincent mask icon at left onlayer mcsprite
     qb "…I know your tricks, Miss Kaur."
 
-    hide sachi mask icon
-    hide vincent mask icon
+    hide sachi mask icon at left onlayer mcsprite
+    hide vincent mask icon at left onlayer mcsprite
 
     jump n1_part2
 
 label sus_full:
+    hide vincent mask icon at left onlayer mcsprite
+    hide sachi mask icon at left onlayer mcsprite
+
+    show vincent mask icon at left onlayer mcsprite
     qb "…You seem to have a lot of questions."
     qb "Do you not trust me?"
+    hide vincent mask icon at left onlayer mcsprite
+    show sachi mask icon at left onlayer mcsprite
     s "I-"
+    hide sachi mask icon at left onlayer mcsprite
+    show vincent mask icon at left onlayer mcsprite
     qb "You shouldn’t. You have no reason to."
     qb "But if I was expecting, er…favors from you, I would grow impatient by now."
     "…Thanks for telling me how to do my job."
-    "He’s right, though. I should try not to be too obvious…"
+    hide vincent mask icon at left onlayer mcsprite
+    show sachi mask icon at left onlayer mcsprite
+    "{i}He’s right, though. I should try not to be too obvious…{/i}"
+    hide sachi mask icon at left onlayer mcsprite
     jump n1_part2
