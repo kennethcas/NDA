@@ -303,14 +303,14 @@ label chatgift:
     show sachi mask icon at left onlayer mcsprite
 
     if drink_turns == 1:
-        "My secret weapon: alcohol. I hand him a glass of Whiskey on the rocks."
+        "{i}My secret weapon: alcohol. I hand him a glass of Whiskey on the rocks."
         hide sachi mask icon at left onlayer mcsprite
         show vincent mask icon at left onlayer mcsprite
         qb "…I prefer bourbon. But thank you."
 
     hide vincent mask icon at left onlayer mcsprite
-    show sachi mask icon at left onlayer mcsprite
-    "He takes a small sip and puts it on the table."
+    hide sachi mask icon at left onlayer mcsprite
+    "{i}He takes a small sip and puts it on the table."
     $ drunk += 25
 
     hide sachi mask icon at left onlayer mcsprite
