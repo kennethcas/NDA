@@ -603,6 +603,7 @@ label n1_part2_2:
 
 label client_select:
 #THIS IS WHERE THE MAP WILL BE. CHOICES R VINCENT GERARD RICHARD MALCOLM
+# PLACEHOLDER MENU FOR NOW
 label vincent_n2_intro:
     return
 label vincent_n2_questions:
@@ -612,36 +613,7 @@ label richard_intro:
     jump chattalk
 label malcolm_intro:
     jump chattalk
-
-label n3_intro_and_selection:
-    #FINISH
-    return
-
-label n4_intro:
-    #FINISH
-    return
-
-label minigame2:
-    jump chattalk
-
-label unsuccessful2A:
-    return
-label unsuccessful2B:
-    return
-
-label ending1:
-    return
-label ending2:
-    return
-label ending3:
-    return
-
-label minigame3:
-    jump chattalk
-
-label successful3A:
-    #FINISH
-    return
-label unsuccessful3B:
-    #FINISH
-    return
+label gerard_post_minigame:
+label richard_post_minigame:
+label malcolm_post_minigame:
+return
