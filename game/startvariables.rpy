@@ -4,7 +4,7 @@ init:
     define caravan = "audio/music/caravan.mp3"
     define susClub = "audio/music/susClub.mp3"
 
-
+    $ db_picked = False
     ## CUSTOMISABLE VARIABLES
     # these are the point values the player needs to reach each relationship stage with a LI. if you dont plan to use relationship stages, you can ignore these or set "pointsfriend" to the maximum affection you can get.
     #$ pointsfriend = 100

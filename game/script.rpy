@@ -309,6 +309,9 @@ label Vincent_N1:
             jump vincent_minigame_intro
 
 label vincent_minigame_intro:
+    stop music fadeout 1.0
+    play music caravan loop fadein 1.0
+    
     "{i}I follow him into one of the backrooms."
     show bg private room
     show vincent fullbody masked
@@ -456,7 +459,7 @@ label n1_part2:
                 hide vincent mask icon at left onlayer mcsprite
 
         hide sachi mask icon at left onlayer mcsprite
-        
+
         show vincent mask icon at left onlayer mcsprite
         v "You would be properly compensated, of course. I can provide you with
          whatever you’d like—better housing, finery, even a new job after this
