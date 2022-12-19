@@ -4,17 +4,30 @@ define v = Character("Vincent")
 define q = Character("???")
 define db = Character("Drunk Businessman")
 define qb = Character("Sober Businessman")
+
 define h = Character("Hostess")
+
+define ab = Character("Awkward Businessman")
+define sb = Character("Sleazy Businessman")
+define db = Character("Dignified Businessman")
+
+define g = Character("Gerard")
+define r = Character("Richard")
+define m = Character("Malcolm")
 
 define config.default_music_volume = 0.7
 define config.default_sfx_volume = 0.7
 define config.default_voice_volume = 07
 
 $ N1_Wallet = False
+
 $ what = False
 $ why = False
+
 $ alcohol_q = False
 $ sex_q = False
+
+$ vincent_n2_intro_done = False
 
 # ---GAME START---
 label start:
@@ -602,8 +615,13 @@ label n1_part2_2:
     jump client_select
 
 label client_select:
-#THIS IS WHERE THE MAP WILL BE. CHOICES R VINCENT GERARD RICHARD MALCOLM
-# PLACEHOLDER MENU FOR NOW
+    #THIS IS WHERE THE MAP WILL BE. CHOICES R VINCENT GERARD RICHARD MALCOLM
+    # PLACEHOLDER MENU FOR NOW
+    menu:
+        "Vincent":
+        "Gerard":
+        "Richard":
+        "Malcolm":
 label vincent_n2_intro:
     return
 label vincent_n2_questions:
