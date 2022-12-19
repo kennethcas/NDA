@@ -9,7 +9,7 @@ define h = Character("Hostess")
 
 define ab = Character("Awkward Businessman")
 define sb = Character("Sleazy Businessman")
-define db = Character("Dignified Businessman")
+define dgb = Character("Dignified Businessman")
 
 define g = Character("Gerard")
 define r = Character("Richard")
@@ -162,21 +162,21 @@ label CW2_N1:
     show richard fullbody drunk
     with fade
 
-    show richard icon at left onlayer mcsprite
+    show richard icon drunk at left onlayer mcsprite
     db "...Can...{p=1.0}
     Can't find my..."
     #realization sfx(?)
     db "'Ey! You! You take my wallet?!" #change formatting
-    hide richard icon at left onlayer mcsprite
+    hide richard icon drunk at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
     "{i}I bat my eyes at him."
     s "Sorry?"
     hide sachi mask icon at left onlayer mcsprite
 
-    show richard icon at left onlayer mcsprite
+    show richard icon drunk at left onlayer mcsprite
     db "What? Y'dunno English or something?"
-    hide richard mask icon at left onlayer mcsprite
+    hide richard icon drunk at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
     "{i}I motion to the bouncer, who nods and swiftly takes care of him. I slip
