@@ -672,6 +672,9 @@ label client_select:
 
 label vincent_n2_check:
     $ renpy.hide_screen("mapClientSelect")
+    $ canwarp = False
+    $ renpy.pause ()
+
     if (vincent_n2_intro_done == False):
         jump vincent_n2_intro
     elif (vincent_n2_intro_done == True):
@@ -703,6 +706,7 @@ label vincent_n2_intro:
     jump client_select
 
 label vincent_n2_questions:
+    show vincent fullbody masked
     show vincent mask icon at left onlayer mcsprite
     v "…Is there anything else you would like to know?"
     hide vincent mask icon at left onlayer mcsprite
@@ -760,14 +764,23 @@ label vincent_n2_questions:
 
 label gerard_intro:
     $ renpy.hide_screen("mapClientSelect")
+    $ canwarp = False
+    $ renpy.pause ()
+
     jump chattalk
 
 label richard_intro:
     $ renpy.hide_screen("mapClientSelect")
+    $ canwarp = False
+    $ renpy.pause ()
+
     jump chattalk
 
 label malcolm_intro:
     $ renpy.hide_screen("mapClientSelect")
+    $ canwarp = False
+    $ renpy.pause ()
+
     jump chattalk
 
 label gerard_post_minigame:
