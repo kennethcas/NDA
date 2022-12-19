@@ -10,6 +10,7 @@ define h = Character("Hostess")
 define ab = Character("Awkward Businessman")
 define sb = Character("Sleazy Businessman")
 define dgb = Character("Dignified Businessman")
+define stb = Character("Studious Businessman")
 
 define g = Character("Gerard")
 define r = Character("Richard")
@@ -925,6 +926,10 @@ label richard_intro:
     $ canwarp = False
     $ renpy.pause ()
 
+    scene bg lounge
+    show richard fullbody
+    with fade
+
     jump chattalk
 
 label malcolm_intro:
@@ -932,7 +937,126 @@ label malcolm_intro:
     $ canwarp = False
     $ renpy.pause ()
 
-    jump chattalk
+    scene bg lounge
+    show malcolm fullbody
+    with fade
+
+    show sachi mask icon at left onlayer mcsprite
+    """
+    {i}I see a man sitting on his own. He looks too dignified to be here, but not in the way Vincent was.
+
+    {i}Less powerful and more... intellectual. As if he would have moral qualms about being here.
+
+    {i}...He's not bad-looking either.
+
+    {i}I walk up to him.
+
+    {i}Is he... writing something down?
+    """
+    menu:
+        "Taking notes, are we?":
+            "{i}The man looks up, surprised."
+            hide sachi mask icon at left onlayer mcsprite
+
+            show malcolm icon at left onlayer mcsprite
+            stb"""
+            ...Hm? Oh. Sorry.
+
+            I'm, uh... a bit curious about these kinds of establishments.
+            """
+            hide malcolm icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            s """
+            ...Curious?
+
+            You're not with the feds, are you?
+            """
+            hide sachi mask icon at left onlayer mcsprite
+
+            show malcolm icon at left onlayer mcsprite
+            "{i}He laughs."
+
+            stb """
+            I'd have a little more tact if I was.
+
+            It's... just for my own curiosity. Scout's honor.
+            """
+
+            "{i}He mock-salutes."
+            hide malcolm icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            "{i}...Interesting. He doesn't seem at all worried."
+            hide sachi mask icon at left onlayer mcsprite
+        "(Catch his eye.)":
+            """
+            {i}He doesn't look up. He seems really preoccupied with his notes.
+
+            {i}I should find a way to get my hands on them.
+
+            {i}I walk up to him and wave.
+            """
+            hide sachi mask icon at left onlayer mcsprite
+
+            show malcolm icon at left onlayer mcsprite
+            stb "...Oh. You must work here."
+            hide malcolm icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            s "I do."
+            hide sachi mask icon at left onlayer mcsprite
+    show malcolm icon at left onlayer mcsprite        
+    stb "Ah... I'm not here for my own, uh... exploits, unfortunately."
+    hide malcolm icon at left onlayer mcsprite 
+
+    show sachi mask icon at left onlayer mcsprite
+    s "Really?"
+    hide sachi mask icon at left onlayer mcsprite
+    
+    show malcolm icon at left onlayer mcsprite
+    stb "Well... even if I wanted to, I couldn't afford it. Not with an assistant's salary."
+    hide malcolm icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
+    menu:
+        "We can make exceptions.":
+            s "Do you... {i}want{/i} to do anything?"
+            hide sachi mask icon at left onlayer mcsprite
+        
+            show malcolm icon at left onlayer mcsprite
+            stb "Ah well... I guess I never thought about it."
+            hide malcolm icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            s "You seem sweet. I could give you a discount."
+            "{i}I wink at him."
+            hide sachi mask icon at left onlayer mcsprite
+
+            show malcolm icon at left onlayer mcsprite
+            stb """
+            Hm...
+
+            I suppose... opportunities like this don't come often, right?
+
+            Passing something like this up would be criminal. Haha...
+            """
+            hide malcolm icon at left onlayer mcsprite
+
+            jump malcolm_minigame
+        "That's unfortunate.":
+            hide sachi mask icon at left onlayer mcsprite
+
+            "{i}He nods."
+
+            show malcolm icon at left onlayer mcsprite
+            stb "Sorry to take up your time."
+            "{i}He goes back to writing."
+            hide malcolm icon at left onlayer mcsprite
+            
+            #BOOL FOR ... DIDNT TAKE HIM TO MINIGAME ?! so it doesnt make you repeat everything again
+            jump client_select
+
 
 label gerard_post_minigame:
 
