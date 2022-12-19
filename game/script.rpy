@@ -839,7 +839,7 @@ label gerard_intro:
             hide gerard icon at left onlayer mcsprite
 
             show sachi mask icon at left onlayer mcsprite
-            s "...Yeah. Definetely."
+            s "...Yeah. Definitely."
             hide sachi mask icon at left onlayer mcsprite
 
             show gerard icon at left onlayer mcsprite
