@@ -649,18 +649,89 @@ label client_select:
     # PLACEHOLDER MENU FOR NOW
     menu:
         "Vincent":
-            "something goes here"
+            if (vincent_n2_intro_done == False):
+                jump vincent_n2_intro
+            elif (vincent_n2_intro_done == True):
+                jump vincent_n2_questions
         "Gerard":
-            "something goes here"
+            jump gerard_intro
         "Richard":
-            "something goes here"
+            jump richard_intro
         "Malcolm":
-            "something goes here"
+            jump malcolm_intro
 
 label vincent_n2_intro:
-    return
+
+    "Vincent said he would meet me here. I wonder where he is."
+    "He’s…an interesting fellow for sure."
+    "He seems credible enough, but…I shouldn’t let my guard down around him."
+    "Still…if he’s {color=#6b091b}telling the truth{/color}…"
+
+    show vincent mask icon at left onlayer mcsprite
+    v "There you are."
+    hide vincent mask icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
+    s "…Huh? Oh!"
+    hide sachi mask icon at left onlayer mcsprite
+
+    "He’s sitting behind me, cross-legged and poised."
+
+    show vincent mask icon at left onlayer mcsprite
+    v "…As I suspected, all three of our…{i}targets{/i}…are here tonight."
+    v "It’s up to you who you would like to {color=#6b091b}approach first{/color}. "
+    hide vincent mask icon at left onlayer mcsprite
+    $ vincent_n2_intro_done = True
+    jump client_select
 
 label vincent_n2_questions:
+    show vincent mask icon at left onlayer mcsprite
+    v "…Is there anything else you would like to know?"
+    hide vincent mask icon at left onlayer mcsprite
+    menu:
+        "How did you find out about me?" if (v1_ev_2 == False or v1_ev_5a == False):
+
+            show vincent mask icon at left onlayer mcsprite
+            v "…I’ve been hearing lots of back alley talk about mysterious maxed
+            out credit cards, incriminating pictures mailed to wives and kids,
+            thousands of dollars of jewelry mysteriously going missing…"
+            v "Those who have been scammed, blackmailed, and otherwise victimized
+            in some shape and form all had one thing in common."
+            v "…They visited The Scarlet Cabaret on a {color=#6b091b}Friday night{/color}
+            after {color=#6b091b}June 1985.{/color}"
+            v "Currently, there are {color=#6b091b}ten women{/color} who work on
+            Fridays. Each of you wear a different {color=#6b091b}animal mask{/color},
+            correct?"
+            v "Coincidentally, my…sources began to report seeing a {color=#6b091b}
+            girl with a cat mask{/color} around that time."
+            hide vincent mask icon at left onlayer mcsprite
+
+            $ v1_ev_2 = True
+            $ v1_ev_5a = True
+            jump client_select
+
+        "How do you know my father?" if (v1_ev_4a == False):
+            show vincent mask icon at left onlayer mcsprite
+            v "…"
+            v "…He used to work under me. To an extent."
+            hide vincent mask icon at left onlayer mcsprite
+
+            $ v1_ev_4a = True
+            jump client_select
+
+        "What's in it for you?":
+            show vincent mask icon at left onlayer mcsprite
+            v "…"
+            v "…Revenge."
+            v "I don’t feel any familial connection to the man. He needs to be
+            held accountable for what he’s done."
+            hide vincent mask icon at left onlayer mcsprite
+
+            jump client_select
+
+        "Nevermind":
+            jump client_select
+
 
 label gerard_intro:
     jump chattalk
