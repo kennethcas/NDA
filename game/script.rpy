@@ -456,6 +456,7 @@ label n1_part2:
                 hide vincent mask icon at left onlayer mcsprite
 
         hide sachi mask icon at left onlayer mcsprite
+        
         show vincent mask icon at left onlayer mcsprite
         v "You would be properly compensated, of course. I can provide you with
          whatever you’d like—better housing, finery, even a new job after this
