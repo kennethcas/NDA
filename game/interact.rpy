@@ -474,119 +474,121 @@ label gerard_ev_1:
     jump gerard_points_check
 
 label gerard_ev_2:
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
     $ g_ev_2 = True;
 
-    #show gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
     g "Car-"
     g "Wait. How…do you know where I work?"
-    #hide gerard icon at left onlayer mcsprite
-
-    "...{i}Shit.{/i}"
+    hide gerard icon at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
+    "...{i}Shit.{/i}"
     s "Oh! You, just, uh…seem like the type."
     hide sachi mask icon at left onlayer mcsprite
 
-    #show gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
     g "…Sure."
     g "But uh…I haven’t been there too long. Around four years now."
-    g " I used to intern there."
-    #hide gerard icon at left onlayer mcsprite
+    g "I used to intern there."
+    hide gerard icon at left onlayer mcsprite
 
-    "…So he was a newbie back then."
+    show sachi mask icon at left onlayer mcsprite
+    "{i}…So he was a newbie back then."
+    hide sachi mask icon at left onlayer mcsprite
 
     jump gerard_points_check
 
 label gerard_ev_3:
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
     $ g_ev_3 = True;
 
-    #show gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
     g "..."
     g "What makes you say that?"
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
     s "Oh…y’know. You seem like the Wall Street type."
     hide sachi mask icon at left onlayer mcsprite
 
-    #show gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
     g "...I work at Carmine, I guess. If that’s what you mean."
     g "Not that it really makes a difference."
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
 
     jump gerard_points_check
 
 label gerard_ev_3b:
-
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
     $ g_ev_3b = True;
 
-    #show gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
     g " But uh…I haven’t been there too long. Around four years now."
     g "I used to intern there."
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
 
-    "…So he was a newbie back then."
+    show sachi mask icon at left onlayer mcsprite
+    "{i}…So he was a newbie back then."
+    hide sachi mask icon at left onlayer mcsprite
 
     jump gerard_points_check
 
 label gerard_ev_4:
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
     $ g_ev_4 = True;
 
-    #show gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
     g "There’s nothing to like. All I’m doing is helping rich people get richer, and killing myself in the process."
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
     s " …What about the money?"
     hide sachi mask icon at left onlayer mcsprite
 
-    #show gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
     g "‘Money’ my ass. I’ve been a runt this whole damn time."
     g " I hardly even get half of what my supervisors get. And even less now that the market’s gone haywire."
     g "..."
     g "...All of the money’s dirty, anyway."
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
 
     jump gerard_points_check
 
 label gerard_ev_5:
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
     $ g_ev_5 = True;
 
-    #show gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
     g "…"
     g "…Are you supposed to ask so many questions?"
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
-    s "I mean, you asked me to call you Gwen. So…its not too much of a stretch to ask-"
+    s "I mean, you asked to call me Gwen. It's not too much of a stretch to ask-"
     hide sachi mask icon at left onlayer mcsprite
 
-    #show gerard icon at left onlayer mcsprite
-    g "She’s just…someone."
-    #hide gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
+    g "She’s just… someone."
+    hide gerard icon at left onlayer mcsprite
 
     if (drunk < 20):
-        "He probably won't tell me anything else {color=#6b091b}sober.{/color}"
+        "{i}He probably won't tell me anything else {color=#6b091b}sober.{/color}"
 
     jump gerard_points_check
 
 label gerard_ev_6:
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
     $ g_ev_6 = True;
@@ -595,65 +597,71 @@ label gerard_ev_6:
     s "Is Gwen someone…special?"
     hide sachi mask icon at left onlayer mcsprite
 
-    #show gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
     g "Was. And…I guess."
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
     s "{i}…Was?{/i}"
     hide sachi mask icon at left onlayer mcsprite
 
     if (drunk < 20):
-        #show gerard icon at left onlayer mcsprite
+        show gerard icon at left onlayer mcsprite
         g "..."
-        #hide gerard icon at left onlayer mcsprite
+        hide gerard icon at left onlayer mcsprite
 
-        "He probably won't tell me anything else {color=#6b091b}sober.{/color}"
+        "{i}He probably won't tell me anything else {color=#6b091b}sober.{/color}"
+
     elif (drunk == 20):
-        #show gerard icon at left onlayer mcsprite
+        show gerard icon at left onlayer mcsprite
         g "She was a journalist. We were friends from college."
         g "She…was super into crime stuff, I guess. Like conspiracy theories and all that."
         g "And it kinda…got to her."
         g "…"
-        #hide gerard icon at left onlayer mcsprite
+        hide gerard icon at left onlayer mcsprite
 
-        "He probably won't tell me anything else until he {color=#6b091b}drinks a bit more.{/color}"
+        "{i}He probably won't tell me anything else until he {color=#6b091b}drinks a bit more.{/color}"
         $ g_ev_6b = True
+
     elif (drunk >= 40):
-        #show gerard icon at left onlayer mcsprite
+        show gerard icon at left onlayer mcsprite
         g "There’s…a conspiracy about Antony Carmine, y’know?"
         g "He was part of a {color=#6b091b}trafficking ring{/color} before he got big. Went by a different name ‘n all."
         g "…What was it? I know she told-oh. Yeah."
         g "{color=#6b091b}Alonzo Romano.{/color}"
         g "…Anyways. Gwen got really into this shit. When I got my internship, she was seriously stoked. Asked me to tell her everything I could."
         g "I…found out a lot of things I wouldn’t wanna know."
-        #hide gerard icon at left onlayer mcsprite
+        hide gerard icon at left onlayer mcsprite
+
         $ g_ev_6c = True
 
     jump gerard_points_check
 
 label gerard_ev_7:
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
     $ g_ev_7 = True;
 
-    #show gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
     g "Y’know. Shady people."
     g "…{i}Really{/i} shady people."
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
 
     if (drunk < 20):
-        #show gerard icon at left onlayer mcsprite
+        show gerard icon at left onlayer mcsprite
         g "..."
-        #hide gerard icon at left onlayer mcsprite
-        "He probably won't tell me anything else {color=#6b091b}sober.{/color}"
+        hide gerard icon at left onlayer mcsprite
+
+        "{i}He probably won't tell me anything else {color=#6b091b}sober.{/color}"
+
     elif (drunk == 20):
-        #show gerard icon at left onlayer mcsprite
+        show gerard icon at left onlayer mcsprite
         g "Drugs, murder…"
         g "…Trafficking."
-        #hide gerard icon at left onlayer mcsprite
-        "He stops."
+        hide gerard icon at left onlayer mcsprite
+
+        "{i}He stops."
         $ g_ev_7b = True
 
     jump gerard_points_check
@@ -675,6 +683,8 @@ label chatgift:
     $ turns += 1
     $ drink_turns += 1
     $ drunk += 20
+
+
     if (client == 1): #DRINK WITH VINCENT
         hide vincent mask icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
@@ -696,7 +706,7 @@ label chatgift:
         jump vincent_points_check
 
     if (client == 2): #DRINK WITH GERARD
-        ghide gerard icon at left onlayer mcsprite
+        hide gerard icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
 
         if (drink_turns == 1):
@@ -774,8 +784,12 @@ label chatdate:
     $ canwarp = False
     $ turns += 1
     $ flirt_turns += 1
+
+
     if (flirt_turns <= 2):
         $ sus -= 20
+
+
     if (client == 1):#FLIRT WITH VINCENT
         hide vincent mask icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
@@ -859,9 +873,10 @@ label chatdate:
             r "I could say the same thing about you, darling."
             hide richard icon at left onlayer mcsprite
 
-        $ canwarp = True
+        
         hide sachi mask icon at left onlayer mcsprite
-        #jump gerard_points_check
+        $ canwarp = True
+
         jump richard_points_check
 
     if (client == 4): #FLIRT WITH  MALCOLM
@@ -894,7 +909,7 @@ label chatdate:
 
 
 label drunk_full:
-    if (client == 1):
+    if (client == 1): #VINCENT FULLY DRUNK
         hide vincent mask icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
 
@@ -936,7 +951,9 @@ label drunk_full:
         hide vincent mask icon at left onlayer mcsprite
 
         jump n1_part2
-    if (client == 2):
+
+
+    if (client == 2): #GERARD FULLY DRUNK
         hide gerard icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
 
@@ -960,16 +977,20 @@ label drunk_full:
 
         jump client_select
 
-    if (client == 3):
+    if (client == 3): #RICHARD FULLY DRUNK
         hide sachi mask icon at left onlayer mcsprite
+
         show richard icon at left onlayer mcsprite
         r "So…are we ever…gonna…"
         r "…We…"
         r "…Hm…"
         hide richard icon at left onlayer mcsprite
 
+        show sachi mask icon at left onlayer mcsprite
         "{i}He’s too {color=#6b091b}drunk{/color} to make sense right now. That’s a shame…"
         "{i}I still had a lot I needed to {color=#6b091b}ask him.{/color}"
+        hide sachi mask icon at left onlayer mcsprite
+
     if (client == 4):
         hide sachi mask icon at left onlayer mcsprite
 

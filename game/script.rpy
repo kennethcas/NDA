@@ -1121,7 +1121,7 @@ label malcolm_intro:
 
 label gerard_post_minigame:
 if (ev_6 == True):
-    if (ev_6)
+    #if (ev_6)
     g """
     Gwen... was a journalist. We were friends from college.
 
