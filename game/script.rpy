@@ -655,6 +655,7 @@ label client_select:
     $ renpy.show_screen("mapClientSelect")
     show bg lounge
     with dissolve
+    $ renpy.pause ()
 
     #THIS IS WHERE THE MAP WILL BE. CHOICES R VINCENT GERARD RICHARD MALCOLM
     # PLACEHOLDER MENU FOR NOW
@@ -948,7 +949,7 @@ label richard_intro:
 
     show sachi mask icon at left onlayer mcsprite
     "{i}...So he remembers me."
-    if (N1_Wallet == True)
+    if (N1_Wallet == True):
         "I hope he doesn't remember ...{i}everything."
     menu:
         "You have a way with women.":
