@@ -108,8 +108,8 @@ screen mapchat:
     bar value drunk range pointsdrunk xpos 70 ypos 80 xsize 250 ysize 30
     bar value sus range pointssus xpos 70 ypos 120 xsize 250 ysize 30
 
-    add "UI/DrunkBarIcon.png" xpos 7 ypos 45
-    add "UI/SusBarIcon.png" xpos 7 ypos 80
+    add "UI/DrunkBarIcon.png" xpos 40 ypos 60
+    add "UI/SusBarIcon.png" xpos 40 ypos 110
     # text currel xpos 212 ypos 166 color "#ffffff" outlines [ (absolute(2), "#000000", absolute(0), absolute(0)) ]
 
     # these buttons allow you to interact with your date
