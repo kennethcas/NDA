@@ -912,7 +912,11 @@ label drunk_full:
         "He’s too {color=#6b091b}drunk{/color} to make sense right now. That’s a shame…"
         "I still had a lot I needed to {color=#6b091b}ask him.{/color}"
     if (client == 4):
-        "."
+        m "I…need…"
+        m "Bathroom…where’s the nearest-"
+        s "Nearest right."
+        s "He dashes out of the room at lightning speed. I hear retching a few minutes later."
+        s "He shouldn’t have {color=#6b091b}drank so much…{/color}"
 label sus_full:
     if (client == 1):
         hide vincent mask icon at left onlayer mcsprite
@@ -954,6 +958,11 @@ label sus_full:
         jump client_select
     if (client == 3):
         r "So…are we ever gonna get to the fun part, are are you just gonna keep blabbing? ‘Cuz I’m getting a bit impatient here."
-        "…Damn. Guess I should’ve been a bit more {color=#6b091b}subtle.{/color}"
+        s "…Damn. Guess I should’ve been a bit more {color=#6b091b}subtle.{/color}"
     if (client == 4):
-        "."
+        
+        m " …"
+        m "I…don’t feel comfortable sharing confidential information with you. Sorry." 
+
+
+        s "…Damn. I should’ve been more subtle."
