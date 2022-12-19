@@ -72,8 +72,8 @@ label chattalk:
         $ sus += 5
 
     show vincent fullbody masked
-    stop music fadeout 1.0
-    play music caravan loop fadein 1.0
+    #stop music fadeout 1.0
+    #play music caravan loop fadein 1.0
 
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite

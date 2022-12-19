@@ -17,9 +17,7 @@ define m = Character("Malcolm")
 
 define config.default_music_volume = 0.7
 define config.default_sfx_volume = 0.7
-define config.default_voice_volume = 07
-
-
+define config.default_voice_volume = 0.7
 
 # ---GAME START---
 label start:
@@ -144,19 +142,22 @@ label intro_expos:
     jump N1_Menu
 
 label N1_Menu:
+    $ renpy.show_screen("mapFirstSelect")
+    $ renpy.pause ()
     # (theres a temporary menu for now)
-    menu:
-        "Drunk Businessman":
-            if db_picked==False:
-                jump CW2_N1
-            else:
-                jump N1_Menu
+    #menu:
+    #    "Drunk Businessman":
+    #        if db_picked==False:
+    #            jump CW2_N1
+    #        else:
+    #            jump N1_Menu
 
-        "Sober Businessman":
-            jump Vincent_N1
+    #    "Sober Businessman":
+    #        jump Vincent_N1
 
 #if you choose CW#2:
 label CW2_N1:
+    $ renpy.hide_screen("mapFirstSelect")
     $ db_picked == True
     show richard fullbody drunk
     with fade
@@ -196,6 +197,8 @@ label CW2_N1:
     jump N1_Menu
 
 label Vincent_N1:
+    $ renpy.hide_screen("mapFirstSelect")
+
     show sachi mask icon at left onlayer mcsprite
     "{i}...{w=1.0}I feel like I'm being watched."
 
@@ -329,6 +332,7 @@ label vincent_minigame_intro:
 label n1_part2:
     stop music fadeout 1.0
     play music susClub loop fadein 1.0
+
     show sachi mask icon at left onlayer mcsprite
     s "Hm. So..."
     hide sachi mask icon at left onlayer mcsprite
@@ -514,6 +518,7 @@ label vincent_intro_questions:
                         v "You have a deal."
                         hide vincent mask icon at left onlayer mcsprite
 
+                        show sachi mask icon at left onlayer mcsprite
                         "{i}No one in their right mind would object to that."
 
                     "I’m still not sold.":
@@ -642,30 +647,42 @@ label n1_part2_2:
     v "…Sachi, then."
     hide vincent mask icon at left onlayer mcsprite
 
+    hide vincent fullbody masked
     jump client_select
 
 label client_select:
+    $ renpy.show_screen("mapClientSelect")
+    show bg lounge
+    with dissolve
+
     #THIS IS WHERE THE MAP WILL BE. CHOICES R VINCENT GERARD RICHARD MALCOLM
     # PLACEHOLDER MENU FOR NOW
-    menu:
-        "Vincent":
-            if (vincent_n2_intro_done == False):
-                jump vincent_n2_intro
-            elif (vincent_n2_intro_done == True):
-                jump vincent_n2_questions
-        "Gerard":
-            jump gerard_intro
-        "Richard":
-            jump richard_intro
-        "Malcolm":
-            jump malcolm_intro
+    #menu:
+    #    "Vincent":
+    #        if (vincent_n2_intro_done == False):
+    #            jump vincent_n2_intro
+    #        elif (vincent_n2_intro_done == True):
+    #            jump vincent_n2_questions
+    #    "Gerard":
+    #        jump gerard_intro
+    #    "Richard":
+    #        jump richard_intro
+    #    "Malcolm":
+    #        jump malcolm_intro
+
+label vincent_n2_check:
+    $ renpy.hide_screen("mapClientSelect")
+    if (vincent_n2_intro_done == False):
+        jump vincent_n2_intro
+    elif (vincent_n2_intro_done == True):
+        jump vincent_n2_questions
 
 label vincent_n2_intro:
 
-    "Vincent said he would meet me here. I wonder where he is."
-    "He’s…an interesting fellow for sure."
-    "He seems credible enough, but…I shouldn’t let my guard down around him."
-    "Still…if he’s {color=#6b091b}telling the truth{/color}…"
+    "{i}Vincent said he would meet me here. I wonder where he is."
+    "{i}He’s…an interesting fellow for sure."
+    "{i}He seems credible enough, but…I shouldn’t let my guard down around him."
+    "{i}Still…if he’s {color=#6b091b}telling the truth{/color}…"
 
     show vincent mask icon at left onlayer mcsprite
     v "There you are."
@@ -675,12 +692,13 @@ label vincent_n2_intro:
     s "…Huh? Oh!"
     hide sachi mask icon at left onlayer mcsprite
 
-    "He’s sitting behind me, cross-legged and poised."
+    "{i}He’s sitting behind me, cross-legged and poised."
 
     show vincent mask icon at left onlayer mcsprite
     v "…As I suspected, all three of our…{i}targets{/i}…are here tonight."
     v "It’s up to you who you would like to {color=#6b091b}approach first{/color}. "
     hide vincent mask icon at left onlayer mcsprite
+
     $ vincent_n2_intro_done = True
     jump client_select
 
@@ -688,8 +706,11 @@ label vincent_n2_questions:
     show vincent mask icon at left onlayer mcsprite
     v "…Is there anything else you would like to know?"
     hide vincent mask icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
     menu:
         "How did you find out about me?" if (v1_ev_2 == False or v1_ev_5a == False):
+            hide sachi mask icon at left onlayer mcsprite
 
             show vincent mask icon at left onlayer mcsprite
             v "…I’ve been hearing lots of back alley talk about mysterious maxed
@@ -711,6 +732,7 @@ label vincent_n2_questions:
             jump client_select
 
         "How do you know my father?" if (v1_ev_4a == False):
+            hide sachi mask icon at left onlayer mcsprite
             show vincent mask icon at left onlayer mcsprite
             v "…"
             v "…He used to work under me. To an extent."
@@ -720,6 +742,8 @@ label vincent_n2_questions:
             jump client_select
 
         "What's in it for you?":
+            hide sachi mask icon at left onlayer mcsprite
+
             show vincent mask icon at left onlayer mcsprite
             v "…"
             v "…Revenge."
@@ -730,16 +754,20 @@ label vincent_n2_questions:
             jump client_select
 
         "Nevermind":
+            hide sachi mask icon at left onlayer mcsprite
             jump client_select
 
 
 label gerard_intro:
+    $ renpy.hide_screen("mapClientSelect")
     jump chattalk
 
 label richard_intro:
+    $ renpy.hide_screen("mapClientSelect")
     jump chattalk
 
 label malcolm_intro:
+    $ renpy.hide_screen("mapClientSelect")
     jump chattalk
 
 label gerard_post_minigame:
