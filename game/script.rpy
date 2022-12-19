@@ -391,7 +391,7 @@ label n1_part2:
         show vincent mask icon at left onlayer mcsprite
         v "That’s correct."
         v "…I have reason to believe that he…{i}my father{/i}…is responsible for
-         your father’s death."
+        your father’s death."
         hide vincent mask icon at left onlayer mcsprite
 
         show sachi mask icon at left onlayer mcsprite
@@ -402,7 +402,7 @@ label n1_part2:
         v "Both you and me know that isn’t true."
         v "…Is that not what you’ve been investigating this whole time?"
         v "Everyone you’ve scammed, blackmailed, stole from…all of them had ties
-         to your father somehow."
+        to your father somehow."
         v "And {i}coincidentally,{/i} those who treated your father the worst at his
         time in the company have received the worst…{i}punishments{/i} from you."
         v "I suspect you’ve been {i}interrogating{/i} them as well, just as
@@ -458,8 +458,8 @@ label n1_part2:
 
         show vincent mask icon at left onlayer mcsprite
         v "You would be properly compensated, of course. I can provide you with
-         whatever you’d like—better housing, finery, even a new job after this
-         entire ordeal is over."
+        whatever you’d like—better housing, finery, even a new job after this
+        entire ordeal is over."
         hide vincent mask icon at left onlayer mcsprite
 
     hide vincent mask icon at left onlayer mcsprite
@@ -558,8 +558,8 @@ label vincent_intro_questions:
 
                 show vincent mask icon at left onlayer mcsprite
                 v "{color=#6b091b}Gerard Wade{/color} and {color=#6b091b}Richard
-                 Bloomberg.{/color} Two current employees of Carmine who were
-                 involved in the incident…"
+                Bloomberg.{/color} Two current employees of Carmine who were
+                involved in the incident…"
                 v "…And {color=#6b091b}Malcolm Hunt{/color}, the assistant
                 pathologist who examined Rahul’s body."
                 v "If you could get them to admit to what they saw, we could
