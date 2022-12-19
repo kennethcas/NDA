@@ -304,6 +304,8 @@ label vincent_minigame_intro:
     jump chattalk
 
 label n1_part2:
+    stop music fadeout 1.0
+    play music susClub loop fadein 1.0
     show sachi mask icon at left onlayer mcsprite
     s "Hm. So..."
     hide sachi mask icon at left onlayer mcsprite
