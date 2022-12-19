@@ -930,7 +930,67 @@ label richard_intro:
     show richard fullbody
     with fade
 
-    jump chattalk
+    show sachi mask icon at left onlayer mcsprite
+    """
+    {i}I see the drunk man from the night before sitting with his legs spread on a barstool. He has a bottle of beer in hand, but he looks sober.
+
+    {i}Based on the pictures Vincent showed me, he must be {color=#6b091b}Richard Bloomberg{/color}, a higher-up at Carmine.
+
+    {i}I {/i}really don't want to talk to him again. But I've dealt with worse.
+
+    {i}He notices me staring and waves me over.
+    """
+    hide sachi mask icon at left onlayer mcsprite
+
+    show richard icon at left onlayer mcsprite
+    r "Eyy baby. Couldn’t get enough of me last night, could’ja?"
+    hide richard icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
+    "{i}...So he remembers me."
+    if (N1_Wallet == True)
+        "I hope he doesn't remember ...{i}everything."
+    menu:
+        "You have a way with women.":
+            hide sachi mask icon at left onlayer mcsprite
+
+            show richard icon at left onlayer mcsprite
+            r "Damn right I do."
+            hide richard icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            s "Don't flatter yourself."
+            hide sachi mask icon at left onlayer mcsprite
+
+            show richard icon at left onlayer mcsprite
+            r "Aw, come on. I hate it when you ladies play {i}hard to get."
+            r "You're not even that pretty, anyways."
+            hide richard icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            "{i}This is going to be harder than I thought."
+            hide sachi mask icon at left onlayer mcsprite
+        "(Say nothing.)":
+            hide sachi mask icon at left onlayer mcsprite
+
+            show richard icon at left onlayer mcsprite
+            r "What is it, sweetheart? {i}Cat got your tongue?"
+            r "It's ok. I like 'em shy."
+            hide richard icon at left onlayer mcsprite
+    
+    show richard icon at left onlayer mcsprite
+    r "…So whadd’ya say, sweetheart? Wanna get out of here?"
+    hide richard icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
+    menu:
+        "Sure.":
+            hide sachi mask icon at left onlayer mcsprite
+            jump richard_minigame
+        "No thanks.":
+            hide sachi mask icon at left onlayer mcsprite
+            jump client_select
+            #BOOL FOR RICHARD REJECTION?
 
 label malcolm_intro:
     $ renpy.hide_screen("mapClientSelect")
@@ -1053,7 +1113,7 @@ label malcolm_intro:
             stb "Sorry to take up your time."
             "{i}He goes back to writing."
             hide malcolm icon at left onlayer mcsprite
-            
+
             #BOOL FOR ... DIDNT TAKE HIM TO MINIGAME ?! so it doesnt make you repeat everything again
             jump client_select
 
