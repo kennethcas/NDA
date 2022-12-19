@@ -96,6 +96,7 @@ label intro_convo:
 
 label intro_expos:
     hide richard fullbody 
+    hide richard fullbody drunk
     hide sachi mask icon at left onlayer mcsprite
     hide richard icon at left onlayer mcsprite
     with fade
@@ -141,7 +142,7 @@ label N1_Menu:
 
 #if you choose CW#2:
 label CW2_N1:
-    show richard fullbody
+    show richard fullbody drunk
     with fade
 
     show richard icon at left onlayer mcsprite
@@ -164,6 +165,7 @@ label CW2_N1:
     "{i}I motion to the bouncer, who nods and swiftly takes care of him. I slip
     out of the scene and into a dark corner."
 
+    hide richard fullbody drunk
     hide richard fullbody
     with dissolve
 
