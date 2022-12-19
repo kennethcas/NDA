@@ -31,7 +31,7 @@ else:
 #START VINCENT MINIGAME ------------------------------------
 label vincent_minigame:
     scene bg private room
-    show vincent fullbody
+    show vincent fullbody masked
 
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
@@ -71,7 +71,7 @@ label chattalk:
     else:
         $ sus += 5
 
-    show vincent fullbody
+    show vincent fullbody masked
 
     #$ hideIcons = True
     hide vincent mask icon at left onlayer mcsprite

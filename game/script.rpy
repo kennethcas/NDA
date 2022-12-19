@@ -185,8 +185,10 @@ label Vincent_N1:
 
     "{i}I look around in search for a perpetrator. And sure enough, I find him in
     seconds' time."
-    show vincent fullbody
+
+    show vincent fullbody masked
     with dissolve
+
     "{i}He looks...out of place. Far too put together for a joint like this."
 
     "{i}The men here are well off, that's for sure...but he seems refined in a way
@@ -253,7 +255,7 @@ label Vincent_N1:
             qb "...Fine. Make it quick."
             hide vincent mask icon at left onlayer mcsprite
 
-            hide vincent fullbody
+            hide vincent fullbody masked
             with fade
 
             show sachi mask icon at left onlayer mcsprite
@@ -282,7 +284,7 @@ label Vincent_N1:
 label vincent_minigame_intro:
     "{i}I follow him into one of the backrooms."
     show bg private room
-    show vincent fullbody
+    show vincent fullbody masked
     with fade
     #scene backroom
 
