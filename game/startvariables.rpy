@@ -59,7 +59,12 @@ init:
     $ g_ev_1 = False
     $ g_ev_2 = False
     $ g_ev_3 = False
-    
+    $ g_ev_3b = False
+    $ g_ev_4 = False
+    $ g_ev_5 = False
+    $ g_ev_6 = False
+    $ g_ev_7 = False
+
 
     $ pointsonly = False
 
