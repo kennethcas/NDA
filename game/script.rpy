@@ -11,6 +11,10 @@ define config.default_sfx_volume = 0.7
 define config.default_voice_volume = 07
 
 $ N1_Wallet = False
+$ what = False
+$ why = False
+$ alcohol_q = False
+$ sex_q = False
 
 # ---GAME START---
 label start:
@@ -95,7 +99,7 @@ label intro_convo:
             jump intro_expos
 
 label intro_expos:
-    hide richard fullbody 
+    hide richard fullbody
     hide richard fullbody drunk
     hide sachi mask icon at left onlayer mcsprite
     hide richard icon at left onlayer mcsprite
@@ -349,25 +353,259 @@ label n1_part2:
         v "I knew your father while he used to work at Carmine. Before
             his passing."
         hide vincent mask icon at left onlayer mcsprite
-        
+
         show sachi mask icon at left onlayer mcsprite
         s "My-"
         hide sachi mask icon at left onlayer mcsprite
 
         "Vincent…{i}Carmine{/i}…"
+        "…Oh my god."
 
         show sachi mask icon at left onlayer mcsprite
-        "…Oh my god."
+        s "You’re…the CEO’s son. I saw you on
+        {i}{color=#6b091b}Time{/i}{/color} last month."
         hide sachi mask icon at left onlayer mcsprite
+
+        show vincent mask icon at left onlayer mcsprite
+        v "That’s correct."
+        v "…I have reason to believe that he…{i}my father{/i}…is responsible for
+         your father’s death."
+        hide vincent mask icon at left onlayer mcsprite
+
+        show sachi mask icon at left onlayer mcsprite
+        s "…The reports said he had a {i}stress-induced heart attack.{/i}"
+        hide sachi mask icon at left onlayer mcsprite
+
+        show vincent mask icon at left onlayer mcsprite
+        v "Both you and me know that isn’t true."
+        v "…Is that not what you’ve been investigating this whole time?"
+        v "Everyone you’ve scammed, blackmailed, stole from…all of them had ties
+         to your father somehow."
+        v "And {i}coincidentally,{/i} those who treated your father the worst at his
+        time in the company have received the worst…{i}punishments{/i} from you."
+        v "I suspect you’ve been {i}interrogating{/i} them as well, just as
+        you’ve tried to do with me."
+        v "…Which is why I would like to join forces with you."
+        v "I would like you to help me prove the involvement of my father in the
+        murder of Rahul Kaur."
+        v "Of course, your father is only one of many victims. But if I were to
+        get {color=#6b091b}properly incriminating evidence{/color} for this
+        incident specifically, I believe I could make a proper case against him."
+        hide vincent mask icon at left onlayer mcsprite
+
+        menu:
+            "But he's your father.":
+                show vincent mask icon at left onlayer mcsprite
+                v "..."
+                v "…Only when its convenient."
+                hide vincent mask icon at left onlayer mcsprite
+
+                "So he has daddy issues. Good to know."
+
+                show vincent mask icon at left onlayer mcsprite
+                v "I don’t feel any familial connection to the man. He needs to
+                be held accountable for what he’s done."
+                hide vincent mask icon at left onlayer mcsprite
+
+                show sachi mask icon at left onlayer mcsprite
+                s "With him out of the way, {i}you{/i} would also get to be
+                full-time CEO."
+                s "But…yes. Accountability."
+                hide sachi mask icon at left onlayer mcsprite
+
+                show vincent mask icon at left onlayer mcsprite
+                v "The company’s better in my hands than his."
+                hide vincent mask icon at left onlayer mcsprite
+
+            "You don't have another way?":
+                show vincent mask icon at left onlayer mcsprite
+                v "Men tend to be very malleable in…compromised states.
+                As you’re well aware of, I’m sure."
+                v "I suspect that you would be able to get the most out of his
+                witnesses and accomplices."
+                hide vincent mask icon at left onlayer mcsprite
+
+        show vincent mask icon at left onlayer mcsprite
+        v "You would be properly compensated, of course. I can provide you with
+         whatever you’d like—better housing, finery, even a new job after this
+         entire ordeal is over."
+        hide vincent mask icon at left onlayer mcsprite
 
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
-    
-    jump n2_intro
+    jump vincent_intro_questions
 
-label n2_intro:
-    "testing testing"
+label vincent_intro_questions:
+    if (what == False or why == False):
+        menu:
+            "What do I need to do?" if (what == False):
+                show vincent mask icon at left onlayer mcsprite
+                v "What you usually do."
+                v "{color=#6b091b}Get the information you need from your clients{/color} and report
+                back to me."
+                v "Seeing how you dealt with me just now, that shouldn’t be too hard. "
+                v " Don’t say anything too {color=#6b091b}suspicious{/color}, and use your
+                {color=#6b091b}vices{/color} to your advantage."
+                hide vincent mask icon at left onlayer mcsprite
+
+                show sachi mask icon at left onlayer mcsprite
+                s "{i}Vices?{/i}"
+                hide sachi mask icon at left onlayer mcsprite
+
+                show vincent mask icon at left onlayer mcsprite
+                v "…{color=#6b091b}Alcohol{/color} and {color=#6b091b}sex{/color}."
+                hide vincent mask icon at left onlayer mcsprite
+
+                $ what = True
+                jump what_menu
+
+            "Why should I trust you?" if (why == False):
+
+                show vincent mask icon at left onlayer mcsprite
+                v "What ulterior motive could I have? If I was interested in
+                your…{i}services{/i}, I would utilize them right now."
+                v "I don’t have any reason to swindle you either. In fact, I
+                could make any payment you wish for upfront if that eases your
+                troubles."
+                hide vincent mask icon at left onlayer mcsprite
+
+                menu:
+                    "I wouldn't mind.":
+                        show vincent mask icon at left onlayer mcsprite
+                        v "How much? Ten grand? Twenty?"
+                        hide vincent mask icon at left onlayer mcsprite
+
+                        show sachi mask icon at left onlayer mcsprite
+                        s "Fifty?"
+                        hide sachi mask icon at left onlayer mcsprite
+
+                        show vincent mask icon at left onlayer mcsprite
+                        v "You have a deal."
+                        hide vincent mask icon at left onlayer mcsprite
+
+                        "No one in their right mind would object to that."
+
+                    "I’m still not sold.":
+                        show vincent mask icon at left onlayer mcsprite
+                        v "Hm. I understand."
+                        hide vincent mask icon at left onlayer mcsprite
+
+                "Vincent hands me a piece of paper. An autopsy report, shredded into
+                vertical strips of paper and gingerly re-taped together."
+
+                show sachi mask icon at left onlayer mcsprite
+                s "Cause of death…"
+                hide sachi mask icon at left onlayer mcsprite
+
+                show vincent mask icon at left onlayer mcsprite
+                v "{color=#6b091b}Rahul Kaur was poisoned.{/color} My father paid for a
+                false autopsy report."
+                v "This is the real one."
+                hide vincent mask icon at left onlayer mcsprite
+
+                "Vincent hands me another piece of paper."
+
+                show vincent mask icon at left onlayer mcsprite
+                v "And {i}here’s{/i} the NDA he signed to keep quiet about the whole
+                ordeal."
+                v "I have most hard pieces of evidence with me currently. All
+                that’s left is the {color=#6b091b}witness testimonies{/color} of
+                those involved."
+                v "I trust that you want the man who killed your father behind
+                bars, no?"
+                hide vincent mask icon at left onlayer mcsprite
+
+                "Vincent hands me three other NDAs."
+
+                show vincent mask icon at left onlayer mcsprite
+                v "{color=#6b091b}Gerard Wade{/color} and {color=#6b091b}Richard
+                 Bloomberg.{/color} Two current employees of Carmine who were
+                 involved in the incident…"
+                v "…And {color=#6b091b}Malcolm Hunt{/color}, the assistant
+                pathologist who examined Rahul’s body."
+                v "If you could get them to admit to what they saw, we could
+                have a solid case that my father can’t pay his way out of. Not
+                if I’m involved, that is."
+                hide vincent mask icon at left onlayer mcsprite
+
+                $ why = True
+                jump vincent_intro_questions
+
+    elif (what == True and why == True):
+        jump n1_part2_2
+
+label what_menu:
+    if (alcohol_q == True and sex_q == True):
+        jump vincent_intro_questions
+    menu:
+        "...Alcohol?" if (alcohol_q == False):
+
+            show vincent mask icon at left onlayer mcsprite
+            v "Self explanatory. The more uninhibited they are, the easier it is."
+            v "As long as you don’t get your client
+            {color=#6b091b}too drunk{/color}, you can get a coherent answer out
+            of them."
+            hide vincent mask icon at left onlayer mcsprite
+            $ alcohol_q = True
+            jump what_menu
+
+        "...Sex?" if (sex_q == False):
+
+            show vincent mask icon at left onlayer mcsprite
+            v "You usually avoid the act by getting your clients blackout drunk, no?"
+            hide vincent mask icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            s "…Maybe."
+            hide sachi mask icon at left onlayer mcsprite
+
+            show vincent mask icon at left onlayer mcsprite
+            v "Impressive."
+            v "Of course, I don’t want you to go through the ordeal of {i}actually{/i}
+            sleeping with them. That’s a fate I wouldn’t wish upon my worst enemy. "
+            v "…But you, above all people, know that men are simple creatures."
+            v "As long as you continue to seduce your clients, they won’t become
+            too suspicious."
+            v "But laying it on too strong may not be the best thing to do,
+            either…or they’ll get impatient."
+            hide vincent mask icon at left onlayer mcsprite
+
+            $ alcohol_q = True
+            jump what_menu
+
+label n1_part2_2:
+    show sachi mask icon at left onlayer mcsprite
+    s "Fine."
+    s "…I’m in."
+    hide sachi mask icon at left onlayer mcsprite
+
+    show vincent mask icon at left onlayer mcsprite
+    v "Perfect."
+    hide vincent mask icon at left onlayer mcsprite
+
+    "Vincent shakes my hand."
+
+    show vincent mask icon at left onlayer mcsprite
+    v "I look forward to working with you, Miss Kaur-"
+    hide vincent mask icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
+    s "Sachi."
+    s "You…asked me to call you Vincent, right? It’s only fair."
+    hide sachi mask icon at left onlayer mcsprite
+
+    "He nods again."
+
+    show vincent mask icon at left onlayer mcsprite
+    v "…Sachi, then."
+    hide vincent mask icon at left onlayer mcsprite
+    jump client_select
+
+label client_select:
+#THIS IS WHERE THE MAP WILL BE. CHOICES R VINCENT GERARD RICHARD MALCOLM
+label vincent_n2_intro:
     return
+label vincent_n2_questions:
 label gerard_intro:
     jump chattalk
 label richard_intro:
