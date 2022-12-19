@@ -406,14 +406,17 @@ label n1_part2:
         incident specifically, I believe I could make a proper case against him."
         hide vincent mask icon at left onlayer mcsprite
 
+        show sachi mask icon at left onlayer mcsprite
         menu:
             "But he's your father.":
+                hide sachi mask icon at left onlayer mcsprite
+
                 show vincent mask icon at left onlayer mcsprite
                 v "..."
                 v "…Only when its convenient."
                 hide vincent mask icon at left onlayer mcsprite
 
-                "So he has daddy issues. Good to know."
+                "{i}So he has daddy issues. Good to know."
 
                 show vincent mask icon at left onlayer mcsprite
                 v "I don’t feel any familial connection to the man. He needs to
@@ -431,6 +434,8 @@ label n1_part2:
                 hide vincent mask icon at left onlayer mcsprite
 
             "You don't have another way?":
+                hide sachi mask icon at left onlayer mcsprite
+
                 show vincent mask icon at left onlayer mcsprite
                 v "Men tend to be very malleable in…compromised states.
                 As you’re well aware of, I’m sure."
@@ -438,6 +443,7 @@ label n1_part2:
                 witnesses and accomplices."
                 hide vincent mask icon at left onlayer mcsprite
 
+        hide sachi mask icon at left onlayer mcsprite
         show vincent mask icon at left onlayer mcsprite
         v "You would be properly compensated, of course. I can provide you with
          whatever you’d like—better housing, finery, even a new job after this
@@ -449,9 +455,12 @@ label n1_part2:
     jump vincent_intro_questions
 
 label vincent_intro_questions:
+    show sachi mask icon at left onlayer mcsprite
     if (what == False or why == False):
         menu:
             "What do I need to do?" if (what == False):
+                hide sachi mask icon at left onlayer mcsprite
+
                 show vincent mask icon at left onlayer mcsprite
                 v "What you usually do."
                 v "{color=#6b091b}Get the information you need from your clients{/color} and report
@@ -473,6 +482,7 @@ label vincent_intro_questions:
                 jump what_menu
 
             "Why should I trust you?" if (why == False):
+                hide sachi mask icon at left onlayer mcsprite
 
                 show vincent mask icon at left onlayer mcsprite
                 v "What ulterior motive could I have? If I was interested in
@@ -482,8 +492,11 @@ label vincent_intro_questions:
                 troubles."
                 hide vincent mask icon at left onlayer mcsprite
 
+                show sachi mask icon at left onlayer mcsprite
                 menu:
                     "I wouldn't mind.":
+                        hide sachi mask icon at left onlayer mcsprite
+
                         show vincent mask icon at left onlayer mcsprite
                         v "How much? Ten grand? Twenty?"
                         hide vincent mask icon at left onlayer mcsprite
@@ -496,14 +509,16 @@ label vincent_intro_questions:
                         v "You have a deal."
                         hide vincent mask icon at left onlayer mcsprite
 
-                        "No one in their right mind would object to that."
+                        "{i}No one in their right mind would object to that."
 
                     "I’m still not sold.":
+                        hide sachi mask icon at left onlayer mcsprite
+
                         show vincent mask icon at left onlayer mcsprite
                         v "Hm. I understand."
                         hide vincent mask icon at left onlayer mcsprite
 
-                "Vincent hands me a piece of paper. An autopsy report, shredded into
+                "{i}Vincent hands me a piece of paper. An autopsy report, shredded into
                 vertical strips of paper and gingerly re-taped together."
 
                 show sachi mask icon at left onlayer mcsprite
@@ -516,7 +531,7 @@ label vincent_intro_questions:
                 v "This is the real one."
                 hide vincent mask icon at left onlayer mcsprite
 
-                "Vincent hands me another piece of paper."
+                "{i}Vincent hands me another piece of paper."
 
                 show vincent mask icon at left onlayer mcsprite
                 v "And {i}here’s{/i} the NDA he signed to keep quiet about the whole
@@ -528,7 +543,7 @@ label vincent_intro_questions:
                 bars, no?"
                 hide vincent mask icon at left onlayer mcsprite
 
-                "Vincent hands me three other NDAs."
+                "{i}Vincent hands me three other NDAs."
 
                 show vincent mask icon at left onlayer mcsprite
                 v "{color=#6b091b}Gerard Wade{/color} and {color=#6b091b}Richard
@@ -540,18 +555,24 @@ label vincent_intro_questions:
                 have a solid case that my father can’t pay his way out of. Not
                 if I’m involved, that is."
                 hide vincent mask icon at left onlayer mcsprite
-
+                hide sachi mask icon at left onlayer mcsprite
                 $ why = True
                 jump vincent_intro_questions
 
     elif (what == True and why == True):
+        hide sachi mask icon at left onlayer mcsprite
+        hide vincent mask icon at left onlayer mcsprite
+
         jump n1_part2_2
 
 label what_menu:
     if (alcohol_q == True and sex_q == True):
         jump vincent_intro_questions
+
+    show sachi mask icon at left onlayer mcsprite
     menu:
         "...Alcohol?" if (alcohol_q == False):
+            hide sachi mask icon at left onlayer mcsprite
 
             show vincent mask icon at left onlayer mcsprite
             v "Self explanatory. The more uninhibited they are, the easier it is."
@@ -559,10 +580,12 @@ label what_menu:
             {color=#6b091b}too drunk{/color}, you can get a coherent answer out
             of them."
             hide vincent mask icon at left onlayer mcsprite
+
             $ alcohol_q = True
             jump what_menu
 
         "...Sex?" if (sex_q == False):
+            hide sachi mask icon at left onlayer mcsprite
 
             show vincent mask icon at left onlayer mcsprite
             v "You usually avoid the act by getting your clients blackout drunk, no?"
@@ -596,7 +619,7 @@ label n1_part2_2:
     v "Perfect."
     hide vincent mask icon at left onlayer mcsprite
 
-    "Vincent shakes my hand."
+    "{i}Vincent shakes my hand."
 
     show vincent mask icon at left onlayer mcsprite
     v "I look forward to working with you, Miss Kaur-"
@@ -607,11 +630,12 @@ label n1_part2_2:
     s "You…asked me to call you Vincent, right? It’s only fair."
     hide sachi mask icon at left onlayer mcsprite
 
-    "He nods again."
+    "{i}He nods again."
 
     show vincent mask icon at left onlayer mcsprite
     v "…Sachi, then."
     hide vincent mask icon at left onlayer mcsprite
+
     jump client_select
 
 label client_select:
@@ -619,19 +643,32 @@ label client_select:
     # PLACEHOLDER MENU FOR NOW
     menu:
         "Vincent":
+            "something goes here"
         "Gerard":
+            "something goes here"
         "Richard":
+            "something goes here"
         "Malcolm":
+            "something goes here"
+
 label vincent_n2_intro:
     return
+
 label vincent_n2_questions:
+
 label gerard_intro:
     jump chattalk
+
 label richard_intro:
     jump chattalk
+
 label malcolm_intro:
     jump chattalk
+
 label gerard_post_minigame:
+
 label richard_post_minigame:
+
 label malcolm_post_minigame:
+
 return
