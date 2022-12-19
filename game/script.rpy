@@ -41,6 +41,8 @@ label start:
     # DIALOGUE. ---
     menu:
         "SKIP INTRO, GO TO MINIGAME":
+            stop music fadeout 1.0
+            play music caravan loop fadein 1.0
             jump vincent_minigame
         "PLAY GAME FROM BEGINNING":
             "THE GAME WILL START NOW."
@@ -325,7 +327,9 @@ label vincent_minigame_intro:
     show sachi mask icon at left onlayer mcsprite
     "{i}...Uh-oh."
     hide sachi mask icon at left onlayer mcsprite
-
+    
+    stop music fadeout 1.0
+    play music caravan loop fadein 1.0
     jump chattalk
 
 label n1_part2:

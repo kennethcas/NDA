@@ -30,9 +30,6 @@ else:
 
 #START VINCENT MINIGAME ------------------------------------
 label vincent_minigame:
-    stop music fadeout 1.0
-    play music caravan loop fadein 1.0
-
     scene bg private room
     show vincent fullbody masked
 
