@@ -27,6 +27,7 @@ $ why = False
 $ alcohol_q = False
 $ sex_q = False
 
+$ db_picked = False
 $ vincent_n2_intro_done = False
 
 # ---GAME START---
@@ -153,12 +154,17 @@ label N1_Menu:
     # (theres a temporary menu for now)
     menu:
         "Drunk Businessman":
-            jump CW2_N1
+            if db_picked==False:
+                jump CW2_N1
+            else:
+                jump N1_Menu
+
         "Sober Businessman":
             jump Vincent_N1
 
 #if you choose CW#2:
 label CW2_N1:
+    $ db_picked == True
     show richard fullbody drunk
     with fade
 
