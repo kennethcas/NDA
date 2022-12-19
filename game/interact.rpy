@@ -741,7 +741,7 @@ label chatdate:
     $ flirt_turns += 1
     if (flirt_turns <= 2):
         $ sus -= 20
-    if (client == 1):
+    if (client == 1):#FLIRT WITH VINCENT
         hide vincent mask icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
         if (flirt_turns == 1):
@@ -776,54 +776,86 @@ label chatdate:
         hide vincent mask icon at left onlayer mcsprite
         jump vincent_points_check
 
-    if (client == 2):
-        #hide gerard icon at left onlayer mcsprite
+    if (client == 2): #FLIRT WITH GERARD
+        hide gerard icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
         if (flirt_turns == 1):
             show sachi mask icon at left onlayer mcsprite
             s "I’m surprised you haven’t made a move on me yet."
             hide sachi mask icon at left onlayer mcsprite
 
+            show gerard icon at left onlayer mcsprite
             g "…Should I?"
-
-            "I wink at him."
-
+            hide gerard icon at left onlayer mcsprite
+            
             show sachi mask icon at left onlayer mcsprite
-            "Only if you want to."
+            "{i}I wink at him."
+            s "Only if you want to."
             hide sachi mask icon onlayer mcsprite
 
         if (flirt_turns >=2):
             show sachi mask icon at left onlayer mcsprite
             s "You know…you seem really sweet."
             s "…I kinda like you."
+            "{i}I rest my hand on his thigh. His face is flushed."
             hide sachi mask icon at left onlayer mcsprite
 
-            "I rest my hand on his thigh. His face is flushed."
         $ canwarp = True
-        hide sachi mask icon at left onlayer mcsprite
         jump gerard_points_check
-    if (client == 3):
-        #hide richard icon at left onlayer mcsprite
+
+    if (client == 3): #FLIRT WITH RICHARD
+        hide richard icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
         if (flirt_turns == 1):
             show sachi mask icon at left onlayer mcsprite
             s "So…what do you wanna do tonight?"
             hide sachi mask icon at left onlayer mcsprite
 
+            show richard icon at left onlayer mcsprite
             r "A better question, sweetheart, is what I {i}don’t{/i} wanna do."
+            hide richard icon at left onlayer mcsprite
 
         if (flirt_turns >=2):
             show sachi mask icon at left onlayer mcsprite
             s "Y’know…you look so sexy right now. "
             hide sachi mask icon at left onlayer mcsprite
 
+            show richard icon at left onlayer mcsprite
             r "I could say the same thing about you, darling."
+            hide richard icon at left onlayer mcsprite
 
         $ canwarp = True
         hide sachi mask icon at left onlayer mcsprite
-        jump gerard_points_check
-    if (client == 4):
-        "."
+        #jump gerard_points_check
+        jump richard_points_check
+
+    if (client == 4): #FLIRT WITH  MALCOLM
+        hide malcolm icon at left onlayer mcsprite
+        hide sachi icon at left onlayer mcsprite
+        if (flirt_turns = 1):
+            show sachi mask icon at left onlayer mcsprite
+            s "Y'know... I think you're pretty cute."
+            hide sachi mask icon at left onlayer mcsprite
+
+            show malcolm icon at left onlayer mcsprite
+            "{i}He blushes."
+            m "Oh...thank you. The feeling's mutual."
+            hide malcolm icon at left onlayer mcsprite
+
+        if (flirt_turns >= 2):
+            s "Let me know when you wanna cut to the chase."
+            s "No need to {i}hold back{/i}, 'kay?"
+
+            show malcolm icon at left onlayer mcsprite
+            m "...Noted. Though... I don't mind just talking to you."
+            m "I didn't pay in full, after all. You don't...er, owe any sexual favors to me, you know?"
+            hide malcolm icon at left onlayer mcsprite
+        
+        hide sachi mask icon at left onlayer mcsprite
+        hide malcolm icon at left onlayer mcsprite
+        $ canwarp = True
+
+        jump malcolm_points_check
 
 
 label drunk_full:
