@@ -50,9 +50,9 @@ label vincent_minigame:
 
 label gerard_minigame:
     scene bg private room
-    #show GERARD FULLBODY SPRITE
-
-    #hide GERARD icon at left onlayer mcsprite
+    show gerard fullbody
+    
+    hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
     #VARIABLE FOR CHECKING WHAT NAME TO PRINT ON SCREEN
@@ -66,9 +66,10 @@ label gerard_minigame:
 
 label richard_minigame:
     scene bg private room
+    show richard fullbody
     #show RICHARD FULLBODY SPRITE
 
-    #hide RICHARD icon at left onlayer mcsprite
+    hide richard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
     #VARIABLE FOR CHECKING WHAT NAME TO PRINT ON SCREEN
@@ -82,9 +83,9 @@ label richard_minigame:
 
 label malcolm_minigame:
     scene bg private room
-    #show MALCOLM FULLBODY SPRITE
+    show malcolm fullbody
 
-    #hide MALCOLM icon at left onlayer mcsprite
+    hide malcolm icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
     #VARIABLE FOR CHECKING WHAT NAME TO PRINT ON SCREEN

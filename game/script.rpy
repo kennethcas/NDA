@@ -767,7 +767,158 @@ label gerard_intro:
     $ canwarp = False
     $ renpy.pause ()
 
-    jump chattalk
+    scene bg lounge
+    show gerard fullbody
+    with fade
+
+    #show sachi mask icon at left onlayer mcsprite
+    "{i}I see a meek looking man by the wall, looking somewhat tense."
+    "{i}I remember the photos Vincent showed me. He must be {color=#6b091b}Gerard Wade{/color}, a current employee of Carmine."
+    "{i}I walk up to him."
+
+    show gerard icon at left onlayer mcsprite
+    g "..."
+    hide gerard icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
+    menu:
+        "You okay, darling?":
+            hide sachi mask icon at left onlayer mcsprite
+        "Hey, handsome.":
+            hide sachi mask icon at left onlayer mcsprite
+    "{i}Gerard looks up at me. He seems tense."
+
+    show gerard icon at left onlayer mcsprite
+    g """
+    Uh...
+
+    Do you... work here?
+    """
+    hide gerard icon at left onlayer mcsprite
+    
+    show sachi mask icon at left onlayer mcsprite
+    menu:
+        "Last time I checked.":
+            hide sachi mask icon at left onlayer mcsprite
+
+            show gerard icon at left onlayer mcsprite
+            g "...Haha. Funny."
+            hide gerard icon at left onlayer mcsprite
+        "(Nod.)":
+            hide sachi mask icon at left onlayer mcsprite
+
+            show gerard icon at left onlayer mcsprite
+            g "...Neat."
+            hide gerard icon at left onlayer mcsprite
+    
+    show sachi mask icon at left onlayer mcsprite
+    s "What's your name darling?"
+    hide sachi mask icon at left onlayer mcsprite
+
+    show gerard icon at left onlayer mcsprite
+    g """
+    ...
+
+    ...Gerard
+
+    You all go by stage names, right?
+    """
+    hide gerard icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
+    "{i}...Not really. But maybe coming up with one will help me get on his good side."
+    
+    menu:
+        "Catra.":
+            hide sachi mask icon at left onlayer mcsprite
+
+            show gerard icon at left onlayer mcsprite
+            g "Oh. Like in {i}She-Ra?"
+            hide gerard icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            s "...Yeah. Definetely."
+            hide sachi mask icon at left onlayer mcsprite
+
+            show gerard icon at left onlayer mcsprite
+            g"""
+            Oh, nice. I didn't know women liked that kinda stuff.
+
+            ...Especially {i}your{/i} type.
+            """
+            hide gerard icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            "{i}He's worse than Vincent."
+            hide sachi mask icon at left onlayer mcsprite
+
+            show gerard icon at left onlayer mcsprite
+            g "You're {i}different{/i}... I guess."
+            hide gerard icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            "{i}Ew. Ew ew ew."
+            hide sachi mask icon at left onlayer mcsprite
+        "Kitty.":
+            hide sachi mask icon at left onlayer mcsprite
+
+            show gerard icon at left onlayer mcsprite
+            g """
+            Isn't that a bit on-the-nose?
+            """
+            hide gerard icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            s "We don't get to decide what we're called."
+            hide sachi mask icon at left onlayer mcsprite
+
+            show gerard icon at left onlayer mcsprite
+            g "That's kinda sad, actually."
+            hide gerard icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            s "..."
+            hide sachi mask icon at left onlayer mcsprite
+
+            show gerard icon at left onlayer mcsprite
+            g "..."
+            hide gerard icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            "{i}...He doesn't seem like he wants to talk."
+            hide sachi mask icon at left onlayer mcsprite
+            
+        "We don't.":
+            s "You can call me whatever you like."
+            "{i}I wink at him."
+            hide sachi mask icon at left onlayer mcsprite
+            
+            show gerard icon at left onlayer mcsprite
+            g "Can I call you {color=#6b091b}Gwen{/color}?"
+            hide gerard icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            s "I... don't see why not."
+            hide sachi mask icon at left onlayer mcsprite
+            
+            show gerard icon at left onlayer mcsprite
+            g "Neat."
+            hide gerard icon at left onlayer mcsprite
+
+            show sachi mask icon at left onlayer mcsprite
+            "{i}I wonder who {color=#6b091b}Gwen{/color} is..."
+            hide sachi mask icon at left onlayer mcsprite
+            #KNOWS GWEN = TRUE
+    show gerard icon at left onlayer mcsprite
+    g "..."
+    g "Wanna get out of here? I'll pay."
+    hide gerard icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
+    "{i}...That was fast."
+    "{i}He must be desperate. I'm not surprised."
+    hide sachi mask icon at left onlayer mcsprite
+    jump gerard_minigame
 
 label richard_intro:
     $ renpy.hide_screen("mapClientSelect")
