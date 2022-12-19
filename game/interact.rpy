@@ -675,7 +675,7 @@ label chatgift:
     $ turns += 1
     $ drink_turns += 1
     $ drunk += 20
-    if (client == 1):
+    if (client == 1): #DRINK WITH VINCENT
         hide vincent mask icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
         if drink_turns == 1:
@@ -691,47 +691,82 @@ label chatgift:
 
         hide sachi mask icon at left onlayer mcsprite
         hide vincent mask icon at left onlayer mcsprite
-        $ canwarp = True
 
+        $ canwarp = True
         jump vincent_points_check
-    if (client == 2):
-        #hide gerard icon at left onlayer mcsprite
+
+    if (client == 2): #DRINK WITH GERARD
+        ghide gerard icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
-        if drink_turns == 1:
+
+        if (drink_turns == 1):
             show sachi mask icon at left onlayer mcsprite
             "Do you want something to drink?"
             hide sachi mask icon at left onlayer mcsprite
 
-            #show gerard icon at left onlayer mcsprite
+            show gerard icon at left onlayer mcsprite
             g "Uh…sure. A beer is fine."
-            #hide gerard icon at left onlayer mcsprite
+            hide gerard icon at left onlayer mcsprite
 
-            "I hand him the bottle. He opens it and takes a large sip."
-
-        "He takes a large sip of his beer."
+            "{i}I hand him the bottle. He opens it and takes a large sip."
+        
+        "{i}He takes a large sip of his beer."
 
         hide sachi mask icon at left onlayer mcsprite
         hide vincent mask icon at left onlayer mcsprite
+
         $ canwarp = True
-    if (client == 3):
-        #hide gerard icon at left onlayer mcsprite
+        jump gerard_points_check
+
+    if (client == 3): #DRINK WITH RICHARD
+        hide richard icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
-        if drink_turns == 1:
-            #show richard icon at left onlayer mcsprite
+
+        if (drink_turns == 1):
+            show richard icon at left onlayer mcsprite
             r "…Can I have a beer, sweetheart?"
-            #hide richard icon at left onlayer mcsprite
-            "I hand him a bottle, and he takes a large swig."
+            hide richard icon at left onlayer mcsprite
 
-        "He takes a large sip of his beer."
+            show sachi mask icon at left onlayer mcsprite
+            "{i}I hand him a bottle, and he takes a large swig."
+            hide sachi mask icon at left onlayer mcsprite
+
+        "{i}He takes a large sip of his beer."
 
         hide sachi mask icon at left onlayer mcsprite
         hide vincent mask icon at left onlayer mcsprite
+
         $ canwarp = True
-    if (client == 4):
-        "."
+        jump richard_points_check
 
+    if (client == 4): #DRINK WITH MALCOLM
+        hide sachi mask icon at left onlayer mcsprite
+        hide malcolm icon at left onlayer mcsprite
 
+        if (drink_turns == 1):
+            show sachi mask icon at left onlayer mcsprite
+            s "Would you like a drink?"
+            hide sachi mask icon at left onlayer mcsprite
 
+            show malcolm icon at left onlayer mcsprite
+            m "Oh! Sure. A glass of rum on the rocks sounds good."
+            m "Cheers."
+            hide malcolm icon at left onlayer mcsprite
+        
+        show sachi mask icon at left onlayer mcsprite
+        "{i}I gesture to his glass. It's empty."
+        s "Would you like some more?"
+        hide sachi mask icon at left onlayer mcsprite
+
+        show malcolm icon at left onlayer mcsprite
+        m "Of course."
+        hide malcolm icon at left onlayer mcsprite
+
+        hide sachi mask icon at left onlayer mcsprite
+        hide vincent mask icon at left onlayer mcsprite
+
+        $ canwarp = True
+        jump malcolm_points_check
 
 # FLIRT MECHANIC ---------
 label chatdate:
