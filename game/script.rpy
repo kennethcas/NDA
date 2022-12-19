@@ -416,7 +416,9 @@ label n1_part2:
                 v "…Only when its convenient."
                 hide vincent mask icon at left onlayer mcsprite
 
+                show sachi mask icon at left onlayer mcsprite
                 "{i}So he has daddy issues. Good to know."
+                hide sachi mask icon at left onlayer mcsprite
 
                 show vincent mask icon at left onlayer mcsprite
                 v "I don’t feel any familial connection to the man. He needs to
