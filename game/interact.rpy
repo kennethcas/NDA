@@ -73,7 +73,6 @@ label chattalk:
 
     show vincent fullbody masked
 
-    #$ hideIcons = True
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
@@ -89,10 +88,9 @@ label chattalk:
         {i}If I play my cards right—nudge them in the right direction while
             telling him what he wants to hear—I can make him fold easy.{/i}
         """
-
         hide sachi mask icon at left onlayer mcsprite
+        
         show vincent mask icon at left onlayer mcsprite
-
         qb "Your real name…is Sachi Kaur, is it not?"
         hide vincent mask icon at left onlayer mcsprite
 
