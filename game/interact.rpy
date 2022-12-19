@@ -46,6 +46,8 @@ label vincent_minigame:
     $ drunk = pointsdrunk
     $ sus = pointssus
 
+#SET DRUNK/SUS TO 0 BEFORE MINIGAMES START
+
 label gerard_minigame:
     scene bg private room
     #show GERARD FULLBODY SPRITE
