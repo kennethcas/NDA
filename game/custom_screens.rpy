@@ -129,10 +129,10 @@ screen mapClientSelect:
     modal True
     tag map
 
-    imagebutton auto "UI/richard fullbody drunk %s.png" action Jump("richard_intro") xpos 200 ypos 165
+    imagebutton auto "UI/richard fullbody drunk %s.png" action Jump("richard_intro") xpos 200 ypos 85
     imagebutton auto "UI/vincent fullbody masked %s.png" action Jump("vincent_n2_check") xpos 850 ypos 65
-    imagebutton auto "UI/gerard fullbody %s.png" action Jump("gerard_intro") xpos -50 ypos 165
-    imagebutton auto "UI/malcolm fullbody %s.png" action Jump("malcolm_intro") xpos 500 ypos 300
+    imagebutton auto "UI/gerard fullbody %s.png" action Jump("gerard_intro") xpos -50 ypos 135
+    imagebutton auto "UI/malcolm fullbody %s.png" action Jump("malcolm_intro") xpos 550 ypos 100
 
 #  THE ACTUAL DATE SCREEN
 screen date:
