@@ -55,6 +55,12 @@ init:
     $ v1_ev_4b = False
     $ v1_ev_5a = False
     $ v1_ev_5b = False
+
+    $ g_ev_1 = False
+    $ g_ev_2 = False
+    $ g_ev_3 = False
+    
+
     $ pointsonly = False
 
     $ N1_Wallet = False
@@ -67,6 +73,14 @@ init:
 
     $ db_picked = False
     $ vincent_n2_intro_done = False
+
+    $vincent_mg = False
+    $gerard_mg = False
+    $richard_mg = False
+    $malcolm_mg = False
+
+    $ client = 0
+
 
 
     # these are all item variables, which increase when you make or buy an item.

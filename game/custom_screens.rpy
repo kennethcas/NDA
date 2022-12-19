@@ -99,10 +99,7 @@ screen mapchat:
 
 
     #DISPLAYS NAME
-    if soberBusinessmanScreen == True:
-        text "SOBER BUSINESSMAN" xpos 70 ypos 35 color "#ffffff" bold True size 24 outlines [ (absolute(2), "#000000", absolute(0), absolute(0)) ]
-    else:
-        text "Firstname Lastname" xpos 70 ypos 35 color "#ffffff" bold True size 24 outlines [ (absolute(2), "#000000", absolute(0), absolute(0)) ]
+    text "[name]" xpos 70 ypos 35 color "#ffffff" bold True size 24 outlines [ (absolute(2), "#000000", absolute(0), absolute(0)) ]
 
     # DRUNK SUS BARS -----------
     bar value drunk range pointsdrunk xpos 70 ypos 80 xsize 250 ysize 30
