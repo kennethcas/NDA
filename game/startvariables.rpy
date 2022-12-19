@@ -63,8 +63,20 @@ init:
     $ g_ev_4 = False
     $ g_ev_5 = False
     $ g_ev_6 = False
+    $ g_ev_6b = False
+    $ g_ev_6c = False
     $ g_ev_7 = False
+    $ g_ev_7b = False
 
+    $ knows_gwen = True
+
+    $ r_ev_1 = False
+    $ r_ev_2 = False
+    $ r_ev_2a = False
+    $ r_ev_2b = False
+    $ r_ev_2c = False
+    $ r_ev_3 = False
+    $ r_ev_4 = False
 
     $ pointsonly = False
 
