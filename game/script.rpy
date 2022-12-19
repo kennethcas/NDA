@@ -19,16 +19,7 @@ define config.default_music_volume = 0.7
 define config.default_sfx_volume = 0.7
 define config.default_voice_volume = 07
 
-$ N1_Wallet = False
 
-$ what = False
-$ why = False
-
-$ alcohol_q = False
-$ sex_q = False
-
-$ db_picked = False
-$ vincent_n2_intro_done = False
 
 # ---GAME START---
 label start:
@@ -311,7 +302,7 @@ label Vincent_N1:
 label vincent_minigame_intro:
     stop music fadeout 1.0
     play music caravan loop fadein 1.0
-    
+
     "{i}I follow him into one of the backrooms."
     show bg private room
     show vincent fullbody masked
@@ -493,8 +484,6 @@ label vincent_intro_questions:
                 show vincent mask icon at left onlayer mcsprite
                 v "…{color=#6b091b}Alcohol{/color} and {color=#6b091b}sex{/color}."
                 hide vincent mask icon at left onlayer mcsprite
-
-                $ what = True
                 jump what_menu
 
             "Why should I trust you?" if (why == False):
@@ -583,6 +572,7 @@ label vincent_intro_questions:
 
 label what_menu:
     if (alcohol_q == True and sex_q == True):
+        $ what = True
         jump vincent_intro_questions
 
     show sachi mask icon at left onlayer mcsprite
@@ -622,7 +612,7 @@ label what_menu:
             either…or they’ll get impatient."
             hide vincent mask icon at left onlayer mcsprite
 
-            $ alcohol_q = True
+            $ sex_q = True
             jump what_menu
 
 label n1_part2_2:

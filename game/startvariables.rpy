@@ -57,6 +57,17 @@ init:
     $ v1_ev_5b = False
     $ pointsonly = False
 
+    $ N1_Wallet = False
+
+    $ what = False
+    $ why = False
+
+    $ alcohol_q = False
+    $ sex_q = False
+
+    $ db_picked = False
+    $ vincent_n2_intro_done = False
+
 
     # these are all item variables, which increase when you make or buy an item.
     #$ cookies = 0
