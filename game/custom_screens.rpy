@@ -117,6 +117,22 @@ screen mapchat:
     # this is a back button that will return to the previous location
     #imagebutton auto "UI/UI button back %s.png" action Jump("map") xpos 18 ypos 615
 
+screen mapFirstSelect:
+    modal True
+    tag map
+
+    # these are the buttons leading to the locations. the %s in the filename auto replaces with idle and hover. the Jump action will take you to the label indicated.
+    imagebutton auto "UI/richard fullbody drunk %s.png" action Jump("CW2_N1") xpos 100 ypos 65
+    imagebutton auto "UI/vincent fullbody masked %s.png" action Jump("Vincent_N1") xpos 490 ypos 65
+
+screen mapClientSelect:
+    modal True
+    tag map
+
+    imagebutton auto "UI/richard fullbody drunk %s.png" action Jump("richard_intro") xpos 235 ypos 165
+    imagebutton auto "UI/vincent fullbody masked %s.png" action Jump("vincent_n2_check") xpos 100 ypos 65
+    imagebutton auto "UI/gerard fullbody %s.png" action Jump("gerard_intro") xpos 60 ypos 165
+    imagebutton auto "UI/malcolm fullbody %s.png" action Jump("malcolm_intro") xpos 600 ypos 300
 
 #  THE ACTUAL DATE SCREEN
 screen date:

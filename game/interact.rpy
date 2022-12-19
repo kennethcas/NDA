@@ -254,12 +254,15 @@ label chattalk:
                         "(Ask about dirty money.)" if g_ev_4 == True:
                             jump gerard_ev_7
 
-                        "Why don't you like work?" if (g_ev_4 == False and g_ev_1 == True):
+                        "Why don't you like work?" if (g_ev_ == False and g_ev_1 == True):
                             jump gerard_ev_4
+
 
                 hide sachi mask icon at left onlayer mcsprite
     if (client == 3):
+        "."
     if (client == 4):
+        "."
 
 
 label vincent_ev_1:
@@ -444,6 +447,8 @@ label gerard_ev_5:
 
 label gerard_ev_6:
 
+label gerard_ev_7:
+
 # DRINK MECHANIC --------
 label chatgift:
     $ renpy.hide_screen("mapchat")
@@ -471,8 +476,11 @@ label chatgift:
 
         jump vincent_points_check
     if (client == 2):
+        "."
     if (client == 3):
+        "."
     if (client == 4):
+        "."
 
 
 
@@ -520,8 +528,11 @@ label chatdate:
         hide vincent mask icon at left onlayer mcsprite
         jump vincent_points_check
     if (client == 2):
+        "."
     if (client == 3):
+        "."
     if (client == 4):
+        "."
 
 
 label drunk_full:
@@ -568,8 +579,11 @@ label drunk_full:
 
         jump n1_part2
     if (client == 2):
+        "."
     if (client == 3):
+        "."
     if (client == 4):
+        "."
 
 
 
@@ -598,5 +612,8 @@ label sus_full:
         hide sachi mask icon at left onlayer mcsprite
         jump n1_part2
     if (client == 2):
+        "."
     if (client == 3):
+        "."
     if (client == 4):
+        "."
