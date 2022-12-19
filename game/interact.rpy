@@ -1,15 +1,3 @@
-#init python:
-#    def hideIcons():
-#        hide vincent mask icon at left onlayer mcsprite
-#        hide sachi mask icon at left onlayer mcsprite
-
-#SETTING SOME BOOLS AND VARIABLES---------------------------
-#$ hideIcons:
-
-
-#if hideIcons: #HIDES ALL PORTRAITS
- #   hide vincent mask icon at left onlayer mcsprite
-  #  hide sachi mask icon at left onlayer mcsprite
 $ client = 0
 $ just_talked = False
 $ showSachiMask = False
@@ -882,41 +870,52 @@ label drunk_full:
 
         jump n1_part2
     if (client == 2):
-        #hide gerard icon at left onlayer mcsprite
+        hide gerard icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
 
-        #show gerard icon at left onlayer mcsprite
+        show gerard icon at left onlayer mcsprite
         g "…"
-        #hide gerard icon at left onlayer mcsprite
+        hide gerard icon at left onlayer mcsprite
 
         show sachi mask icon at left onlayer mcsprite
         s "..."
         hide sachi mask icon at left onlayer mcsprite
 
-        #show gerard icon at left onlayer mcsprite
+        show gerard icon at left onlayer mcsprite
         g "…"
-        g "...{i}snore{/i}..."
-        #hide gerard icon at left onlayer mcsprite
+        g "...{i}(snore){/i}..."
+        hide gerard icon at left onlayer mcsprite
 
         show sachi mask icon at left onlayer mcsprite
-        s "Did he…pass out? That’s no good…"
-        s "I still had a lot I needed to {color=#6b091b}ask him{/color}..."
+        "{i}Did he…pass out? That’s no good…"
+        "{i}I still had a lot I needed to {color=#6b091b}ask him{/color}..."
         hide sachi mask icon at left onlayer mcsprite
 
         jump client_select
 
     if (client == 3):
+        hide sachi mask icon at left onlayer mcsprite
+        show richard icon at left onlayer mcsprite
         r "So…are we ever…gonna…"
         r "…We…"
-        r "…H m…"
-        "He’s too {color=#6b091b}drunk{/color} to make sense right now. That’s a shame…"
-        "I still had a lot I needed to {color=#6b091b}ask him.{/color}"
+        r "…Hm…"
+        hide richard icon at left onlayer mcsprite
+
+        "{i}He’s too {color=#6b091b}drunk{/color} to make sense right now. That’s a shame…"
+        "{i}I still had a lot I needed to {color=#6b091b}ask him.{/color}"
     if (client == 4):
+        hide sachi mask icon at left onlayer mcsprite
+
+        show malcolm icon at left onlayer mcsprite
         m "I…need…"
         m "Bathroom…where’s the nearest-"
+        hide malcolm icon at left onlayer mcsprite
+
+        show sachi mask icon at left onlayer mcsprite
         s "Nearest right."
-        s "He dashes out of the room at lightning speed. I hear retching a few minutes later."
-        s "He shouldn’t have {color=#6b091b}drank so much…{/color}"
+        "{i}He dashes out of the room at lightning speed. I hear retching a few minutes later."
+        "{i}He shouldn’t have {color=#6b091b}drank so much…{/color}"
+        hide sachi mask icon at left onlayer mcsprite
 label sus_full:
     if (client == 1):
         hide vincent mask icon at left onlayer mcsprite
@@ -937,32 +936,48 @@ label sus_full:
         hide vincent mask icon at left onlayer mcsprite
 
         show sachi mask icon at left onlayer mcsprite
-        "…Thanks for telling me how to do my job."
-        "He’s right, though. I should try not to be too obvious…"
-        hide sachi mask icon at left onlayer mcsprite
-        jump n1_part2
-    if (client == 2):
-        #hide gerard icon at left onlayer mcsprite
+        "{i}…Thanks for telling me how to do my job."
+        "{i}He’s right, though. I should try not to be too obvious…"
         hide sachi mask icon at left onlayer mcsprite
 
-        #show gerard icon at left onlayer mcsprite
+        jump n1_part2
+    if (client == 2):
+        hide gerard icon at left onlayer mcsprite
+        hide sachi mask icon at left onlayer mcsprite
+
+        show gerard icon at left onlayer mcsprite
         g " …Aren’t we supposed to hook up? What is this, a job interview?"
         g "This isn’t what I paid for."
-        #hide gerard icon at left onlayer mcsprite
+        hide gerard icon at left onlayer mcsprite
 
         show sachi mask icon at left onlayer mcsprite
         s "Sorry. I guess…I got too curious."
+        
+
+        "{i}…Shit. I probably should’ve been a little more {color=#6b091b}subtle{/color}."
         hide sachi mask icon at left onlayer mcsprite
 
-        " …Shit. I probably should’ve been a little more {color=#6b091b}subtle{/color}."
         jump client_select
     if (client == 3):
+        hide sachi mask icon at left onlayer mcsprite
+
+        show richard icon at left onlayer mcsprite
         r "So…are we ever gonna get to the fun part, are are you just gonna keep blabbing? ‘Cuz I’m getting a bit impatient here."
+        hide richard icon at left onlayer mcsprite
+
+        show sachi mask icon at left onlayer mcsprite
         s "…Damn. Guess I should’ve been a bit more {color=#6b091b}subtle.{/color}"
+        hide sachi mask icon at left onlayer mcsprite
+
     if (client == 4):
-        
+        hide sachi mask icon at left onlayer mcsprite
+
+        show malcolm icon at left onlayer mcsprite
         m " …"
-        m "I…don’t feel comfortable sharing confidential information with you. Sorry." 
+        m "I…don’t feel comfortable sharing confidential information with you. Sorry."
+        hide malcolm icon at left onlayer mcsprite
 
-
+        show sachi mask icon at left onlayer mcsprite
         s "…Damn. I should’ve been more subtle."
+        hide sachi mask icon at left onlayer mcsprite
+        jump client_select

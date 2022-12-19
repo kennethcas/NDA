@@ -1120,6 +1120,17 @@ label malcolm_intro:
 
 
 label gerard_post_minigame:
+if (ev_6 == True):
+    if (ev_6)
+    g """
+    Gwen... was a journalist. We were friends from college.
+
+    She... was super into crime stuff, I guess. Like conspiracy theories and all that.
+
+    And it kinda... got to her.
+
+    ...
+    """
 
 label richard_post_minigame:
 
