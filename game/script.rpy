@@ -1200,7 +1200,7 @@ label gerard_post_minigame:
     g "…I’ll still pay, though."
     hide gerard icon at left onlayer mcsprite
 
-    if g_ev_6 == 3 or g_ev_4 == 3:
+    if g_ev_6 == 0 or g_ev_4 == 0:
         "…I wish I could’ve gotten more out of him."
     jump client_select
 
@@ -1225,6 +1225,48 @@ label richard_post_minigame:
         s "{i}’Tony?{/i} Are you two close?"
         hide sachi mask icon at left onlayer mcsprite
 
+        show richard icon at left onlayer mcsprite
+        r " …I’m useful to him when I need to be."
+        r "But unfortunately, the corporate world isn’t as one-and-done as the shadow world. You have a reputation to keep…and shooting your prey point-blank won’t make you the alpha."
+        r "…Which is where his pack comes in. "
+        r "I think…R.H. was by far the best one out there."
+        hide richard icon at left onlayer mcsprite
+
+        "{i}R...H...?{/i}"
+        "It can't be..."
+
+        show richard icon at left onlayer mcsprite
+        r " …Funny little Indian guy. Y’know…the type you’d see at a gas station store. Not the type you’d think would have a body count, you know?"
+        r "…But then again, Tony’s only five-seven."
+        r "…It’s a shame the boss killed him. He was his sharpest knife."
+        r "Y’know…I never understood why he did. It makes no sense to me."
+        r "…But I dunno what goes on in Tony’s little head. He probably had good reason."
+        hide richard icon at left onlayer mcsprite
+    show richard icon at left onlayer mcsprite
+    r "Huh? …Oh. My phone’s ringing."
+    r "…Shit. My wife…shit shit shit."
+    r "…Don’t say anything, ‘kay? You better not fucking say anything."
+    hide richard icon at left onlayer mcsprite
+
+    "…I put a finger to my lips and nod. He walks out, fuming."
+    if r_ev_2 == False:
+        "…I wish I could’ve gotten more out of him."
+
 label malcolm_post_minigame:
-    m "testing"
+    if $ m_ev_4 == 3:
+        show malcolm icon at left onlayer mcsprite
+        m "Originally, all of the cases connected to Carmine had female victims."
+        m "Only very recently were there male victims. I would say that the first male victim case was around four years ago."
+        m "Rahul Kaur."
+        m "Since then, the victim profiles began to change drastically. Less…women in their twenties and thirties. More middle-aged men."
+        m "…It’s very strange."
+        hide malcolm icon at left onlayer mcsprite
+    if $ m_ev_5 == 3:
+        show malcolm icon at left onlayer mcsprite
+        m "There’s…also a rumor that Madame Han and Alonzo had an illegitimate son together. "
+        m "She was rumored to give him away to one of her old employees."
+        hide malcolm icon at left onlayer mcsprite
+    if m_ev_5 == 0 or m_ev_4 == 0:
+        "…I wish I could’ve gotten more out of him."
+    jump client_select
 return
