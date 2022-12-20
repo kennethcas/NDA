@@ -51,6 +51,7 @@ label gerard_minigame:
     $ renpy.pause ()
     $ drunk = pointsdrunk
     $ sus = pointssus
+    
 
 label richard_minigame:
     scene bg private room
@@ -147,12 +148,11 @@ label chattalk:
     elif (drunk > 40 and <= 80):
         $ sus += 10
     else:
-        $ sus += 5
+        $ sus += 5        
 
     if (client == 1): #TALK WITH VINCENT-----------------------------------------------------
         show vincent fullbody masked
-        stop music fadeout 1.0
-        play music caravan loop fadein 1.0
+        
 
         hide vincent mask icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
@@ -257,8 +257,6 @@ label chattalk:
 
     if (client == 2): #TALK WITH GERARD----------------------------------------------------------
         show gerard fullbody
-        stop music fadeout 1.0
-        play music caravan loop fadein 1.0
 
         if (talk_turns == 1):
             show sachi mask icon at left onlayer mcsprite
@@ -316,8 +314,6 @@ label chattalk:
 
     if (client == 3): #TALK WITH RICHARD---------------------------
         show richard fullbody
-        stop music fadeout 1.0
-        play music caravan loop fadein 1.0
 
         if (talk_turns == 1):
             show sachi mask icon at left onlayer mcsprite
@@ -1060,7 +1056,9 @@ label drunk_full:
         "{i}Did he…pass out? That’s no good…"
         "{i}I still had a lot I needed to {color=#6b091b}ask him{/color}..."
         hide sachi mask icon at left onlayer mcsprite
-
+        
+        stop music fadeout 1.0
+        play music susClub loop fadein 1.0
         jump client_select
 
     if (client == 3): #RICHARD FULLY DRUNK
@@ -1131,6 +1129,8 @@ label sus_full:
         "{i}…Shit. I probably should’ve been a little more {color=#6b091b}subtle{/color}."
         hide sachi mask icon at left onlayer mcsprite
 
+        stop music fadeout 1.0
+        play music susClub loop fadein 1.0
         jump client_select
     if (client == 3):
         hide sachi mask icon at left onlayer mcsprite
@@ -1154,4 +1154,7 @@ label sus_full:
         show sachi mask icon at left onlayer mcsprite
         s "…Damn. I should’ve been more subtle."
         hide sachi mask icon at left onlayer mcsprite
+
+        stop music fadeout 1.0
+        play music susClub loop fadein 1.0
         jump client_select

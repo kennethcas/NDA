@@ -259,6 +259,8 @@ label Vincent_N1:
     menu:
         "Go with him":
             hide sachi mask icon at left onlayer mcsprite
+            stop music fadeout 1.0
+            play music caravan loop fadein 1.0
             jump chattalk
         "Object":
             s "I...will check with the front first."
@@ -305,7 +307,7 @@ label Vincent_N1:
 
 label vincent_minigame_intro:
     stop music fadeout 1.0
-    play music caravan loop fadein 1.0
+    #play music caravan loop fadein 1.0
 
     "{i}I follow him into one of the backrooms."
     show bg private room
@@ -326,8 +328,8 @@ label vincent_minigame_intro:
     "{i}...Uh-oh."
     hide sachi mask icon at left onlayer mcsprite
 
-    stop music fadeout 1.0
-    play music caravan loop fadein 1.0
+    #stop music fadeout 1.0
+    play music caravan loop
     jump chattalk
 
 label n1_part2:
@@ -915,11 +917,16 @@ label gerard_intro:
     g "..."
     g "Wanna get out of here? I'll pay."
     hide gerard icon at left onlayer mcsprite
-
+    
+    stop music fadeout 1.0
     show sachi mask icon at left onlayer mcsprite
     "{i}...That was fast."
     "{i}He must be desperate. I'm not surprised."
     hide sachi mask icon at left onlayer mcsprite
+
+    
+    play music caravan loop
+
     jump gerard_minigame
 
 label richard_intro:
@@ -987,6 +994,8 @@ label richard_intro:
     menu:
         "Sure.":
             hide sachi mask icon at left onlayer mcsprite
+            stop music fadeout 1.0
+            play music caravan loop
             jump richard_minigame
         "No thanks.":
             hide sachi mask icon at left onlayer mcsprite
@@ -1094,6 +1103,7 @@ label malcolm_intro:
             "{i}I wink at him."
             hide sachi mask icon at left onlayer mcsprite
 
+            stop music fadeout 1.0
             show malcolm icon at left onlayer mcsprite
             stb """
             Hm...
@@ -1104,6 +1114,7 @@ label malcolm_intro:
             """
             hide malcolm icon at left onlayer mcsprite
 
+            play music caravan loop
             jump malcolm_minigame
         "That's unfortunate.":
             hide sachi mask icon at left onlayer mcsprite
