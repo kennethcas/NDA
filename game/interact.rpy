@@ -697,7 +697,7 @@ label gerard_ev_6:
     hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
-    $ g_ev_6 = 0;
+    $ g_ev_6 = 1;
 
     show sachi mask icon at left onlayer mcsprite
     s "Is Gwen someone…special?"
@@ -727,7 +727,7 @@ label gerard_ev_6:
         hide gerard icon at left onlayer mcsprite
 
         "{i}He probably won't tell me anything else until he {color=#6b091b}drinks a bit more.{/color}"
-        $ g_ev_6 = 1;
+        $ g_ev_6 = 2;
 
     elif (drunk >= 40):
         show gerard icon at left onlayer mcsprite
@@ -739,7 +739,7 @@ label gerard_ev_6:
         g "I…found out a lot of things I wouldn’t wanna know."
         hide gerard icon at left onlayer mcsprite
 
-        $ g_ev_6 = 2;
+        $ g_ev_6 = 3;
 
     jump gerard_points_check
 
@@ -863,7 +863,7 @@ jump richard_points_check
 
 label richard_ev_4:
     $ r_ev_4 = True
-    
+
     show richard icon at left onlayer mcsprite
     r " …Oooh, baby. I would need you to sign a form if I told you."
     hide richard icon at left onlayer mcsprite

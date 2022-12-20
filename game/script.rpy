@@ -145,7 +145,7 @@ label intro_expos:
 
 label N1_Menu:
     $ renpy.show_screen("mapFirstSelect")
-    
+
     #$ renpy.pause ()
     # (theres a temporary menu for now)
     #menu:
@@ -809,7 +809,7 @@ label gerard_intro:
     Do you... work here?
     """
     hide gerard icon at left onlayer mcsprite
-    
+
     show sachi mask icon at left onlayer mcsprite
     menu:
         "Last time I checked.":
@@ -824,7 +824,7 @@ label gerard_intro:
             show gerard icon at left onlayer mcsprite
             g "...Neat."
             hide gerard icon at left onlayer mcsprite
-    
+
     show sachi mask icon at left onlayer mcsprite
     s "What's your name darling?"
     hide sachi mask icon at left onlayer mcsprite
@@ -841,7 +841,7 @@ label gerard_intro:
 
     show sachi mask icon at left onlayer mcsprite
     "{i}...Not really. But maybe coming up with one will help me get on his good side."
-    
+
     menu:
         "Catra.":
             hide sachi mask icon at left onlayer mcsprite
@@ -901,12 +901,12 @@ label gerard_intro:
             show sachi mask icon at left onlayer mcsprite
             "{i}...He doesn't seem like he wants to talk."
             hide sachi mask icon at left onlayer mcsprite
-            
+
         "We don't.":
             s "You can call me whatever you like."
             "{i}I wink at him."
             hide sachi mask icon at left onlayer mcsprite
-            
+
             show gerard icon at left onlayer mcsprite
             g "Can I call you {color=#6b091b}Gwen{/color}?"
             hide gerard icon at left onlayer mcsprite
@@ -914,7 +914,7 @@ label gerard_intro:
             show sachi mask icon at left onlayer mcsprite
             s "I... don't see why not."
             hide sachi mask icon at left onlayer mcsprite
-            
+
             show gerard icon at left onlayer mcsprite
             g "Neat."
             hide gerard icon at left onlayer mcsprite
@@ -927,14 +927,14 @@ label gerard_intro:
     g "..."
     g "Wanna get out of here? I'll pay."
     hide gerard icon at left onlayer mcsprite
-    
+
     stop music fadeout 1.0
     show sachi mask icon at left onlayer mcsprite
     "{i}...That was fast."
     "{i}He must be desperate. I'm not surprised."
     hide sachi mask icon at left onlayer mcsprite
 
-    
+
     play music caravan loop
 
     jump gerard_minigame
@@ -995,7 +995,7 @@ label richard_intro:
             r "What is it, sweetheart? {i}Cat got your tongue?"
             r "It's ok. I like 'em shy."
             hide richard icon at left onlayer mcsprite
-    
+
     show richard icon at left onlayer mcsprite
     r "…So whadd’ya say, sweetheart? Wanna get out of here?"
     hide richard icon at left onlayer mcsprite
@@ -1086,14 +1086,14 @@ label malcolm_intro:
             show sachi mask icon at left onlayer mcsprite
             s "I do."
             hide sachi mask icon at left onlayer mcsprite
-    show malcolm icon at left onlayer mcsprite        
+    show malcolm icon at left onlayer mcsprite
     stb "Ah... I'm not here for my own, uh... exploits, unfortunately."
-    hide malcolm icon at left onlayer mcsprite 
+    hide malcolm icon at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
     s "Really?"
     hide sachi mask icon at left onlayer mcsprite
-    
+
     show malcolm icon at left onlayer mcsprite
     stb "Well... even if I wanted to, I couldn't afford it. Not with an assistant's salary."
     hide malcolm icon at left onlayer mcsprite
@@ -1103,7 +1103,7 @@ label malcolm_intro:
         "We can make exceptions.":
             s "Do you... {i}want{/i} to do anything?"
             hide sachi mask icon at left onlayer mcsprite
-        
+
             show malcolm icon at left onlayer mcsprite
             stb "Ah well... I guess I never thought about it."
             hide malcolm icon at left onlayer mcsprite
@@ -1141,20 +1141,9 @@ label malcolm_intro:
 
 
 label gerard_post_minigame:
-if (ev_6 == True):
-    #if (ev_6)
-    g """
-    Gwen... was a journalist. We were friends from college.
-
-    She... was super into crime stuff, I guess. Like conspiracy theories and all that.
-
-    And it kinda... got to her.
-
-    ...
-    """
-
+    g "testing"
 label richard_post_minigame:
-
+    r "testing"
 label malcolm_post_minigame:
-
+    m "testing"
 return
