@@ -922,6 +922,7 @@ label chatdate:
     if (client == 1):#FLIRT WITH VINCENT
         hide vincent mask icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
+
         if (flirt_turns == 1):
             show sachi mask icon at left onlayer mcsprite
             s "Y’know, our customers aren’t usually too easy on the eyes."
@@ -984,6 +985,7 @@ label chatdate:
     if (client == 3): #FLIRT WITH RICHARD
         hide richard icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
+
         if (flirt_turns == 1):
             show sachi mask icon at left onlayer mcsprite
             s "So…what do you wanna do tonight?"
@@ -1032,11 +1034,12 @@ label chatdate:
         
         hide sachi mask icon at left onlayer mcsprite
         hide malcolm icon at left onlayer mcsprite
+        
         $ canwarp = True
 
         jump malcolm_points_check
 
-
+#FULLY DRUNKK--------------------------------------------------------------
 label drunk_full:
     if (client == 1): #VINCENT FULLY DRUNK
         hide vincent mask icon at left onlayer mcsprite
@@ -1106,7 +1109,7 @@ label drunk_full:
         
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
-        
+
         jump client_select
 
     if (client == 3): #RICHARD FULLY DRUNK
@@ -1142,7 +1145,7 @@ label drunk_full:
         jump client_select
 
 
-
+#FULLY SUSPICIOUS------------------------------------------------------------------------------
 label sus_full:
     if (client == 1):
         hide vincent mask icon at left onlayer mcsprite
@@ -1167,7 +1170,10 @@ label sus_full:
         "{i}He’s right, though. I should try not to be too obvious…"
         hide sachi mask icon at left onlayer mcsprite
 
+        stop music fadeout 1.0
+        play music susClub loop fadein 1.0
         jump n1_part2
+
     if (client == 2):
         hide gerard icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
@@ -1198,6 +1204,10 @@ label sus_full:
         show sachi mask icon at left onlayer mcsprite
         s "…Damn. Guess I should’ve been a bit more {color=#6b091b}subtle.{/color}"
         hide sachi mask icon at left onlayer mcsprite
+
+        stop music fadeout 1.0
+        play music susClub loop fadein 1.0
+        jump client_select
 
     if (client == 4):
         hide sachi mask icon at left onlayer mcsprite
