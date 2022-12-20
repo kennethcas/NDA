@@ -257,6 +257,12 @@ label chattalk:
 
     if (client == 2): #TALK WITH GERARD----------------------------------------------------------
         show gerard fullbody
+	
+        "So {color=#6b091b}Gerard Wade{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
+        "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
+        "…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
+            menu:
+       
 
         "So {color=#6b091b}Gerard Wade{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
         "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
@@ -320,6 +326,10 @@ label chattalk:
 
     if (client == 3): #TALK WITH RICHARD---------------------------
         show richard fullbody
+	
+	"So {color=#6b091b}Richard Bloomberg{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
+        "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
+       	"…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
 
 	"So {color=#6b091b}Richard Bloomberg{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
         "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
