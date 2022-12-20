@@ -657,8 +657,6 @@ label n1_part2_2:
     jump client_select
 
 label client_select:
-    $ renpy.show_screen("mapClientSelect")
-
     show bg lounge
     hide gerard fullbody
     hide richard fullbody
@@ -666,11 +664,9 @@ label client_select:
     hide vincent masked fullbody
     hide vincent fullbody
     with dissolve
+    $ renpy.show_screen("mapClientSelect")
 
-    #$ renpy.pause ()
-
-    #THIS IS WHERE THE MAP WILL BE. CHOICES R VINCENT GERARD RICHARD MALCOLM
-    # PLACEHOLDER MENU FOR NOW
+    $ renpy.pause ()
     #menu:
     #    "Vincent":
     #        if (vincent_n2_intro_done == False):
