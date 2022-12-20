@@ -82,6 +82,9 @@ init:
     $ m_ev_1 = False
     $ m_ev_2 = False
     $ m_ev_3 = False
+    $ m_ev_4 = False
+    $ m_ev_5 = 0
+    $ m_ev_6 = 0
 
     $ meet_gerard = False
     $ meet_richard = False

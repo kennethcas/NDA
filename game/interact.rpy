@@ -157,7 +157,7 @@ label chattalk:
         hide sachi mask icon at left onlayer mcsprite
 
         if (talk_turns == 1):
-            
+
 
             "{i}Clients knowing personal information…is never a good thing."
 
@@ -256,7 +256,7 @@ label chattalk:
     if (client == 2): #TALK WITH GERARD----------------------------------------------------------
         show gerard fullbody
         if (talk_turns == 1):
-            
+
             "{i}{color=#6b091b}Gerard Wade{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
             "{i}I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
             "{i}…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
@@ -357,7 +357,7 @@ label chattalk:
         hide sachi mask icon at left onlayer mcsprite
 
         if (talk_turns == 1):
-            
+
             """
             {i}So {color=#6b091b}Malcolm Hunt{/color} is an assistant in forensics. From what Vincent said,
             he helped with {/i}Baba's{i} autopsy. The {color=#6b091b}real one.{/color}
@@ -372,11 +372,31 @@ label chattalk:
                 "You don't seem like the Wall Street type.":
                     hide sachi mask icon at left onlayer mcsprite
                     jump malcolm_ev_1
+                "What were you writing down?"
+                    hide sachi mask icon at left onlayer mcsprite
+                    jump malcolm_ev_2
 
         elif (talk_turns ==2):
-            ""
+            show sachi mask icon at left onlayer mcsprite
+            menu:
+                "Why are you writing about the {i}Cabaret{/i}?" if (m_ev_2 == True):
+                    hide sachi mask icon at left onlayer mcsprite
+                    jump malcolm_ev_3
+
+                "...In kahoots?" if (m_ev_1 == True):
+                    hide sachi mask icon at left onlayer mcsprite
+                    jump malcolm_ev_4
+
         elif (talk_turns >=3):
-            ""
+            show sachi mask icon at left onlayer mcsprite
+            menu:
+                "...Rich history?" if (m_ev_3 == True):
+                    hide sachi mask icon at left onlayer mcsprite
+                    jump malcolm_ev_5
+
+                "What have the cops been covering up?" if (m_ev_1 == True and m_ev_4 < 3):
+                    hide sachi mask icon at left onlayer mcsprite
+                    jump malcolm_ev_6
 
 
 label vincent_ev_1:
@@ -802,7 +822,7 @@ label richard_ev_2a:
     r "As long as I’m making over six figures, I don’t give a damn ‘bout the actual work involved."
     hide richard icon at left onlayer mcsprite
 
-    if $drunk <=20:
+    if $drunk < 20:
         show richard icon at left onlayer mcsprite
         r "‘That all, sweetheart?"
         hide richard icon at left onlayer mcsprite
@@ -842,8 +862,7 @@ label richard_ev_3:
     r "…More than you could ever think up in your {i}pretty little head{/i}. That’s for sure."
     r "As long as I’m making over six figures, I don’t give a damn ‘bout the actual work involved."
     hide richard icon at left onlayer mcsprite
-
-jump richard_points_check
+    jump richard_points_check
 
 label richard_ev_4:
     $ r_ev_4 = True
@@ -851,8 +870,7 @@ label richard_ev_4:
     show richard icon at left onlayer mcsprite
     r " …Oooh, baby. I would need you to sign a form if I told you."
     hide richard icon at left onlayer mcsprite
-
-jump richard_points_check
+    jump richard_points_check
 
 label malcolm_ev_1:
     $ m_ev_1 = True
@@ -871,6 +889,122 @@ label malcolm_ev_1:
     m "The feds are in kahoots with most of the guys that come here, anyways. So I doubt it makes a difference."
     m "…Anyway. I work in forensics, for what its worth. I’m not a cop or anything."
     hide malcolm icon at left onlayer mcsprite
+
+    jump malcolm_points_check
+
+label malcolm_ev_2:
+    $ m_ev_2 = True
+
+    show malcolm icon at left onlayer mcsprite
+    m "..."
+    hide malcolm icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
+    s "I mean, you don’t usually see people {i}take notes{/i} here."
+    hide sachi mask icon at left onlayer mcsprite
+
+    show malcolm icon at left onlayer mcsprite
+    m " I…like to write. As a hobby."
+    m " I wanted to remember what it’s like to be here."
+    hide malcolm icon at left onlayer mcsprite
+
+    jump malcolm_points_check
+
+label malcolm_ev_3:
+    $ m_ev_3 = True
+
+    show malcolm icon at left onlayer mcsprite
+    m "…I don’t know. I guess it just spoke to me."
+    m "It…has a rich history, you know."
+    m "Why?"
+    hide malcolm icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
+    s "…I thought you were a cop, honestly."
+    hide sachi mask icon at left onlayer mcsprite
+
+    show malcolm icon at left onlayer mcsprite
+    m "Haha..."
+    hide malcolm icon at left onlayer mcsprite
+
+    if m_ev_1 == False:
+        m "I…work for the NYPD, actually. But I’m here on my own terms."
+        m "I work in forensics, for what its worth. I’m not a cop or anything."
+        $ m_ev_1 == Tr
+
+    jump malcolm_points_check
+
+label malcolm_ev_4:
+    $ m_ev_4 = True
+
+    show malcolm icon at left onlayer mcsprite
+    m "Yeah. Dead bodies can’t lie."
+    m "…I prefer it that way."
+    hide malcolm icon at left onlayer mcsprite
+
+    jump malcolm_points_check
+
+label malcolm_ev_5:
+    $ m_ev_5 = 1
+
+    show malcolm icon at left onlayer mcsprite
+    m "Yeah. You didn’t know?"
+    hide malcolm icon at left onlayer mcsprite
+
+    if drunk < 20:
+        show malcolm icon at left onlayer mcsprite
+        m "I guess its not my place to tell you."
+        hide malcolm icon at left onlayer mcsprite
+        "…I should get him a little more drunk."
+        $ m_ev_5 = 2
+
+    if drunk == 20:
+        show malcolm icon at left onlayer mcsprite
+        m "That’s strange. I suppose the Madame withholds a lot of information."
+        hide malcolm icon at left onlayer mcsprite
+
+        show sachi mask icon at left onlayer mcsprite
+        s "…You know Madame Han?"
+        hide sachi mask icon at left onlayer mcsprite
+
+        show malcolm icon at left onlayer mcsprite
+        m "I know of her."
+        hide malcolm icon at left onlayer mcsprite
+
+        show sachi mask icon at left onlayer mcsprite
+        s "He might say more if he gets more drunk."
+        hide sachi mask icon at left onlayer mcsprite
+        $ m_ev_5 = 2
+    if drunk == 40:
+        show malcolm icon at left onlayer mcsprite
+        m "Madame Han has connections to an old mob leader. Have you heard of Alonzo Romano?"
+        m "Both of them worked together. It’s rumored that the Scarlet Cabaret originally trafficked girls from Asia. But I guess they forfeited the operation once Romano died about a decade ago."
+        hide malcolm icon at left onlayer mcsprite
+    jump malcolm_points_check
+
+label malcolm_ev_6:
+    $ malcolm_ev_6 = 1
+
+    if drunk < 20:
+        show malcolm icon at left onlayer mcsprite
+        m " …I suppose that’s confidential. Not that I’d necessarily care…"
+        hide malcolm icon at left onlayer mcsprite
+
+        show sachi mask icon at left onlayer mcsprite
+        s "…I should get him a little more drunk."
+        hide sachi mask icon at left onlayer mcsprite
+    if drunk == 20:
+        show malcolm icon at left onlayer mcsprite
+        m "You know Carmine & Associates? There’s a bunch of cold cases related to the company."
+        m "There’s been…a lot of ex-Carmine employees who have been poisoned in the exact same way. Thallium."
+        m "You know, I just realized…huh."
+        m "I looked at the old files, and…there’s another cold case involving Thallium poisoning. Except…all the victims were prostitutes of Asian descent."
+        m " Some…even had connections to the Cabaret."
+        hide malcolm icon at left onlayer mcsprite
+        $ malcolm_ev_6 = 2
+        jump malcolm_points_check
+
+
 
 # DRINK MECHANIC --------
 label chatgift:
