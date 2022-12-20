@@ -145,8 +145,8 @@ label intro_expos:
 
 label N1_Menu:
     $ renpy.show_screen("mapFirstSelect")
+    $ renpy.pause ()
     
-    #$ renpy.pause ()
     # (theres a temporary menu for now)
     #menu:
     #    "Drunk Businessman":
