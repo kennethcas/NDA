@@ -153,12 +153,11 @@ label chattalk:
     if (client == 1): #TALK WITH VINCENT-----------------------------------------------------
         show vincent fullbody masked
 
-
         hide vincent mask icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
 
         if (talk_turns == 1):
-            show sachi mask icon at left onlayer mcsprite
+            
 
             "{i}Clients knowing personal information…is never a good thing."
 
@@ -168,7 +167,6 @@ label chattalk:
 
             "{i}If I play my cards right—nudge them in the right direction while
                 telling him what he wants to hear—I can make him fold easy."
-
             hide sachi mask icon at left onlayer mcsprite
 
             show vincent mask icon at left onlayer mcsprite
@@ -257,20 +255,11 @@ label chattalk:
 
     if (client == 2): #TALK WITH GERARD----------------------------------------------------------
         show gerard fullbody
-
-        "So {color=#6b091b}Gerard Wade{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
-        "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
-        "…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
-            menu:
-
-
-        "So {color=#6b091b}Gerard Wade{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
-        "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
-        "…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
-            menu:
-
-
         if (talk_turns == 1):
+            
+            "{i}{color=#6b091b}Gerard Wade{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
+            "{i}I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
+            "{i}…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
             show sachi mask icon at left onlayer mcsprite
             menu:
                 "How’s work?":
@@ -326,24 +315,18 @@ label chattalk:
 
     if (client == 3): #TALK WITH RICHARD---------------------------
         show richard fullbody
-
-	"So {color=#6b091b}Richard Bloomberg{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
-        "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
-       	"…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
-
-	"So {color=#6b091b}Richard Bloomberg{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
-        "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
-       	"…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
+        hide richard icon at left onlayer mcsprite
+        hide sachi mask icon at left onlayer mcsprite
 
         if (talk_turns == 1):
-            show sachi mask icon at left onlayer mcsprite
             """
-            {i}So {color=#6b091b}Richard Bloomberg{/color} is an employee in the higher ranks. From what Vincent said, he was involved in the incident.
+            {i}{color=#6b091b}Richard Bloomberg{/color} is an employee in the higher ranks. From what Vincent said, he was involved in the incident.
 
             {i}I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions.
 
             {i}…{color=#6b091b}sweet-talk{color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…
             """
+            show sachi mask icon at left onlayer mcsprite
 
             menu:
                 "You’re a Wall-Street hotshot, huh?":
@@ -374,7 +357,7 @@ label chattalk:
         hide sachi mask icon at left onlayer mcsprite
 
         if (talk_turns == 1):
-            show sachi mask icon at left onlayer mcsprite
+            
             """
             {i}So {color=#6b091b}Malcolm Hunt{/color} is an assistant in forensics. From what Vincent said,
             he helped with {/i}Baba's{i} autopsy. The {color=#6b091b}real one.{/color}
@@ -384,6 +367,7 @@ label chattalk:
 
             {i}…{color=#6b091b}sweet-talk{color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…
             """
+            show sachi mask icon at left onlayer mcsprite
             menu:
                 "You don't seem like the Wall Street type.":
                     hide sachi mask icon at left onlayer mcsprite
