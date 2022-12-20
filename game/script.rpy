@@ -663,6 +663,8 @@ label client_select:
     hide vincent masked fullbody
     hide vincent fullbody
     with dissolve
+    $ drunk = 0
+    $ sus = 0
     $ renpy.show_screen("mapClientSelect")
 
     $ renpy.pause ()
