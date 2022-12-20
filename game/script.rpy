@@ -780,144 +780,147 @@ label gerard_intro:
     show gerard fullbody
     with fade
 
-    #show sachi mask icon at left onlayer mcsprite
-    "{i}I see a meek looking man by the wall, looking somewhat tense."
-    "{i}I remember the photos Vincent showed me. He must be {color=#6b091b}Gerard Wade{/color}, a current employee of Carmine."
-    "{i}I walk up to him."
+    if meet_gerard == False:
+        #show sachi mask icon at left onlayer mcsprite
+        "{i}I see a meek looking man by the wall, looking somewhat tense."
+        "{i}I remember the photos Vincent showed me. He must be {color=#6b091b}Gerard Wade{/color}, a current employee of Carmine."
+        "{i}I walk up to him."
 
-    show gerard icon at left onlayer mcsprite
-    g "..."
-    hide gerard icon at left onlayer mcsprite
+        show gerard icon at left onlayer mcsprite
+        g "..."
+        hide gerard icon at left onlayer mcsprite
 
-    show sachi mask icon at left onlayer mcsprite
-    menu:
-        "You okay, darling?":
-            hide sachi mask icon at left onlayer mcsprite
-        "Hey, handsome.":
-            hide sachi mask icon at left onlayer mcsprite
-    "{i}Gerard looks up at me. He seems tense."
+        show sachi mask icon at left onlayer mcsprite
+        menu:
+            "You okay, darling?":
+                hide sachi mask icon at left onlayer mcsprite
+            "Hey, handsome.":
+                hide sachi mask icon at left onlayer mcsprite
+        "{i}Gerard looks up at me. He seems tense."
 
-    show gerard icon at left onlayer mcsprite
-    g """
-    Uh...
+        show gerard icon at left onlayer mcsprite
+        g """
+        Uh...
 
-    Do you... work here?
-    """
-    hide gerard icon at left onlayer mcsprite
+        Do you... work here?
+        """
+        hide gerard icon at left onlayer mcsprite
 
-    show sachi mask icon at left onlayer mcsprite
-    menu:
-        "Last time I checked.":
-            hide sachi mask icon at left onlayer mcsprite
+        show sachi mask icon at left onlayer mcsprite
+        menu:
+            "Last time I checked.":
+                hide sachi mask icon at left onlayer mcsprite
 
-            show gerard icon at left onlayer mcsprite
-            g "...Haha. Funny."
-            hide gerard icon at left onlayer mcsprite
-        "(Nod.)":
-            hide sachi mask icon at left onlayer mcsprite
+                show gerard icon at left onlayer mcsprite
+                g "...Haha. Funny."
+                hide gerard icon at left onlayer mcsprite
+            "(Nod.)":
+                hide sachi mask icon at left onlayer mcsprite
 
-            show gerard icon at left onlayer mcsprite
-            g "...Neat."
-            hide gerard icon at left onlayer mcsprite
+                show gerard icon at left onlayer mcsprite
+                g "...Neat."
+                hide gerard icon at left onlayer mcsprite
 
-    show sachi mask icon at left onlayer mcsprite
-    s "What's your name darling?"
-    hide sachi mask icon at left onlayer mcsprite
+        show sachi mask icon at left onlayer mcsprite
+        s "What's your name darling?"
+        hide sachi mask icon at left onlayer mcsprite
 
-    show gerard icon at left onlayer mcsprite
-    g """
-    ...
+        show gerard icon at left onlayer mcsprite
+        g """
+        ...
 
-    ...Gerard
+        ...Gerard
 
-    You all go by stage names, right?
-    """
-    hide gerard icon at left onlayer mcsprite
+        You all go by stage names, right?
+        """
+        hide gerard icon at left onlayer mcsprite
 
-    show sachi mask icon at left onlayer mcsprite
-    "{i}...Not really. But maybe coming up with one will help me get on his good side."
+        show sachi mask icon at left onlayer mcsprite
+        "{i}...Not really. But maybe coming up with one will help me get on his good side."
 
-    menu:
-        "Catra.":
-            hide sachi mask icon at left onlayer mcsprite
+        menu:
+            "Catra.":
+                hide sachi mask icon at left onlayer mcsprite
 
-            show gerard icon at left onlayer mcsprite
-            g "Oh. Like in {i}She-Ra?"
-            hide gerard icon at left onlayer mcsprite
+                show gerard icon at left onlayer mcsprite
+                g "Oh. Like in {i}She-Ra?"
+                hide gerard icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            s "...Yeah. Definitely."
-            hide sachi mask icon at left onlayer mcsprite
+                show sachi mask icon at left onlayer mcsprite
+                s "...Yeah. Definitely."
+                hide sachi mask icon at left onlayer mcsprite
 
-            show gerard icon at left onlayer mcsprite
-            g"""
-            Oh, nice. I didn't know women liked that kinda stuff.
+                show gerard icon at left onlayer mcsprite
+                g"""
+                Oh, nice. I didn't know women liked that kinda stuff.
 
-            ...Especially {i}your{/i} type.
-            """
-            hide gerard icon at left onlayer mcsprite
+                ...Especially {i}your{/i} type.
+                """
+                hide gerard icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            "{i}He's worse than Vincent."
-            hide sachi mask icon at left onlayer mcsprite
+                show sachi mask icon at left onlayer mcsprite
+                "{i}He's worse than Vincent."
+                hide sachi mask icon at left onlayer mcsprite
 
-            show gerard icon at left onlayer mcsprite
-            g "You're {i}different{/i}... I guess."
-            hide gerard icon at left onlayer mcsprite
+                show gerard icon at left onlayer mcsprite
+                g "You're {i}different{/i}... I guess."
+                hide gerard icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            "{i}Ew. Ew ew ew."
-            hide sachi mask icon at left onlayer mcsprite
-        "Kitty.":
-            hide sachi mask icon at left onlayer mcsprite
+                show sachi mask icon at left onlayer mcsprite
+                "{i}Ew. Ew ew ew."
+                hide sachi mask icon at left onlayer mcsprite
+            "Kitty.":
+                hide sachi mask icon at left onlayer mcsprite
 
-            show gerard icon at left onlayer mcsprite
-            g """
-            Isn't that a bit on-the-nose?
-            """
-            hide gerard icon at left onlayer mcsprite
+                show gerard icon at left onlayer mcsprite
+                g """
+                Isn't that a bit on-the-nose?
+                """
+                hide gerard icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            s "We don't get to decide what we're called."
-            hide sachi mask icon at left onlayer mcsprite
+                show sachi mask icon at left onlayer mcsprite
+                s "We don't get to decide what we're called."
+                hide sachi mask icon at left onlayer mcsprite
 
-            show gerard icon at left onlayer mcsprite
-            g "That's kinda sad, actually."
-            hide gerard icon at left onlayer mcsprite
+                show gerard icon at left onlayer mcsprite
+                g "That's kinda sad, actually."
+                hide gerard icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            s "..."
-            hide sachi mask icon at left onlayer mcsprite
+                show sachi mask icon at left onlayer mcsprite
+                s "..."
+                hide sachi mask icon at left onlayer mcsprite
 
-            show gerard icon at left onlayer mcsprite
-            g "..."
-            hide gerard icon at left onlayer mcsprite
+                show gerard icon at left onlayer mcsprite
+                g "..."
+                hide gerard icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            "{i}...He doesn't seem like he wants to talk."
-            hide sachi mask icon at left onlayer mcsprite
+                show sachi mask icon at left onlayer mcsprite
+                "{i}...He doesn't seem like he wants to talk."
+                hide sachi mask icon at left onlayer mcsprite
 
-        "We don't.":
-            s "You can call me whatever you like."
-            "{i}I wink at him."
-            hide sachi mask icon at left onlayer mcsprite
+            "We don't.":
+                s "You can call me whatever you like."
+                "{i}I wink at him."
+                hide sachi mask icon at left onlayer mcsprite
 
-            show gerard icon at left onlayer mcsprite
-            g "Can I call you {color=#6b091b}Gwen{/color}?"
-            hide gerard icon at left onlayer mcsprite
+                show gerard icon at left onlayer mcsprite
+                g "Can I call you {color=#6b091b}Gwen{/color}?"
+                hide gerard icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            s "I... don't see why not."
-            hide sachi mask icon at left onlayer mcsprite
+                show sachi mask icon at left onlayer mcsprite
+                s "I... don't see why not."
+                hide sachi mask icon at left onlayer mcsprite
 
-            show gerard icon at left onlayer mcsprite
-            g "Neat."
-            hide gerard icon at left onlayer mcsprite
+                show gerard icon at left onlayer mcsprite
+                g "Neat."
+                hide gerard icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            "{i}I wonder who {color=#6b091b}Gwen{/color} is..."
-            hide sachi mask icon at left onlayer mcsprite
-            #KNOWS GWEN = TRUE
+                show sachi mask icon at left onlayer mcsprite
+                "{i}I wonder who {color=#6b091b}Gwen{/color} is..."
+                hide sachi mask icon at left onlayer mcsprite
+                $ knows_gwen = True
+        $ meet_gerard = True
+
     show gerard icon at left onlayer mcsprite
     g "..."
     g "Wanna get out of here? I'll pay."
@@ -939,57 +942,60 @@ label richard_intro:
     #$ canwarp = False
     #$ renpy.pause ()
 
-    scene bg lounge
-    show richard fullbody
-    with fade
+    if meet_richard == False:
+        scene bg lounge
+        show richard fullbody
+        with fade
 
-    show sachi mask icon at left onlayer mcsprite
-    """
-    {i}I see the drunk man from the night before sitting with his legs spread on a barstool. He has a bottle of beer in hand, but he looks sober.
+        show sachi mask icon at left onlayer mcsprite
+        """
+        {i}I see the drunk man from the night before sitting with his legs spread on a barstool. He has a bottle of beer in hand, but he looks sober.
 
-    {i}Based on the pictures Vincent showed me, he must be {color=#6b091b}Richard Bloomberg{/color}, a higher-up at Carmine.
+        {i}Based on the pictures Vincent showed me, he must be {color=#6b091b}Richard Bloomberg{/color}, a higher-up at Carmine.
 
-    {i}I {/i}really don't want to talk to him again. But I've dealt with worse.
+        {i}I {/i}really don't want to talk to him again. But I've dealt with worse.
 
-    {i}He notices me staring and waves me over.
-    """
-    hide sachi mask icon at left onlayer mcsprite
+        {i}He notices me staring and waves me over.
+        """
+        hide sachi mask icon at left onlayer mcsprite
 
-    show richard icon at left onlayer mcsprite
-    r "Eyy baby. Couldn’t get enough of me last night, could’ja?"
-    hide richard icon at left onlayer mcsprite
+        show richard icon at left onlayer mcsprite
+        r "Eyy baby. Couldn’t get enough of me last night, could’ja?"
+        hide richard icon at left onlayer mcsprite
 
-    show sachi mask icon at left onlayer mcsprite
-    "{i}...So he remembers me."
-    if (N1_Wallet == True):
-        "I hope he doesn't remember ...{i}everything."
-    menu:
-        "You have a way with women.":
-            hide sachi mask icon at left onlayer mcsprite
+        show sachi mask icon at left onlayer mcsprite
+        "{i}...So he remembers me."
+        if (N1_Wallet == True):
+            "I hope he doesn't remember ...{i}everything."
+        menu:
+            "You have a way with women.":
+                hide sachi mask icon at left onlayer mcsprite
 
-            show richard icon at left onlayer mcsprite
-            r "Damn right I do."
-            hide richard icon at left onlayer mcsprite
+                show richard icon at left onlayer mcsprite
+                r "Damn right I do."
+                hide richard icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            s "Don't flatter yourself."
-            hide sachi mask icon at left onlayer mcsprite
+                show sachi mask icon at left onlayer mcsprite
+                s "Don't flatter yourself."
+                hide sachi mask icon at left onlayer mcsprite
 
-            show richard icon at left onlayer mcsprite
-            r "Aw, come on. I hate it when you ladies play {i}hard to get."
-            r "You're not even that pretty, anyways."
-            hide richard icon at left onlayer mcsprite
+                show richard icon at left onlayer mcsprite
+                r "Aw, come on. I hate it when you ladies play {i}hard to get."
+                r "You're not even that pretty, anyways."
+                hide richard icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            "{i}This is going to be harder than I thought."
-            hide sachi mask icon at left onlayer mcsprite
-        "(Say nothing.)":
-            hide sachi mask icon at left onlayer mcsprite
+                show sachi mask icon at left onlayer mcsprite
+                "{i}This is going to be harder than I thought."
+                hide sachi mask icon at left onlayer mcsprite
+            "(Say nothing.)":
+                hide sachi mask icon at left onlayer mcsprite
 
-            show richard icon at left onlayer mcsprite
-            r "What is it, sweetheart? {i}Cat got your tongue?"
-            r "It's ok. I like 'em shy."
-            hide richard icon at left onlayer mcsprite
+                show richard icon at left onlayer mcsprite
+                r "What is it, sweetheart? {i}Cat got your tongue?"
+                r "It's ok. I like 'em shy."
+                hide richard icon at left onlayer mcsprite
+
+        $ met_richard == True
 
     show richard icon at left onlayer mcsprite
     r "…So whadd’ya say, sweetheart? Wanna get out of here?"
@@ -1017,77 +1023,81 @@ label malcolm_intro:
     with fade
 
     show sachi mask icon at left onlayer mcsprite
-    """
-    {i}I see a man sitting on his own. He looks too dignified to be here, but not in the way Vincent was.
+    if (meet_malcolm == False):
+        """
+        {i}I see a man sitting on his own. He looks too dignified to be here, but not in the way Vincent was.
 
-    {i}Less powerful and more... intellectual. As if he would have moral qualms about being here.
+        {i}Less powerful and more... intellectual. As if he would have moral qualms about being here.
 
-    {i}...He's not bad-looking either.
+        {i}...He's not bad-looking either.
 
-    {i}I walk up to him.
+        {i}I walk up to him.
 
-    {i}Is he... writing something down?
-    """
-    menu:
-        "Taking notes, are we?":
-            "{i}The man looks up, surprised."
-            hide sachi mask icon at left onlayer mcsprite
+        {i}Is he... writing something down?
+        """
+        menu:
+            "Taking notes, are we?":
+                "{i}The man looks up, surprised."
+                hide sachi mask icon at left onlayer mcsprite
 
-            show malcolm icon at left onlayer mcsprite
-            stb"""
-            ...Hm? Oh. Sorry.
+                show malcolm icon at left onlayer mcsprite
+                stb"""
+                ...Hm? Oh. Sorry.
 
-            I'm, uh... a bit curious about these kinds of establishments.
-            """
-            hide malcolm icon at left onlayer mcsprite
+                I'm, uh... a bit curious about these kinds of establishments.
+                """
+                hide malcolm icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            s """
-            ...Curious?
+                show sachi mask icon at left onlayer mcsprite
+                s """
+                ...Curious?
 
-            You're not with the feds, are you?
-            """
-            hide sachi mask icon at left onlayer mcsprite
+                You're not with the feds, are you?
+                """
+                hide sachi mask icon at left onlayer mcsprite
 
-            show malcolm icon at left onlayer mcsprite
-            "{i}He laughs."
+                show malcolm icon at left onlayer mcsprite
+                "{i}He laughs."
 
-            stb """
-            I'd have a little more tact if I was.
+                stb """
+                I'd have a little more tact if I was.
 
-            It's... just for my own curiosity. Scout's honor.
-            """
+                It's... just for my own curiosity. Scout's honor.
+                """
 
-            "{i}He mock-salutes."
-            hide malcolm icon at left onlayer mcsprite
+                "{i}He mock-salutes."
+                hide malcolm icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            "{i}...Interesting. He doesn't seem at all worried."
-            hide sachi mask icon at left onlayer mcsprite
-        "(Catch his eye.)":
-            """
-            {i}He doesn't look up. He seems really preoccupied with his notes.
+                show sachi mask icon at left onlayer mcsprite
+                "{i}...Interesting. He doesn't seem at all worried."
+                hide sachi mask icon at left onlayer mcsprite
+            "(Catch his eye.)":
+                """
+                {i}He doesn't look up. He seems really preoccupied with his notes.
 
-            {i}I should find a way to get my hands on them.
+                {i}I should find a way to get my hands on them.
 
-            {i}I walk up to him and wave.
-            """
-            hide sachi mask icon at left onlayer mcsprite
+                {i}I walk up to him and wave.
+                """
+                hide sachi mask icon at left onlayer mcsprite
 
-            show malcolm icon at left onlayer mcsprite
-            stb "...Oh. You must work here."
-            hide malcolm icon at left onlayer mcsprite
+                show malcolm icon at left onlayer mcsprite
+                stb "...Oh. You must work here."
+                hide malcolm icon at left onlayer mcsprite
 
-            show sachi mask icon at left onlayer mcsprite
-            s "I do."
-            hide sachi mask icon at left onlayer mcsprite
-    show malcolm icon at left onlayer mcsprite
-    stb "Ah... I'm not here for my own, uh... exploits, unfortunately."
-    hide malcolm icon at left onlayer mcsprite
+                show sachi mask icon at left onlayer mcsprite
+                s "I do."
+                hide sachi mask icon at left onlayer mcsprite
+        show malcolm icon at left onlayer mcsprite
+        stb "Ah... I'm not here for my own, uh... exploits, unfortunately."
+        hide malcolm icon at left onlayer mcsprite
 
-    show sachi mask icon at left onlayer mcsprite
-    s "Really?"
-    hide sachi mask icon at left onlayer mcsprite
+        show sachi mask icon at left onlayer mcsprite
+        s "Really?"
+        hide sachi mask icon at left onlayer mcsprite
+
+        $ meet_malcolm == True
+
 
     show malcolm icon at left onlayer mcsprite
     stb "Well... even if I wanted to, I couldn't afford it. Not with an assistant's salary."
@@ -1130,8 +1140,6 @@ label malcolm_intro:
             stb "Sorry to take up your time."
             "{i}He goes back to writing."
             hide malcolm icon at left onlayer mcsprite
-
-            #BOOL FOR ... DIDNT TAKE HIM TO MINIGAME ?! so it doesnt make you repeat everything again
             jump client_select
 
 

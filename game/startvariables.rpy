@@ -83,6 +83,10 @@ init:
     $ m_ev_2 = False
     $ m_ev_3 = False
 
+    $ meet_gerard = False
+    $ meet_richard = False
+    $ meet_malcolm = False
+
     $ pointsonly = False
 
     $ N1_Wallet = False
