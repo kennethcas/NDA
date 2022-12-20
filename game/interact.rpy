@@ -329,6 +329,7 @@ label chattalk:
                 "You’re a Wall-Street hotshot, huh?":
                     hide sachi mask icon at left onlayer mcsprite
                     jump richard_ev_1
+
                 "You like your job?":
                     hide sachi mask icon at left onlayer mcsprite
                     jump richard_ev_2
@@ -349,7 +350,44 @@ label chattalk:
                     jump richard_ev_4
 
     if (client == 4): #TALK WITH MALCOLM--------------------------------
-        "."
+        hide malcolm icon at left onlayer mcsprite
+        hide sachi mask icon at left onlayer mcsprite
+
+        if (talk_turns == 1):
+            show sachi mask icon at left onlayer mcsprite
+            """
+            {i}So {color=#6b091b}Malcolm Hunt{/color} is an assistant in forensics. From what Vincent said, 
+            he helped with {/i}Baba's{i} autopsy. The {color=#6b091b}real one.{/color}
+
+            {i}I should find out more about what {color=#6b091b}really happened{/color}. I shouldn't be too obvious 
+            from the get-go, though. Or he'll get too suspicious of my intentions.
+
+            {i}…{color=#6b091b}sweet-talk{color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…
+            """
+            menu:
+                "You don't seem like the Wall Street type.":
+                    hide sachi mask icon at left onlayer mcsprite
+
+                    show malcolm icon at left onlayer mcsprite
+                    m "I'm not."
+                    m "I... work for the NYPD, actually."
+                    hide malcolm icon at left onlayer mcsprite
+
+                    show sachi mask icon at left onlayer mcsprite
+                    s "So you-"
+                    hide sachi mask icon at left onlayer mcsprite
+
+                    show malcolm icon at left onlayer mcsprite
+                    m "Haha, don’t worry. I’m not reporting the Cabaret. I’m here on my own terms."
+                    m "The feds are in kahoots with most of the guys that come here, anyways. So I doubt it makes a difference."
+                    m "…Anyway. I work in forensics, for what its worth. I’m not a cop or anything."
+                    hide malcolm icon at left onlayer mcsprite
+
+        elif (talk_turns ==2):
+            ""
+        elif (talk_turns >=3):
+            ""
+        
 
 label vincent_ev_1:
     hide vincent mask icon at left onlayer mcsprite
