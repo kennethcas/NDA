@@ -145,7 +145,8 @@ label intro_expos:
 
 label N1_Menu:
     $ renpy.show_screen("mapFirstSelect")
-    $ renpy.pause ()
+    
+    #$ renpy.pause ()
     # (theres a temporary menu for now)
     #menu:
     #    "Drunk Businessman":
@@ -161,6 +162,7 @@ label N1_Menu:
 label CW2_N1:
     $ renpy.hide_screen("mapFirstSelect")
     $ db_picked == True
+
     show richard fullbody drunk
     with fade
 
@@ -656,9 +658,16 @@ label n1_part2_2:
 
 label client_select:
     $ renpy.show_screen("mapClientSelect")
+
     show bg lounge
+    hide gerard fullbody
+    hide richard fullbody
+    hide malcolm fullbody
+    hide vincent masked fullbody
+    hide vincent fullbody
     with dissolve
-    $ renpy.pause ()
+
+    #$ renpy.pause ()
 
     #THIS IS WHERE THE MAP WILL BE. CHOICES R VINCENT GERARD RICHARD MALCOLM
     # PLACEHOLDER MENU FOR NOW
@@ -677,8 +686,8 @@ label client_select:
 
 label vincent_n2_check:
     $ renpy.hide_screen("mapClientSelect")
-    $ canwarp = False
-    $ renpy.pause ()
+    #$ canwarp = False
+    #$ renpy.pause ()
 
     if (vincent_n2_intro_done == False):
         jump vincent_n2_intro
@@ -769,8 +778,8 @@ label vincent_n2_questions:
 
 label gerard_intro:
     $ renpy.hide_screen("mapClientSelect")
-    $ canwarp = False
-    $ renpy.pause ()
+    #$ canwarp = False
+    #$ renpy.pause ()
 
     scene bg lounge
     show gerard fullbody
@@ -932,8 +941,8 @@ label gerard_intro:
 
 label richard_intro:
     $ renpy.hide_screen("mapClientSelect")
-    $ canwarp = False
-    $ renpy.pause ()
+    #$ canwarp = False
+    #$ renpy.pause ()
 
     scene bg lounge
     show richard fullbody
@@ -1005,8 +1014,8 @@ label richard_intro:
 
 label malcolm_intro:
     $ renpy.hide_screen("mapClientSelect")
-    $ canwarp = False
-    $ renpy.pause ()
+    #$ canwarp = False
+    #$ renpy.pause ()
 
     scene bg lounge
     show malcolm fullbody
