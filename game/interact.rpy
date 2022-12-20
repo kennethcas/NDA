@@ -372,7 +372,7 @@ label chattalk:
                 "You don't seem like the Wall Street type.":
                     hide sachi mask icon at left onlayer mcsprite
                     jump malcolm_ev_1
-                "What were you writing down?"
+                "What were you writing down?":
                     hide sachi mask icon at left onlayer mcsprite
                     jump malcolm_ev_2
 

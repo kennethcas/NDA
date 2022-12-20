@@ -1211,8 +1211,18 @@ label richard_post_minigame:
 
         show richard icon at left onlayer mcsprite
         r "…Can you keep a secret, sweetheart?"
-        r "."
+        r "A lot of people at Carmine have a body count."
+        r "If you’re not a nepotism kid, the only way of getting on Tony’s good side is to do his dirty work for him."
+        r "Even after all these years he’s still the same guy. And when someone’s dead to the man…they are dead."
+        r "…Lemme tell you a secret sweetheart. None of these black suit businessmen—and I mean none of them—have a shiny clean record."
+        r "…The angels among us are cokeheads with porn addictions."
+        r "‘Tony’s record is just…worse than others."
         hide richard icon at left onlayer mcsprite
+
+        show sachi mask icon at left onlayer mcsprite
+        s "{i}’Tony?{/i} Are you two close?"
+        hide sachi mask icon at left onlayer mcsprite
+
 label malcolm_post_minigame:
     m "testing"
 return
