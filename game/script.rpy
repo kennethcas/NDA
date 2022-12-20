@@ -1144,9 +1144,75 @@ label malcolm_intro:
 
 
 label gerard_post_minigame:
-    g "testing"
+    if g_ev_6 == 3:
+        show gerard icon at left onlayer mcsprite
+        g "..."
+        g "There’s a hidden archives room on the sixteenth floor. There’s…police reports inside."
+        g " …First-degree murders. All of them marked as cold cases…"
+        g "Gwen did a bit of digging, and found out that they were all officially marked as death by heart attack. But the police reports say that they found traces of poison in their bodies."
+        g "All of the victims…were women. The more recent victims worked at Carmine. But a lot of the old ones were Jane Does."
+        g " A lot of them…looked foreign, too."
+        hide gerard icon at left onlayer mcsprite
+    if g_ev_4 == 3:
+        show gerard icon at left onlayer mcsprite
+        g "I think the worst thing I found so far was Antony Carmine’s trafficking ring."
+        g "Twenty years ago…he invested in a brothel in Bangkok while travelling. He made it a major business, somehow."
+        g "He and his…{i}business partner{/i}…found a way to extend the business overseas. "
+        g "Apparently…many of the girls got majorly fucked over in the process. A lot of them were illegals on the verge of deportation…"
+        g " …And Carmine granted them whatever they wanted, like some fucked up, depraved genie."
+        g "The more {i}indebted{/i} they were…the worse their fate."
+        hide gerard icon at left onlayer mcsprite
+
+    if g_ev_6 == 3 or g_ev_4 == 3:
+        show gerard icon at left onlayer mcsprite
+        g "Anyway…I tried to…take the files one night. For Gwen."
+        g "…I saw something that night."
+        g "Another…murder. But a man died this time."
+        hide gerard icon at left onlayer mcsprite
+
+        show sachi mask icon at left onlayer mcsprite
+        " …He must be talking about {i}Baba.{/i} My father."
+        hide sachi mask icon at left onlayer mcsprite
+
+        show gerard icon at left onlayer mcsprite
+        g "At least…I think it was a murder."
+        g "There was someone else in the room, watching him die."
+        hide gerard icon at left onlayer mcsprite
+
+        show sachi mask icon at left onlayer mcsprite
+        s "…Did you see him?"
+        hide sachi mask icon at left onlayer mcsprite
+
+        show gerard icon at left onlayer mcsprite
+        g "…Did you see him?"
+        g "He was tall. On the skinnier side, too."
+        g "…That’s it."
+        g "I took the files and left before anyone could see me. I gave them to Gwen the day after."
+        g "…You don’t know how much I regret that."
+        g "A week later…Gwen died from a heart attack. On paper, that is."
+        g "…You can probably guess what really happened. "
+        hide gerard icon at left onlayer mcsprite
+
+    show gerard icon at left onlayer mcsprite
+    g "Not gonna lie, I’m not really in the mood."
+    g "…I’ll still pay, though."
+    hide gerard icon at left onlayer mcsprite
+
+    if g_ev_6 == 3 or g_ev_4 == 3:
+        "…I wish I could’ve gotten more out of him."
+    jump client_select
+
+
 label richard_post_minigame:
-    r "testing"
+    if r_ev_2 == 3:
+        show sachi mask icon at left onlayer mcsprite
+        s "So…what kind of {i}nasty stuff{/i} do people at Carmine have to do?"
+        hide sachi mask icon at left onlayer mcsprite
+
+        show richard icon at left onlayer mcsprite
+        r "…Can you keep a secret, sweetheart?"
+        r "."
+        hide richard icon at left onlayer mcsprite
 label malcolm_post_minigame:
     m "testing"
 return
