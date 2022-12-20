@@ -1011,7 +1011,7 @@ label chatdate:
     if (client == 4): #FLIRT WITH  MALCOLM
         hide malcolm icon at left onlayer mcsprite
         hide sachi icon at left onlayer mcsprite
-        if (flirt_turns = 1):
+        if (flirt_turns == 1):
             show sachi mask icon at left onlayer mcsprite
             s "Y'know... I think you're pretty cute."
             hide sachi mask icon at left onlayer mcsprite
