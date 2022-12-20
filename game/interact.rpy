@@ -777,18 +777,82 @@ label richard_ev_1:
     r "Haha. I guess I boss people around, schmooze up with black suits... y'know. The whole deal."
     hide richard icon at left onlayer mcsprite
 
+    jump richard_points_check
+
 
 label richard_ev_2:
     $ r_ev_2 = True
 
+    hide sachi icon at left onlayer mcsprite
+
+    show richard icon at left onlayer mcsprite
+    r "What’s not to like? I get paid major buck. That’s what matters."
+    r "As long as I’m making over six figures, I don’t give a damn ‘bout the actual work involved."
+    hide richard icon at left onlayer mcsprite
+
+    jump richard_points_check
+
+
 label richard_ev_2a:
-    $ r_ev_2a = True
+    $ r_ev_2a = 1
+
+    hide sachi icon at left onlayer mcsprite
+
+    show richard icon at left onlayer mcsprite
+    r "As long as I’m making over six figures, I don’t give a damn ‘bout the actual work involved."
+    hide richard icon at left onlayer mcsprite
+
+    if $drunk <=20:
+        show richard icon at left onlayer mcsprite
+        r "‘That all, sweetheart?"
+        hide richard icon at left onlayer mcsprite
+
+        "…He needs more {color=#6b091b}booze{/color} in him before he’ll blab."
+
+    if $drunk ==20:
+        $ r_ev_2a = 2
+        show richard icon at left onlayer mcsprite
+        r "It…can get a bit dirty though, sometimes."
+        hide richard icon at left onlayer mcsprite
+
+        show sachi icon at left onlayer mcsprite
+        s "{i}Dirty?{/i}"
+        hide sachi icon at left onlayer mcsprite
+
+        show richard icon at left onlayer mcsprite
+        r "…It’s better not to think about it."
+        hide richard icon at left onlayer mcsprite
+
+        "He might need a little more {color=#6b091b}booze{/color} in him to {i}really{/i} open up.."
+
+    if $drunk == 40:
+        $ r_ev_2a = 3
+        show richard icon at left onlayer mcsprite
+        r "Sometimes…our clients get into bad business, and we have to cover up the tracks."
+        r "Luckily, I’ve only ever had to do cleanup. I feel a bit bad for the runts who {i}actually{/i} had to do the nasty stuff."
+        r "...Just kidding. No I don't"
+        hide richard icon at left onlayer mcsprite
+
+    jump richard_points_check
 
 label richard_ev_3:
     $ r_ev_3 = True
 
+    show richard icon at left onlayer mcsprite
+    r "…More than you could ever think up in your {i}pretty little head{/i}. That’s for sure."
+    r "As long as I’m making over six figures, I don’t give a damn ‘bout the actual work involved."
+    hide richard icon at left onlayer mcsprite
+
+jump richard_points_check
+
 label richard_ev_4:
     $ r_ev_4 = True
+    
+    show richard icon at left onlayer mcsprite
+    r " …Oooh, baby. I would need you to sign a form if I told you."
+    hide richard icon at left onlayer mcsprite
+
+jump richard_points_check
 
 label malcolm_ev_1:
     $ m_ev_1 = True

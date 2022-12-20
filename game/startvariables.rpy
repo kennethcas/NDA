@@ -74,8 +74,7 @@ init:
 
     $ r_ev_1 = False
     $ r_ev_2 = False
-    $ r_ev_2a = False
-    $ r_ev_2b = False
+    $ r_ev_2a = 0
     $ r_ev_2c = False
     $ r_ev_3 = False
     $ r_ev_4 = False
