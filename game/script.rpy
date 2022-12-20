@@ -64,6 +64,7 @@ label intro_convo:
     # music: jazzy? lowkey?
 
     # DIALOGUE. ---
+    play audio barAmbience loop fadein 1.0 volume 0.5
     "OCTOBER 21, 1983 \nNEW YORK"
     show richard fullbody
     with fade

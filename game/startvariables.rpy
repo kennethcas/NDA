@@ -5,6 +5,8 @@ init:
     define susClub = "audio/music/susClub.mp3"
 
     #sound effects?
+    define barAmbience = "audio/sfx/restaurantAmbience.ogg"
+    define pourDrink = "audio/sfx/pourDrink.ogg"
 
     $ db_picked = False
     ## CUSTOMISABLE VARIABLES
