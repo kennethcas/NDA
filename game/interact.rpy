@@ -367,21 +367,7 @@ label chattalk:
             menu:
                 "You don't seem like the Wall Street type.":
                     hide sachi mask icon at left onlayer mcsprite
-
-                    show malcolm icon at left onlayer mcsprite
-                    m "I'm not."
-                    m "I... work for the NYPD, actually."
-                    hide malcolm icon at left onlayer mcsprite
-
-                    show sachi mask icon at left onlayer mcsprite
-                    s "So you-"
-                    hide sachi mask icon at left onlayer mcsprite
-
-                    show malcolm icon at left onlayer mcsprite
-                    m "Haha, don’t worry. I’m not reporting the Cabaret. I’m here on my own terms."
-                    m "The feds are in kahoots with most of the guys that come here, anyways. So I doubt it makes a difference."
-                    m "…Anyway. I work in forensics, for what its worth. I’m not a cop or anything."
-                    hide malcolm icon at left onlayer mcsprite
+                    jump malcolm_ev_1
 
         elif (talk_turns ==2):
             ""
@@ -767,6 +753,7 @@ label gerard_ev_7:
     jump gerard_points_check
 
 label richard_ev_1:
+    $ r_ev_1 = True;
     hide sachi icon at left onlayer mcsprite
 
     show richard icon at left onlayer mcsprite
@@ -789,12 +776,34 @@ label richard_ev_1:
 
 
 label richard_ev_2:
+    $ r_ev_2 = True
 
 label richard_ev_2a:
+    $ r_ev_2a = True
 
 label richard_ev_3:
+    $ r_ev_3 = True
 
 label richard_ev_4:
+    $ r_ev_4 = True
+
+label malcolm_ev_1:
+    $ m_ev_1 = True
+
+    show malcolm icon at left onlayer mcsprite
+    m "I'm not."
+    m "I... work for the NYPD, actually."
+    hide malcolm icon at left onlayer mcsprite
+
+    show sachi mask icon at left onlayer mcsprite
+    s "So you-"
+    hide sachi mask icon at left onlayer mcsprite
+
+    show malcolm icon at left onlayer mcsprite
+    m "Haha, don’t worry. I’m not reporting the Cabaret. I’m here on my own terms."
+    m "The feds are in kahoots with most of the guys that come here, anyways. So I doubt it makes a difference."
+    m "…Anyway. I work in forensics, for what its worth. I’m not a cop or anything."
+    hide malcolm icon at left onlayer mcsprite
 
 # DRINK MECHANIC --------
 label chatgift:
@@ -1097,6 +1106,7 @@ label drunk_full:
         
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
+        
         jump client_select
 
     if (client == 3): #RICHARD FULLY DRUNK
@@ -1113,6 +1123,8 @@ label drunk_full:
         "{i}I still had a lot I needed to {color=#6b091b}ask him.{/color}"
         hide sachi mask icon at left onlayer mcsprite
 
+        jump client_select
+
     if (client == 4):
         hide sachi mask icon at left onlayer mcsprite
 
@@ -1126,6 +1138,11 @@ label drunk_full:
         "{i}He dashes out of the room at lightning speed. I hear retching a few minutes later."
         "{i}He shouldn’t have {color=#6b091b}drank so much…{/color}"
         hide sachi mask icon at left onlayer mcsprite
+
+        jump client_select
+
+
+
 label sus_full:
     if (client == 1):
         hide vincent mask icon at left onlayer mcsprite
@@ -1170,6 +1187,7 @@ label sus_full:
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
         jump client_select
+
     if (client == 3):
         hide sachi mask icon at left onlayer mcsprite
 

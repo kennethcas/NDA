@@ -80,6 +80,10 @@ init:
     $ r_ev_3 = False
     $ r_ev_4 = False
 
+    $ m_ev_1 = False
+    $ m_ev_2 = False
+    $ m_ev_3 = False
+
     $ pointsonly = False
 
     $ N1_Wallet = False
