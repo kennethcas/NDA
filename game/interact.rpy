@@ -257,12 +257,12 @@ label chattalk:
 
     if (client == 2): #TALK WITH GERARD----------------------------------------------------------
         show gerard fullbody
-	
+
         "So {color=#6b091b}Gerard Wade{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
         "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
         "…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
             menu:
-       
+
 
         "So {color=#6b091b}Gerard Wade{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
         "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
@@ -326,7 +326,7 @@ label chattalk:
 
     if (client == 3): #TALK WITH RICHARD---------------------------
         show richard fullbody
-	
+
 	"So {color=#6b091b}Richard Bloomberg{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
         "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
        	"…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
@@ -697,7 +697,7 @@ label gerard_ev_6:
     hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
-    $ g_ev_6 = True;
+    $ g_ev_6 = 0;
 
     show sachi mask icon at left onlayer mcsprite
     s "Is Gwen someone…special?"
@@ -727,7 +727,7 @@ label gerard_ev_6:
         hide gerard icon at left onlayer mcsprite
 
         "{i}He probably won't tell me anything else until he {color=#6b091b}drinks a bit more.{/color}"
-        $ g_ev_6b = True
+        $ g_ev_6 = 1;
 
     elif (drunk >= 40):
         show gerard icon at left onlayer mcsprite
@@ -739,7 +739,7 @@ label gerard_ev_6:
         g "I…found out a lot of things I wouldn’t wanna know."
         hide gerard icon at left onlayer mcsprite
 
-        $ g_ev_6c = True
+        $ g_ev_6 = 2;
 
     jump gerard_points_check
 
@@ -792,7 +792,6 @@ label richard_ev_1:
     show richard icon at left onlayer mcsprite
     r "Haha. I guess I boss people around, schmooze up with black suits... y'know. The whole deal."
     hide richard icon at left onlayer mcsprite
-
 
 
 label richard_ev_2:
