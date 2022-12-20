@@ -997,7 +997,7 @@ label richard_intro:
                 r "It's ok. I like 'em shy."
                 hide richard icon at left onlayer mcsprite
 
-        $ met_richard == True
+        $ meet_richard == True
 
     show richard icon at left onlayer mcsprite
     r "…So whadd’ya say, sweetheart? Wanna get out of here?"
