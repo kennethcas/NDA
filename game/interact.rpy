@@ -86,6 +86,7 @@ label malcolm_minigame:
     $ drunk = pointsdrunk
     $ sus = pointssus
 
+#POINTS CHECK FOR EACH CLIENT-----------------------------
 label vincent_points_check:
     $ just_talked = False
     if (turns <= 5 and drunk < 80 and sus < 60):
@@ -108,6 +109,30 @@ label gerard_points_check:
     elif (turns > 5):
         jump gerard_post_minigame
 
+label richard_points_check:
+    $ just_talked = False
+    if (turns <= 5 and drunk < 80 and sus < 60):
+        jump richard_minigame
+    elif (drunk >= 80):
+        jump drunk_full
+    elif (sus >= 60):
+        jump sus_full
+    elif (turns > 5):
+        jump richard_post_minigame
+
+label malcolm_points_check:
+    $ just_talked = False
+    if (turns <= 5 and drunk < 80 and sus < 60):
+        jump malcolm_minigame
+    elif (drunk >= 80):
+        jump drunk_full
+    elif (sus >= 60):
+        jump sus_full
+    elif (turns > 5):
+        jump malcolm_post_minigame
+#POINTS CHECK FOR EACH CLIENT END--------------------
+
+#TALK MECHANIC---------------------------------------
 label chattalk:
     $ renpy.hide_screen("mapchat")
     $ canwarp = False
@@ -124,7 +149,7 @@ label chattalk:
     else:
         $ sus += 5
 
-    if (client == 1):
+    if (client == 1): #TALK WITH VINCENT-----------------------------------------------------
         show vincent fullbody masked
         stop music fadeout 1.0
         play music caravan loop fadein 1.0
@@ -135,13 +160,13 @@ label chattalk:
         if (talk_turns == 1):
             show sachi mask icon at left onlayer mcsprite
 
-            "Clients knowing personal information…is never a good thing."
+            "{i}Clients knowing personal information…is never a good thing."
 
-            "Especially when its someone like {i}him.{/i} The last thing I
+            "{i}Especially when its someone like {/i}him.{i} The last thing I
                 need right now is someone more powerful than even the richest,
                 sleaziest Wall Street bankers on my tail right now."
 
-            "If I play my cards right—nudge them in the right direction while
+            "{i}If I play my cards right—nudge them in the right direction while
                 telling him what he wants to hear—I can make him fold easy."
 
             hide sachi mask icon at left onlayer mcsprite
@@ -153,16 +178,20 @@ label chattalk:
             show sachi mask icon at left onlayer mcsprite
             menu:
                 "Yes.":
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_ev_1
                 "You have the wrong girl.":
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_ev_2
                 "Why?":
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_ev_3
 
         elif (talk_turns == 2):
             show sachi mask icon at left onlayer mcsprite
             menu:
                 "What do you want from me?":
+                    hide sachi mask icon at left onlayer mcsprite
                     if (v1_ev_1 == True):
                         jump vincent_ev_3
                     if (v1_ev_2 == True):
@@ -171,6 +200,7 @@ label chattalk:
                         jump vincent_ev_1
 
                 "How do you know who I am?":
+                    hide sachi mask icon at left onlayer mcsprite
                     if (v1_ev_1 == True):
                         jump vincent_ev_2
                     if (v1_ev_2 == True):
@@ -182,42 +212,51 @@ label chattalk:
             show sachi mask icon at left onlayer mcsprite
             menu:
                 "How do you know my father?" if v1_ev_1 == True:
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_ev_4a
 
                 "Why me?" if v1_ev_2 == True:
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_ev_5a
 
                 "What kind of {i}help{/i} do you need?" if v1_ev_3 == True:
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_1_end
 
         elif (talk_turns == 4):
             show sachi mask icon at left onlayer mcsprite
             menu:
                 "How long have you been working at Carmine?" if v1_ev_4a == True:
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_ev_4b
 
                 "You have no proof." if v1_ev_5a == True:
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_ev_5b
 
                 "What kind of {i}help{/i} do you need?":
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_1_end
 
         elif (talk_turns == 5):
             show sachi mask icon at left onlayer mcsprite
             menu:
                 "How long have you been working at Carmine?" if v1_ev_4a == True:
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_ev_4b
 
                 "You have no proof." if v1_ev_5a == True:
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_ev_5b
 
                 "What kind of {i}help{/i} do you need?":
+                    hide sachi mask icon at left onlayer mcsprite
                     jump vincent_1_end
 
         hide sachi mask icon at left onlayer mcsprite
 
-    if (client == 2):
-        #show gerard fullbody
+    if (client == 2): #TALK WITH GERARD----------------------------------------------------------
+        show gerard fullbody
         stop music fadeout 1.0
         play music caravan loop fadein 1.0
 
@@ -225,68 +264,95 @@ label chattalk:
             show sachi mask icon at left onlayer mcsprite
             menu:
                 "How’s work?":
+                    hide sachi mask icon at left onlayer mcsprite
                     jump gerard_ev_1
+
                 "How long have you worked at Carmine?":
+                    hide sachi mask icon at left onlayer mcsprite
                     jump gerard_ev_2
+
                 "You seem like a bigshot.":
+                    hide sachi mask icon at left onlayer mcsprite
                     jump gerard_ev_3
 
         elif (talk_turns == 2):
             show sachi mask icon at left onlayer mcsprite
             menu:
                 "How long have you worked at Carmine?" if (g_ev_2 == False or g_ev_3 == True):
+                    hide sachi mask icon at left onlayer mcsprite
                     if (g_ev_3 == True):
                         jump gerard_ev_3b
                     elif (g_ev_3 == False and g_ev_2 == True):
                         jump gerard_ev_2
+
                 "Why don't you like work?" if (g_ev_1 == True):
+                    hide sachi mask icon at left onlayer mcsprite
                     jump gerard_ev_4
+
                 "Who's Gwen?":
+                    hide sachi mask icon at left onlayer mcsprite
                     jump gerard_ev_5
 
         elif (talk_turns >= 3):
             show sachi mask icon at left onlayer mcsprite
             menu:
                 "Who's Gwen?" if g_ev_5 == False and knows_gwen == True:
+                    hide sachi mask icon at left onlayer mcsprite
                     jump gerard_ev_5
 
                 "(Ask about Gwen.)" if g_ev_5 == True:
+                    hide sachi mask icon at left onlayer mcsprite
                     jump gerard_ev_6
 
                 "(Ask about dirty money.)" if g_ev_4 == True:
+                    hide sachi mask icon at left onlayer mcsprite
                     jump gerard_ev_7
 
                 "Why don't you like work?" if (g_ev_4 == False and g_ev_1 == True):
+                    hide sachi mask icon at left onlayer mcsprite
                     jump gerard_ev_4
+
         hide sachi mask icon at left onlayer mcsprite
 
-    if (client == 3):
-        #show richard fullbody
+    if (client == 3): #TALK WITH RICHARD---------------------------
+        show richard fullbody
         stop music fadeout 1.0
         play music caravan loop fadein 1.0
 
         if (talk_turns == 1):
             show sachi mask icon at left onlayer mcsprite
-            "So Richard Bloomberg is an employee in the higher ranks. From what Vincent said, he was involved in the incident."
-            ""
-            ""
+            """
+            {i}So {color=#6b091b}Richard Bloomberg{/color} is an employee in the higher ranks. From what Vincent said, he was involved in the incident.
+
+            {i}I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions.
+
+            {i}…{color=#6b091b}sweet-talk{color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…
+            """
+
             menu:
                 "You’re a Wall-Street hotshot, huh?":
+                    hide sachi mask icon at left onlayer mcsprite
                     jump richard_ev_1
                 "You like your job?":
+                    hide sachi mask icon at left onlayer mcsprite
                     jump richard_ev_2
 
         elif (talk_turns >= 2):
             show sachi mask icon at left onlayer mcsprite
             menu:
                 "(Ask about work.)" if (r_ev_2 == True):
+                    hide sachi mask icon at left onlayer mcsprite
                     jump richard_ev_2a
+
                 "(Ask about 'the whole deal.')" if (r_ev_1 == True and r_ev_3 ==False):
+                    hide sachi mask icon at left onlayer mcsprite
                     jump richard_ev_3
+
                 "The ‘nasty stuff?’" if (r_ev_2c == True and r_ev_4 == False):
+                    hide sachi mask icon at left onlayer mcsprite
                     jump richard_ev_4
 
-    if (client == 4):
+    if (client == 4): #TALK WITH MALCOLM--------------------------------
         "."
 
 label vincent_ev_1:
@@ -667,6 +733,26 @@ label gerard_ev_7:
     jump gerard_points_check
 
 label richard_ev_1:
+    hide sachi icon at left onlayer mcsprite
+
+    show richard icon at left onlayer mcsprite
+    r """
+    Damn right I am.
+
+    You into that, baby?
+    """
+    hide richard icon at left onlayer mcsprite
+
+    show sachi icon at left onlayer mcsprite
+    "{i}...Major ew."
+    s "What kinda...{i}big Wall Street stuff{/i} do you do, mister?"
+    hide sachi icon at left onlayer mcsprite
+
+    show richard icon at left onlayer mcsprite
+    r "Haha. I guess I boss people around, schmooze up with black suits... y'know. The whole deal."
+    hide richard icon at left onlayer mcsprite
+
+
 
 label richard_ev_2:
 
