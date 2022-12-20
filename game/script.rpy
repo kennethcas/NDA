@@ -29,13 +29,13 @@ label start:
     play music profoundSadness loop fadein 1.0
 
     # DIALOGUE. ---
-    menu:
-        "SKIP INTRO, GO TO MINIGAME":
-            stop music fadeout 1.0
-            play music caravan loop fadein 1.0
-            jump vincent_minigame_intro
-        "PLAY GAME FROM BEGINNING":
-            "THE GAME WILL START NOW."
+    #menu:
+    #    "SKIP INTRO, GO TO MINIGAME":
+    #        stop music fadeout 1.0
+    #        play music caravan loop fadein 1.0
+    #        jump vincent_minigame_intro
+    #    "PLAY GAME FROM BEGINNING":
+    #        "THE GAME WILL START NOW."
 
     "OCTOBER 31, 1983 \nNEW YORK"
     q "..."
