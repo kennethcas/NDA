@@ -812,7 +812,8 @@ label chatgift:
     $ turns += 1
     $ drink_turns += 1
     $ drunk += 20
-
+    
+    play sound pourDrink
 
     if (client == 1): #DRINK WITH VINCENT
         hide vincent mask icon at left onlayer mcsprite
