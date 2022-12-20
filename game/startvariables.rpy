@@ -66,9 +66,7 @@ init:
     $ g_ev_3b = False
     $ g_ev_4 = False
     $ g_ev_5 = False
-    $ g_ev_6 = False
-    $ g_ev_6b = False
-    $ g_ev_6c = False
+    $ g_ev_6 = 0
     $ g_ev_7 = False
     $ g_ev_7b = False
 

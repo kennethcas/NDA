@@ -39,7 +39,7 @@ label vincent_minigame:
 label gerard_minigame:
     scene bg private room
     show gerard fullbody
-    
+
     hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
@@ -51,7 +51,7 @@ label gerard_minigame:
     $ renpy.pause ()
     $ drunk = pointsdrunk
     $ sus = pointssus
-    
+
 
 label richard_minigame:
     scene bg private room
@@ -148,11 +148,11 @@ label chattalk:
     elif (drunk > 40 and <= 80):
         $ sus += 10
     else:
-        $ sus += 5        
+        $ sus += 5
 
     if (client == 1): #TALK WITH VINCENT-----------------------------------------------------
         show vincent fullbody masked
-        
+
 
         hide vincent mask icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
@@ -258,6 +258,12 @@ label chattalk:
     if (client == 2): #TALK WITH GERARD----------------------------------------------------------
         show gerard fullbody
 
+        "So {color=#6b091b}Gerard Wade{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
+        "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
+        "…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
+            menu:
+
+
         if (talk_turns == 1):
             show sachi mask icon at left onlayer mcsprite
             menu:
@@ -315,6 +321,10 @@ label chattalk:
     if (client == 3): #TALK WITH RICHARD---------------------------
         show richard fullbody
 
+	"So {color=#6b091b}Richard Bloomberg{/color} is an employee in the lower ranks. From what Vincent said, he was {color=#6b091b}involved{/color} in the incident."
+        "I should figure out what he meant by that. I shouldn’t be too obvious from the get-go, though, or he’ll get too suspicious of my intentions."
+       	"…{color=#6b091b}Sweet-talk{/color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…"
+
         if (talk_turns == 1):
             show sachi mask icon at left onlayer mcsprite
             """
@@ -356,10 +366,10 @@ label chattalk:
         if (talk_turns == 1):
             show sachi mask icon at left onlayer mcsprite
             """
-            {i}So {color=#6b091b}Malcolm Hunt{/color} is an assistant in forensics. From what Vincent said, 
+            {i}So {color=#6b091b}Malcolm Hunt{/color} is an assistant in forensics. From what Vincent said,
             he helped with {/i}Baba's{i} autopsy. The {color=#6b091b}real one.{/color}
 
-            {i}I should find out more about what {color=#6b091b}really happened{/color}. I shouldn't be too obvious 
+            {i}I should find out more about what {color=#6b091b}really happened{/color}. I shouldn't be too obvious
             from the get-go, though. Or he'll get too suspicious of my intentions.
 
             {i}…{color=#6b091b}sweet-talk{color} and {color=#6b091b}booze{/color} might help him loosen up too. But I shouldn’t overdo either…
@@ -373,7 +383,7 @@ label chattalk:
             ""
         elif (talk_turns >=3):
             ""
-        
+
 
 label vincent_ev_1:
     hide vincent mask icon at left onlayer mcsprite
@@ -812,7 +822,7 @@ label chatgift:
     $ turns += 1
     $ drink_turns += 1
     $ drunk += 20
-    
+
     play sound pourDrink
 
     if (client == 1): #DRINK WITH VINCENT
@@ -849,7 +859,7 @@ label chatgift:
             hide gerard icon at left onlayer mcsprite
 
             "{i}I hand him the bottle. He opens it and takes a large sip."
-        
+
         "{i}He takes a large sip of his beer."
 
         hide sachi mask icon at left onlayer mcsprite
@@ -892,7 +902,7 @@ label chatgift:
             m "Oh! Sure. A glass of rum on the rocks sounds good."
             m "Cheers."
             hide malcolm icon at left onlayer mcsprite
-        
+
         show sachi mask icon at left onlayer mcsprite
         "{i}I gesture to his glass. It's empty."
         s "Would you like some more?"
@@ -967,7 +977,7 @@ label chatdate:
             show gerard icon at left onlayer mcsprite
             g "…Should I?"
             hide gerard icon at left onlayer mcsprite
-            
+
             show sachi mask icon at left onlayer mcsprite
             "{i}I wink at him."
             s "Only if you want to."
@@ -1005,7 +1015,7 @@ label chatdate:
             r "I could say the same thing about you, darling."
             hide richard icon at left onlayer mcsprite
 
-        
+
         hide sachi mask icon at left onlayer mcsprite
         $ canwarp = True
 
@@ -1032,10 +1042,10 @@ label chatdate:
             m "...Noted. Though... I don't mind just talking to you."
             m "I didn't pay in full, after all. You don't...er, owe any sexual favors to me, you know?"
             hide malcolm icon at left onlayer mcsprite
-        
+
         hide sachi mask icon at left onlayer mcsprite
         hide malcolm icon at left onlayer mcsprite
-        
+
         $ canwarp = True
 
         jump malcolm_points_check
@@ -1107,7 +1117,7 @@ label drunk_full:
         "{i}Did he…pass out? That’s no good…"
         "{i}I still had a lot I needed to {color=#6b091b}ask him{/color}..."
         hide sachi mask icon at left onlayer mcsprite
-        
+
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
 
@@ -1186,7 +1196,7 @@ label sus_full:
 
         show sachi mask icon at left onlayer mcsprite
         s "Sorry. I guess…I got too curious."
-        
+
 
         "{i}…Shit. I probably should’ve been a little more {color=#6b091b}subtle{/color}."
         hide sachi mask icon at left onlayer mcsprite
