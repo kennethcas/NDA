@@ -150,6 +150,10 @@ label chattalk:
     else:
         $ sus += 5
 
+    stop music fadeout 1.0
+    stop audio fadeout 1.0
+    play music caravan loop fadein 1.0
+
     if (client == 1): #TALK WITH VINCENT-----------------------------------------------------
         show vincent fullbody masked
 
@@ -158,13 +162,11 @@ label chattalk:
 
         if (talk_turns == 1):
 
-
+            show sachi mask icon at left onlayer mcsprite
             "{i}Clients knowing personal information…is never a good thing."
-
             "{i}Especially when its someone like {/i}him.{i} The last thing I
                 need right now is someone more powerful than even the richest,
                 sleaziest Wall Street bankers on my tail right now."
-
             "{i}If I play my cards right—nudge them in the right direction while
                 telling him what he wants to hear—I can make him fold easy."
             hide sachi mask icon at left onlayer mcsprite
@@ -413,6 +415,7 @@ label vincent_ev_1:
     qb "I’ve been looking for you. You’re {color=#6b091b}Rahul Kaur{/color}’s daughter."
     qb "…I wonder what he’d think now of your…er…profession. And {color=#6b091b}exploits{/color}, for that matter…"
     hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
     s "…Well isn’t {i}he{/i} a delight."
     hide sachi mask icon at left onlayer mcsprite
@@ -1019,16 +1022,17 @@ label chatgift:
     if (client == 1): #DRINK WITH VINCENT
         hide vincent mask icon at left onlayer mcsprite
         hide sachi mask icon at left onlayer mcsprite
+
         if drink_turns == 1:
             show sachi mask icon at left onlayer mcsprite
-            "My secret weapon: alcohol. I hand him a glass of Whiskey on the rocks."
+            "{i}My secret weapon: alcohol. I hand him a glass of Whiskey on the rocks."
             hide sachi mask icon at left onlayer mcsprite
 
             show vincent mask icon at left onlayer mcsprite
             qb "…I prefer bourbon. But thank you."
             hide vincent mask icon at left onlayer mcsprite
 
-        "He takes a small sip and puts it on the table."
+        "{i}He takes a small sip and puts it on the table."
 
         hide sachi mask icon at left onlayer mcsprite
         hide vincent mask icon at left onlayer mcsprite
@@ -1309,8 +1313,10 @@ label drunk_full:
         "{i}I still had a lot I needed to {color=#6b091b}ask him{/color}..."
         hide sachi mask icon at left onlayer mcsprite
 
+        #STOP CARAVAN PLAY SUSCLUB AND BAR AUDIO
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
+        play audio barAmbience loop fadein 1.0
 
         jump client_select
 
@@ -1374,6 +1380,8 @@ label sus_full:
 
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
+        play audio barAmbience loop fadein 1.0
+
         jump n1_part2
 
     if (client == 2):
@@ -1394,6 +1402,8 @@ label sus_full:
 
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
+        play audio barAmbience loop fadein 1.0
+
         jump client_select
 
     if (client == 3):
@@ -1409,6 +1419,8 @@ label sus_full:
 
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
+        play audio barAmbience loop fadein 1.0
+
         jump client_select
 
     if (client == 4):
@@ -1425,4 +1437,6 @@ label sus_full:
 
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
+        play audio barAmbience loop fadein 1.0
+
         jump client_select

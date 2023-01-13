@@ -17,7 +17,7 @@ define r = Character("Richard")
 define m = Character("Malcolm")
 
 define config.default_music_volume = 0.7
-define config.default_sfx_volume = 0.7
+define config.default_sfx_volume = 0.5
 define config.default_voice_volume = 0.7
 
 # ---GAME START---
@@ -56,15 +56,13 @@ label start:
     jump intro_convo
 
 label intro_convo:
-    stop music fadeout 1.0
+    stop music fadeout 1.0 #STOPS PROFOUND SADNESS MUSIC
+
     play music susClub loop fadein 1.0
+    play sound barAmbience loop fadein 1.0 volume 0.5
     scene bg lounge
     with fade
-    # ambience sfx: bar
-    # music: jazzy? lowkey?
 
-    # DIALOGUE. ---
-    play audio barAmbience loop fadein 1.0 volume 0.5
     "OCTOBER 21, 1983 \nNEW YORK"
     show richard fullbody
     with fade
@@ -118,8 +116,6 @@ label intro_expos:
     "Of course, the {i}Cabaret{/i} isn't really a Cabaret. {w=1.0}And the
     only performance us girls would be putting on is faking an orgasm."
 
-    #black?
-
     "{color=#6b091b}Madame Han{/color} has always been discrete in her
     dealings. But I have my ways of figuring things out."
 
@@ -140,24 +136,13 @@ label intro_expos:
     an accent and hit a sweet spot on the Madonna-Whore complex, I stay
     employed."
 
-    #back to frontroom, map-style pick and choose who to talk to
+
     jump N1_Menu
 
 label N1_Menu:
     $ renpy.show_screen("mapFirstSelect")
     $ renpy.pause ()
-    # (theres a temporary menu for now)
-    #menu:
-    #    "Drunk Businessman":
-    #        if db_picked==False:
-    #            jump CW2_N1
-    #        else:
-    #            jump N1_Menu
 
-    #    "Sober Businessman":
-    #        jump Vincent_N1
-
-#if you choose CW#2:
 label CW2_N1:
     $ renpy.hide_screen("mapFirstSelect")
     $ db_picked == True
@@ -168,8 +153,7 @@ label CW2_N1:
     show richard icon drunk at left onlayer mcsprite
     db "...Can...{p=1.0}
     Can't find my..."
-    #realization sfx(?)
-    db "'Ey! You! You take my wallet?!" #change formatting
+    db "'Ey! You! You take my wallet?!"
     hide richard icon drunk at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
@@ -261,8 +245,11 @@ label Vincent_N1:
     menu:
         "Go with him":
             hide sachi mask icon at left onlayer mcsprite
-            stop music fadeout 1.0
-            play music caravan loop fadein 1.0
+
+            #stop music fadeout 1.0
+            #stop audio fadeout 1.0
+            #play music caravan loop fadein 1.0
+
             jump chattalk
         "Object":
             s "I...will check with the front first."
@@ -274,8 +261,8 @@ label Vincent_N1:
 
             show sachi mask icon at left onlayer mcsprite
             s "I'm sorry, sir. {w=1.0}Protocol."
-            "{i}He nods, frowning."
             hide sachi mask icon at left onlayer mcsprite
+            "{i}He nods, frowning."
 
             show vincent mask icon at left onlayer mcsprite
             qb "...Fine. Make it quick."
@@ -309,13 +296,12 @@ label Vincent_N1:
 
 label vincent_minigame_intro:
     stop music fadeout 1.0
-    #play music caravan loop fadein 1.0
+    stop audio fadeout 1.0
 
     "{i}I follow him into one of the backrooms."
     show bg private room
     show vincent fullbody masked
     with fade
-    #scene backroom
 
     show sachi mask icon at left onlayer mcsprite
     s "You wanted to {color=#6b091b}ask me something?{/color}"
@@ -330,13 +316,15 @@ label vincent_minigame_intro:
     "{i}...Uh-oh."
     hide sachi mask icon at left onlayer mcsprite
 
-    #stop music fadeout 1.0
-    play music caravan loop
+    play music caravan loop fadein 1.0
     jump chattalk
 
 label n1_part2:
-    stop music fadeout 1.0
-    play music susClub loop fadein 1.0
+    #STILL IN BACKROOM, DON'T STOP MINIGAME MUSIC?
+    stop music fadeout 2.0
+    
+    play music susClub loop fadein 2.0
+    #play audio barAmbience loop fadein 1.0 volume 0.5
 
     show sachi mask icon at left onlayer mcsprite
     s "Hm. So..."
@@ -643,7 +631,7 @@ label n1_part2_2:
 
     show sachi mask icon at left onlayer mcsprite
     s "Sachi."
-    s "You…asked me to call you Vincent, right? It’s only fair."
+    s "You asked me to call you Vincent, right? It’s only fair."
     hide sachi mask icon at left onlayer mcsprite
 
     "{i}He nods again."
@@ -663,6 +651,7 @@ label client_select:
     hide vincent masked fullbody
     hide vincent fullbody
     with dissolve
+
     $ drunk = 0
     $ sus = 0
     $ renpy.show_screen("mapClientSelect")
@@ -928,14 +917,16 @@ label gerard_intro:
     g "Wanna get out of here? I'll pay."
     hide gerard icon at left onlayer mcsprite
 
+    #STOPS CARAVAN AND BAR AUDIO
     stop music fadeout 1.0
+    stop audio fadeout 1.0
+
     show sachi mask icon at left onlayer mcsprite
     "{i}...That was fast."
     "{i}He must be desperate. I'm not surprised."
     hide sachi mask icon at left onlayer mcsprite
 
-
-    play music caravan loop
+    play music caravan loop fadein 1.0
 
     jump gerard_minigame
 
@@ -1007,8 +998,13 @@ label richard_intro:
     menu:
         "Sure.":
             hide sachi mask icon at left onlayer mcsprite
+
+            #STOPS CARAVAN AND BAR AUDIO
             stop music fadeout 1.0
-            play music caravan loop
+            stop audio fadeout 1.0
+
+            play music caravan loop fadein 1.0
+
             jump richard_minigame
         "No thanks.":
             hide sachi mask icon at left onlayer mcsprite
@@ -1120,7 +1116,10 @@ label malcolm_intro:
             "{i}I wink at him."
             hide sachi mask icon at left onlayer mcsprite
 
+            #STOPS CARAVAN AND BAR AUDIO
             stop music fadeout 1.0
+            stop audio fadeout 1.0
+
             show malcolm icon at left onlayer mcsprite
             stb """
             Hm...
@@ -1131,8 +1130,10 @@ label malcolm_intro:
             """
             hide malcolm icon at left onlayer mcsprite
 
-            play music caravan loop
+            play music caravan loop fadein 1.0
+
             jump malcolm_minigame
+
         "That's unfortunate.":
             hide sachi mask icon at left onlayer mcsprite
 
@@ -1140,8 +1141,9 @@ label malcolm_intro:
 
             show malcolm icon at left onlayer mcsprite
             stb "Sorry to take up your time."
-            "{i}He goes back to writing."
             hide malcolm icon at left onlayer mcsprite
+            "{i}He goes back to writing."
+            
             jump client_select
 
 
