@@ -354,8 +354,7 @@ label n1_part2:
         hide sachi mask icon at left onlayer mcsprite
 
         show vincent mask icon at left onlayer mcsprite
-        v "I’d prefer it if you {i}didn’t{/i} call me by my last name,
-            actually. "
+        v "In fact, I’d prefer it if you {i}didn’t{/i} call me by my last name."
         hide vincent mask icon at left onlayer mcsprite
 
     elif (v1_ev_1==False and v1_ev_4a==False):
@@ -470,7 +469,7 @@ label vincent_intro_questions:
                 v "{color=#6b091b}Get the information you need from your clients{/color} and report
                 back to me."
                 v "Seeing how you dealt with me just now, that shouldn’t be too hard. "
-                v " Don’t say anything too {color=#6b091b}suspicious{/color}, and use your
+                v "Don’t say anything too {color=#6b091b}suspicious{/color}, and use your
                 {color=#6b091b}vices{/color} to your advantage."
                 hide vincent mask icon at left onlayer mcsprite
 
@@ -488,9 +487,9 @@ label vincent_intro_questions:
 
                 show vincent mask icon at left onlayer mcsprite
                 v "What ulterior motive could I have? If I was interested in
-                your…{i}services{/i}, I would utilize them right now."
+                your {i}services{/i}, I would utilize them right now."
                 v "I don’t have any reason to swindle you either. In fact, I
-                could make any payment you wish for upfront if that eases your
+                could make any payment you wish upfront if that eases your
                 troubles."
                 hide vincent mask icon at left onlayer mcsprite
 
@@ -552,7 +551,7 @@ label vincent_intro_questions:
                 v "{color=#6b091b}Gerard Wade{/color} and {color=#6b091b}Richard
                 Bloomberg.{/color} Two current employees of Carmine who were
                 involved in the incident…"
-                v "…And {color=#6b091b}Malcolm Hunt{/color}, the assistant
+                v "And {color=#6b091b}Malcolm Hunt{/color}, the assistant
                 pathologist who examined Rahul’s body."
                 v "If you could get them to admit to what they saw, we could
                 have a solid case that my father can’t pay his way out of. Not
@@ -596,7 +595,7 @@ label what_menu:
             hide vincent mask icon at left onlayer mcsprite
 
             show sachi mask icon at left onlayer mcsprite
-            s "…Maybe."
+            s "Perhaps."
             hide sachi mask icon at left onlayer mcsprite
 
             show vincent mask icon at left onlayer mcsprite
@@ -615,8 +614,9 @@ label what_menu:
 
 label n1_part2_2:
     show sachi mask icon at left onlayer mcsprite
+    #CHECK LATER, MAKE THE TEXT APPEAR IN THE SAME BLOCK ? TIME IT ?
     s "Fine."
-    s "…I’m in."
+    s "I’m in."
     hide sachi mask icon at left onlayer mcsprite
 
     show vincent mask icon at left onlayer mcsprite
@@ -637,7 +637,7 @@ label n1_part2_2:
     "{i}He nods again."
 
     show vincent mask icon at left onlayer mcsprite
-    v "…Sachi, then."
+    v "Sachi, then."
     hide vincent mask icon at left onlayer mcsprite
 
     hide vincent fullbody masked
@@ -772,10 +772,11 @@ label gerard_intro:
     with fade
 
     if meet_gerard == False:
-        #show sachi mask icon at left onlayer mcsprite
-        "{i}I see a meek looking man by the wall, looking somewhat tense."
+        show sachi mask icon at left onlayer mcsprite
+        "{i}I see a meek-looking man by the wall, looking somewhat tense."
         "{i}I remember the photos Vincent showed me. He must be {color=#6b091b}Gerard Wade{/color}, a current employee of Carmine."
         "{i}I walk up to him."
+        hide sachi mask icon at left onlayer mcsprite
 
         show gerard icon at left onlayer mcsprite
         g "..."
@@ -827,7 +828,7 @@ label gerard_intro:
         hide gerard icon at left onlayer mcsprite
 
         show sachi mask icon at left onlayer mcsprite
-        "{i}...Not really. But maybe coming up with one will help me get on his good side."
+        "{i}Not particularly. But maybe coming up with one will help me get on his good side."
 
         menu:
             "Catra.":
@@ -899,7 +900,7 @@ label gerard_intro:
                 hide gerard icon at left onlayer mcsprite
 
                 show sachi mask icon at left onlayer mcsprite
-                s "I... don't see why not."
+                s "I don't see why not."
                 hide sachi mask icon at left onlayer mcsprite
 
                 show gerard icon at left onlayer mcsprite
@@ -946,7 +947,7 @@ label richard_intro:
 
         {i}Based on the pictures Vincent showed me, he must be {color=#6b091b}Richard Bloomberg{/color}, a higher-up at Carmine.
 
-        {i}I {/i}really don't want to talk to him again. But I've dealt with worse.
+        {i}I  {/i}really{i} don't want to talk to him again. But I've dealt with worse.
 
         {i}He notices me staring and waves me over.
         """
@@ -968,13 +969,15 @@ label richard_intro:
                 r "Damn right I do."
                 hide richard icon at left onlayer mcsprite
 
+                #CHECK LATER !!!!!
                 show sachi mask icon at left onlayer mcsprite
                 s "Don't flatter yourself."
                 hide sachi mask icon at left onlayer mcsprite
 
                 show richard icon at left onlayer mcsprite
                 r "Aw, come on. I hate it when you ladies play {i}hard to get."
-                r "You're not even that pretty, anyways."
+                r "You're not pretty enough to be acting this way."
+                #r "You're not even that pretty, anyways."
                 hide richard icon at left onlayer mcsprite
 
                 show sachi mask icon at left onlayer mcsprite
@@ -985,7 +988,7 @@ label richard_intro:
 
                 show richard icon at left onlayer mcsprite
                 r "What is it, sweetheart? {i}Cat got your tongue?"
-                r "It's ok. I like 'em shy."
+                r "That's okay. I like 'em shy."
                 hide richard icon at left onlayer mcsprite
 
         $ meet_richard == True
@@ -1255,7 +1258,7 @@ label richard_post_minigame:
         "…I wish I could’ve gotten more out of him."
 
 label malcolm_post_minigame:
-    if $ m_ev_4 == 3:
+    if m_ev_4 == 3:
         show malcolm icon at left onlayer mcsprite
         m "Originally, all of the cases connected to Carmine had female victims."
         m "Only very recently were there male victims. I would say that the first male victim case was around four years ago."
@@ -1263,12 +1266,15 @@ label malcolm_post_minigame:
         m "Since then, the victim profiles began to change drastically. Less…women in their twenties and thirties. More middle-aged men."
         m "…It’s very strange."
         hide malcolm icon at left onlayer mcsprite
-    if $ m_ev_5 == 3:
+
+    if m_ev_5 == 3:
         show malcolm icon at left onlayer mcsprite
         m "There’s…also a rumor that Madame Han and Alonzo had an illegitimate son together. "
         m "She was rumored to give him away to one of her old employees."
         hide malcolm icon at left onlayer mcsprite
+
     if m_ev_5 == 0 or m_ev_4 == 0:
         "…I wish I could’ve gotten more out of him."
     jump client_select
+
 return

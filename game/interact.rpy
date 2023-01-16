@@ -26,7 +26,7 @@ label vincent_minigame:
     hide sachi mask icon at left onlayer mcsprite
 
     #VARIABLE FOR CHECKING WHAT NAME TO PRINT ON SCREEN
-    $ name = "SOBER BUSINESSMAN"
+    $ name = "MYSTERIOUS BUSINESSMAN"
     $ client = 1
 
     $ renpy.show_screen("mapchat")
@@ -163,10 +163,10 @@ label chattalk:
         if (talk_turns == 1):
 
             show sachi mask icon at left onlayer mcsprite
-            "{i}Clients knowing personal information…is never a good thing."
+            "{i}Clients knowing personal information is never a good thing."
             "{i}Especially when its someone like {/i}him.{i} The last thing I
                 need right now is someone more powerful than even the richest,
-                sleaziest Wall Street bankers on my tail right now."
+                sleaziest Wall Street bankers on my tail."
             "{i}If I play my cards right—nudge them in the right direction while
                 telling him what he wants to hear—I can make him fold easy."
             hide sachi mask icon at left onlayer mcsprite
@@ -215,7 +215,7 @@ label chattalk:
                     hide sachi mask icon at left onlayer mcsprite
                     jump vincent_ev_4a
 
-                "Why me?" if v1_ev_2 == True:
+                "Why do you need {i}my{/i} help?" if v1_ev_2 == True:
                     hide sachi mask icon at left onlayer mcsprite
                     jump vincent_ev_5a
 
@@ -413,11 +413,11 @@ label vincent_ev_1:
 
     show vincent mask icon at left onlayer mcsprite
     qb "I’ve been looking for you. You’re {color=#6b091b}Rahul Kaur{/color}’s daughter."
-    qb "…I wonder what he’d think now of your…er…profession. And {color=#6b091b}exploits{/color}, for that matter…"
+    qb "…I wonder what he’d think now of your… profession. And {color=#6b091b}exploits{/color}, for that matter…"
     hide vincent mask icon at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
-    s "…Well isn’t {i}he{/i} a delight."
+    s "{i}…Well isn’t {/i}he{i} a delight."
     hide sachi mask icon at left onlayer mcsprite
 
     jump vincent_points_check
@@ -432,33 +432,30 @@ label vincent_ev_2:
         "{i}He shakes his head."
 
     show vincent mask icon at left onlayer mcsprite
-    qb "…I’ve been hearing lots of back alley talk about mysterious maxed out
+    qb "I’ve been hearing lots of back alley talk about mysterious maxed out
         credit cards, incriminating pictures mailed to wives and kids..."
     qb "...thousands of dollars of jewelry mysteriously going missing…"
-
     hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
-    s "I’m surprised someone of your…{i}esteemed status{/i} keeps up with
+    s "I’m surprised someone of your {i}esteemed status{/i} keeps up with
         {i}back-alley talk{/i}."
-
     hide sachi mask icon at left onlayer mcsprite
-    show vincent mask icon at left onlayer mcsprite
 
+    show vincent mask icon at left onlayer mcsprite
     qb "My…{i}esteemed status{/i}?"
-
     hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
-
     s "…Your mask."
-    s "The only clients who wear masks are people in the public eye. For
-        uh…pretty obvious reasons. Not getting caught by the press and all…"
-
+    s "The only clients who wear masks are people in the public eye. For 
+        pretty obvious reasons. Not getting caught by the press and all."
     hide sachi mask icon at left onlayer mcsprite
+    
     show vincent mask icon at left onlayer mcsprite
-
-    qb "…Well, I have my sources."
-
+    qb "Well, I have my sources."
     hide vincent mask icon at left onlayer mcsprite
+
     jump vincent_points_check
 
 label vincent_ev_3:
@@ -469,13 +466,12 @@ label vincent_ev_3:
 
     show vincent mask icon at left onlayer mcsprite
     qb "I need your help."
-
     hide vincent mask icon at left onlayer mcsprite
+
     show sachi mask icon at left onlayer mcsprite
-
     s "My…{i}help{/i}?"
-
     hide sachi mask icon at left onlayer mcsprite
+
     jump vincent_points_check
 
 label vincent_ev_4a:
@@ -486,14 +482,14 @@ label vincent_ev_4a:
 
     show vincent mask icon at left onlayer mcsprite
     qb "..."
-    qb "...He used to work under me. To an extent."
+    qb "He used to work under me. To an extent."
     hide vincent mask icon at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
     s "…"
-    "{i}So he used to work at Carmine. A white-collar investment firm that I’m all
+    "{i}So he used to work at Carmine. That white-collar investment firm that I’m all
     too familiar with."
-    "{i}No, scratch that…he’s a bigwig at Carmine."
+    "{i}No, scratch that. He’s a bigwig at Carmine."
     hide sachi mask icon at left onlayer mcsprite
 
     jump vincent_points_check
@@ -510,14 +506,12 @@ label vincent_ev_4b:
 
     show sachi mask icon at left onlayer mcsprite
     "{i}Five years? That’s way too soon for such a big promotion…"
-    s "You’re…Antony Carmine’s son."
+    s "You’re… Antony Carmine’s son."
     hide sachi mask icon at left onlayer mcsprite
 
     show vincent mask icon at left onlayer mcsprite
     qb "…"
-
     hide vincent mask icon at left onlayer mcsprite
-    hide sachi mask icon at left onlayer mcsprite
 
     jump vincent_points_check
 
@@ -530,12 +524,12 @@ label vincent_ev_5a:
     show vincent mask icon at left onlayer mcsprite
     qb "Those who have been scammed, blackmailed, and otherwise victimized
         in some shape and form all had one thing in common."
-    qb "…They visited The Scarlet Cabaret on a
+    qb "They visited {i}The Scarlet Cabaret{/i} on a
         {color=#6b091b}Friday night{/color} after {color=#6b091b}June 1985{/color}."
     qb "Currently, there are {color=#6b091b}ten women{/color} who work on
         Fridays. Each of you wear a different {color=#6b091b}animal
         mask{/color}, correct?"
-    qb "Coincidentally, my…{i}sources{/i} began to report seeing a
+    qb "Coincidentally, my {i}sources{/i} began to report seeing a
         {color=#6b091b}girl with a cat mask{/color} around that time."
     hide vincent mask icon at left onlayer mcsprite
 
@@ -553,7 +547,7 @@ label vincent_ev_5b:
 
     show vincent mask icon at left onlayer mcsprite
     qb "Believe me. If I wanted you behind bars, I could easily find a way."
-    qb "…I think we could be useful to one another."
+    qb "But I think we could be useful to one another."
     hide vincent mask icon at left onlayer mcsprite
 
     jump vincent_points_check
@@ -565,12 +559,13 @@ label vincent_1_end:
 
     show vincent mask icon at left onlayer mcsprite
     qb "..."
-    qb "...Revenge."
+    qb "Revenge."
     hide vincent mask icon at left onlayer mcsprite
 
     jump vincent_points_check
 
 label gerard_ev_1:
+    #CHECK LATER
     #hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
@@ -582,7 +577,7 @@ label gerard_ev_1:
     g " …I don’t want to think about it."
     #hide gerard icon at left onlayer mcsprite
 
-    "...Yikes."
+    "{i}...Yikes."
 
     jump gerard_points_check
 
@@ -1133,7 +1128,7 @@ label chatdate:
             show sachi mask icon at left onlayer mcsprite
             s "Y’know, our customers aren’t usually too easy on the eyes."
             s "Men like you are hard to come by."
-            "I wink at him."
+            "{i}I wink at him."
             hide sachi mask icon at left onlayer mcsprite
 
             show vincent mask icon at left onlayer mcsprite
@@ -1230,8 +1225,10 @@ label chatdate:
             hide malcolm icon at left onlayer mcsprite
 
         if (flirt_turns >= 2):
+            show sachi mask icon at left onlayer mcsprite
             s "Let me know when you wanna cut to the chase."
-            s "No need to {i}hold back{/i}, 'kay?"
+            s "No need to {i}hold back{/i}, okay?"
+            hide sachi mask icon at left onlayer mcsprite
 
             show malcolm icon at left onlayer mcsprite
             m "...Noted. Though... I don't mind just talking to you."
