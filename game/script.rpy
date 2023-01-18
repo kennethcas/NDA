@@ -296,7 +296,7 @@ label Vincent_N1:
 
 label vincent_minigame_intro:
     stop music fadeout 1.0
-    stop audio fadeout 1.0
+    stop sound fadeout 1.0
 
     "{i}I follow him into one of the backrooms."
     show bg private room
@@ -317,6 +317,7 @@ label vincent_minigame_intro:
     hide sachi mask icon at left onlayer mcsprite
 
     play music caravan loop fadein 1.0
+
     jump chattalk
 
 label n1_part2:
@@ -687,6 +688,8 @@ label vincent_n2_intro:
     "{i}He seems credible enough, but…I shouldn’t let my guard down around him."
     "{i}Still…if he’s {color=#6b091b}telling the truth{/color}…"
 
+    show vincent fullbody masked with fade
+
     show vincent mask icon at left onlayer mcsprite
     v "There you are."
     hide vincent mask icon at left onlayer mcsprite
@@ -702,11 +705,15 @@ label vincent_n2_intro:
     v "It’s up to you who you would like to {color=#6b091b}approach first{/color}. "
     hide vincent mask icon at left onlayer mcsprite
 
+    hide vincent fullbody masked
+
     $ vincent_n2_intro_done = True
+
     jump client_select
 
 label vincent_n2_questions:
     show vincent fullbody masked
+
     show vincent mask icon at left onlayer mcsprite
     v "…Is there anything else you would like to know?"
     hide vincent mask icon at left onlayer mcsprite
@@ -733,16 +740,19 @@ label vincent_n2_questions:
 
             $ v1_ev_2 = True
             $ v1_ev_5a = True
+
             jump client_select
 
         "How do you know my father?" if (v1_ev_4a == False):
             hide sachi mask icon at left onlayer mcsprite
+
             show vincent mask icon at left onlayer mcsprite
             v "…"
             v "…He used to work under me. To an extent."
             hide vincent mask icon at left onlayer mcsprite
 
             $ v1_ev_4a = True
+
             jump client_select
 
         "What's in it for you?":
@@ -920,7 +930,7 @@ label gerard_intro:
 
     #STOPS CARAVAN AND BAR AUDIO
     stop music fadeout 1.0
-    stop audio fadeout 1.0
+    stop sound fadeout 1.0
 
     show sachi mask icon at left onlayer mcsprite
     "{i}...That was fast."
@@ -1004,7 +1014,7 @@ label richard_intro:
 
             #STOPS CARAVAN AND BAR AUDIO
             stop music fadeout 1.0
-            stop audio fadeout 1.0
+            stop sound fadeout 1.0
 
             play music caravan loop fadein 1.0
 
@@ -1121,7 +1131,7 @@ label malcolm_intro:
 
             #STOPS CARAVAN AND BAR AUDIO
             stop music fadeout 1.0
-            stop audio fadeout 1.0
+            stop sound fadeout 1.0
 
             show malcolm icon at left onlayer mcsprite
             stb """
@@ -1160,6 +1170,7 @@ label gerard_post_minigame:
         g "All of the victims…were women. The more recent victims worked at Carmine. But a lot of the old ones were Jane Does."
         g " A lot of them…looked foreign, too."
         hide gerard icon at left onlayer mcsprite
+
     if g_ev_4 == 3:
         show gerard icon at left onlayer mcsprite
         g "I think the worst thing I found so far was Antony Carmine’s trafficking ring."
@@ -1206,7 +1217,7 @@ label gerard_post_minigame:
     hide gerard icon at left onlayer mcsprite
 
     if g_ev_6 == 0 or g_ev_4 == 0:
-        "…I wish I could’ve gotten more out of him."
+        "{i}…I wish I could’ve gotten more out of him."
     jump client_select
 
 
@@ -1247,15 +1258,17 @@ label richard_post_minigame:
         r "Y’know…I never understood why he did. It makes no sense to me."
         r "…But I dunno what goes on in Tony’s little head. He probably had good reason."
         hide richard icon at left onlayer mcsprite
+
     show richard icon at left onlayer mcsprite
     r "Huh? …Oh. My phone’s ringing."
     r "…Shit. My wife…shit shit shit."
     r "…Don’t say anything, ‘kay? You better not fucking say anything."
     hide richard icon at left onlayer mcsprite
 
-    "…I put a finger to my lips and nod. He walks out, fuming."
+    "I put a finger to my lips and nod. He walks out, fuming."
+
     if r_ev_2 == False:
-        "…I wish I could’ve gotten more out of him."
+        "{i}…I wish I could’ve gotten more out of him."
 
 label malcolm_post_minigame:
     if m_ev_4 == 3:

@@ -150,10 +150,6 @@ label chattalk:
     else:
         $ sus += 5
 
-    stop music fadeout 1.0
-    stop audio fadeout 1.0
-    play music caravan loop fadein 1.0
-
     if (client == 1): #TALK WITH VINCENT-----------------------------------------------------
         show vincent fullbody masked
 
@@ -565,19 +561,20 @@ label vincent_1_end:
     jump vincent_points_check
 
 label gerard_ev_1:
-    #CHECK LATER
-    #hide gerard icon at left onlayer mcsprite
+    hide gerard icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
 
     $ g_ev_1 = True;
 
-    #show gerard icon at left onlayer mcsprite
+    show gerard icon at left onlayer mcsprite
     g "Work?"
     g "Don’t people come here to get {i}away{/i} from work?"
     g " …I don’t want to think about it."
-    #hide gerard icon at left onlayer mcsprite
-
+    hide gerard icon at left onlayer mcsprite
+    
+    show sachi mask icon at left onlayer mcsprite
     "{i}...Yikes."
+    hide sachi mask icon at left onlayer mcsprite
 
     jump gerard_points_check
 
@@ -799,9 +796,10 @@ label richard_ev_1:
 
 
 label richard_ev_2:
-    $ r_ev_2 = True
-
     hide sachi icon at left onlayer mcsprite
+    hide richard icon at left onlayer mcsprite
+
+    $ r_ev_2 = True
 
     show richard icon at left onlayer mcsprite
     r "What’s not to like? I get paid major buck. That’s what matters."
@@ -812,23 +810,27 @@ label richard_ev_2:
 
 
 label richard_ev_2a:
-    $ r_ev_2a = 1
-
+    hide richard icon at left onlayer mcsprite
     hide sachi icon at left onlayer mcsprite
+
+    $ r_ev_2a = 1
 
     show richard icon at left onlayer mcsprite
     r "As long as I’m making over six figures, I don’t give a damn ‘bout the actual work involved."
     hide richard icon at left onlayer mcsprite
 
     if $drunk < 20:
+
         show richard icon at left onlayer mcsprite
         r "‘That all, sweetheart?"
         hide richard icon at left onlayer mcsprite
 
-        "…He needs more {color=#6b091b}booze{/color} in him before he’ll blab."
+        "{i}…He needs more {color=#6b091b}booze{/color} in him before he’ll blab."
 
     if $drunk ==20:
+
         $ r_ev_2a = 2
+
         show richard icon at left onlayer mcsprite
         r "It…can get a bit dirty though, sometimes."
         hide richard icon at left onlayer mcsprite
@@ -841,10 +843,12 @@ label richard_ev_2a:
         r "…It’s better not to think about it."
         hide richard icon at left onlayer mcsprite
 
-        "He might need a little more {color=#6b091b}booze{/color} in him to {i}really{/i} open up.."
+        "{i}He might need a little more {color=#6b091b}booze{/color} in him to {/i}really{i} open up.."
 
     if $drunk == 40:
+
         $ r_ev_2a = 3
+
         show richard icon at left onlayer mcsprite
         r "Sometimes…our clients get into bad business, and we have to cover up the tracks."
         r "Luckily, I’ve only ever had to do cleanup. I feel a bit bad for the runts who {i}actually{/i} had to do the nasty stuff."
@@ -860,6 +864,7 @@ label richard_ev_3:
     r "…More than you could ever think up in your {i}pretty little head{/i}. That’s for sure."
     r "As long as I’m making over six figures, I don’t give a damn ‘bout the actual work involved."
     hide richard icon at left onlayer mcsprite
+
     jump richard_points_check
 
 label richard_ev_4:
@@ -868,6 +873,7 @@ label richard_ev_4:
     show richard icon at left onlayer mcsprite
     r " …Oooh, baby. I would need you to sign a form if I told you."
     hide richard icon at left onlayer mcsprite
+
     jump richard_points_check
 
 label malcolm_ev_1:
@@ -973,11 +979,13 @@ label malcolm_ev_5:
         s "He might say more if he gets more drunk."
         hide sachi mask icon at left onlayer mcsprite
         $ m_ev_5 = 2
+
     if drunk == 40:
         show malcolm icon at left onlayer mcsprite
         m "Madame Han has connections to an old mob leader. Have you heard of Alonzo Romano?"
         m "Both of them worked together. It’s rumored that the Scarlet Cabaret originally trafficked girls from Asia. But I guess they forfeited the operation once Romano died about a decade ago."
         hide malcolm icon at left onlayer mcsprite
+
     jump malcolm_points_check
 
 label malcolm_ev_6:
@@ -991,6 +999,7 @@ label malcolm_ev_6:
         show sachi mask icon at left onlayer mcsprite
         s "…I should get him a little more drunk."
         hide sachi mask icon at left onlayer mcsprite
+
     if drunk == 20:
         show malcolm icon at left onlayer mcsprite
         m "You know Carmine & Associates? There’s a bunch of cold cases related to the company."
@@ -999,7 +1008,9 @@ label malcolm_ev_6:
         m "I looked at the old files, and…there’s another cold case involving Thallium poisoning. Except…all the victims were prostitutes of Asian descent."
         m " Some…even had connections to the Cabaret."
         hide malcolm icon at left onlayer mcsprite
+
         $ malcolm_ev_6 = 2
+
         jump malcolm_points_check
 
 
@@ -1313,7 +1324,7 @@ label drunk_full:
         #STOP CARAVAN PLAY SUSCLUB AND BAR AUDIO
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
-        play audio barAmbience loop fadein 1.0
+        play sound barAmbience loop fadein 1.0
 
         jump client_select
 
@@ -1331,6 +1342,10 @@ label drunk_full:
         "{i}I still had a lot I needed to {color=#6b091b}ask him.{/color}"
         hide sachi mask icon at left onlayer mcsprite
 
+        stop music fadeout 1.0
+        play music susClub loop fadein 1.0
+        play sound barAmbience loop fadein 1.0
+
         jump client_select
 
     if (client == 4):
@@ -1346,6 +1361,10 @@ label drunk_full:
         "{i}He dashes out of the room at lightning speed. I hear retching a few minutes later."
         "{i}He shouldn’t have {color=#6b091b}drank so much…{/color}"
         hide sachi mask icon at left onlayer mcsprite
+
+        stop music fadeout 1.0
+        play music susClub loop fadein 1.0
+        play sound barAmbience loop fadein 1.0
 
         jump client_select
 
@@ -1399,7 +1418,7 @@ label sus_full:
 
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
-        play audio barAmbience loop fadein 1.0
+        play sound barAmbience loop fadein 1.0
 
         jump client_select
 
@@ -1416,7 +1435,7 @@ label sus_full:
 
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
-        play audio barAmbience loop fadein 1.0
+        play sound barAmbience loop fadein 1.0
 
         jump client_select
 
@@ -1434,6 +1453,6 @@ label sus_full:
 
         stop music fadeout 1.0
         play music susClub loop fadein 1.0
-        play audio barAmbience loop fadein 1.0
+        play sound barAmbience loop fadein 1.0
 
         jump client_select
