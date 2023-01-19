@@ -20,22 +20,10 @@ define config.default_music_volume = 0.7
 define config.default_sfx_volume = 0.5
 define config.default_voice_volume = 0.7
 
-# ---GAME START---
+# ---GAME START---------------------------------------------------------------
 label start:
 
-    # scene black
-
-    # music: tense, ominous
     play music profoundSadness loop fadein 1.0
-
-    # DIALOGUE. ---
-    #menu:
-    #    "SKIP INTRO, GO TO MINIGAME":
-    #        stop music fadeout 1.0
-    #        play music caravan loop fadein 1.0
-    #        jump vincent_minigame_intro
-    #    "PLAY GAME FROM BEGINNING":
-    #        "THE GAME WILL START NOW."
 
     "OCTOBER 31, 1983 \nNEW YORK"
     q "..."
@@ -51,15 +39,13 @@ label start:
     q "{color=#6b091b}Sachi{/color}..."
     q "Take care of yourself, okay?"
 
-    # ---
-
     jump intro_convo
 
 label intro_convo:
     stop music fadeout 1.0 #STOPS PROFOUND SADNESS MUSIC
-
     play music susClub loop fadein 1.0
     play sound barAmbience loop fadein 1.0 volume 0.5
+
     scene bg lounge
     with fade
 
@@ -246,9 +232,9 @@ label Vincent_N1:
         "Go with him":
             hide sachi mask icon at left onlayer mcsprite
 
-            #stop music fadeout 1.0
-            #stop audio fadeout 1.0
-            #play music caravan loop fadein 1.0
+            stop music fadeout 1.0
+            stop sound fadeout 1.0
+            play music caravan loop fadein 1.0
 
             jump chattalk
         "Object":
@@ -456,6 +442,7 @@ label n1_part2:
 
     hide vincent mask icon at left onlayer mcsprite
     hide sachi mask icon at left onlayer mcsprite
+
     jump vincent_intro_questions
 
 label vincent_intro_questions:
@@ -641,7 +628,12 @@ label n1_part2_2:
     v "Sachi, then."
     hide vincent mask icon at left onlayer mcsprite
 
+    stop music fadeout 1.0
+    play music susClub fadeout 1.0
+    play audio barAmbience loop fadein 1.0
+
     hide vincent fullbody masked
+
     jump client_select
 
 label client_select:
@@ -993,6 +985,7 @@ label richard_intro:
                 show sachi mask icon at left onlayer mcsprite
                 "{i}This is going to be harder than I thought."
                 hide sachi mask icon at left onlayer mcsprite
+
             "(Say nothing.)":
                 hide sachi mask icon at left onlayer mcsprite
 
@@ -1008,6 +1001,7 @@ label richard_intro:
     hide richard icon at left onlayer mcsprite
 
     show sachi mask icon at left onlayer mcsprite
+
     menu:
         "Sure.":
             hide sachi mask icon at left onlayer mcsprite
