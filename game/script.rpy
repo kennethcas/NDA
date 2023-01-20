@@ -232,11 +232,14 @@ label Vincent_N1:
         "Go with him":
             hide sachi mask icon at left onlayer mcsprite
 
-            stop music fadeout 1.0
-            stop sound fadeout 1.0
-            play music caravan loop fadein 1.0
+            jump vincent_minigame_intro
 
-            jump chattalk
+            #stop music fadeout 1.0
+            #stop sound fadeout 1.0
+            #play music caravan loop fadein 1.0
+
+            #jump chattalk
+
         "Object":
             s "I...will check with the front first."
             hide sachi mask icon at left onlayer mcsprite
@@ -283,6 +286,7 @@ label Vincent_N1:
 label vincent_minigame_intro:
     stop music fadeout 1.0
     stop sound fadeout 1.0
+    play music susClub loop fadein 2.0 volume 0.5
 
     "{i}I follow him into one of the backrooms."
     show bg private room
@@ -302,7 +306,8 @@ label vincent_minigame_intro:
     "{i}...Uh-oh."
     hide sachi mask icon at left onlayer mcsprite
 
-    play music caravan loop fadein 1.0
+    stop music fadeout 2.0
+    play music caravan loop fadein 2.0
 
     jump chattalk
 
@@ -628,9 +633,9 @@ label n1_part2_2:
     v "Sachi, then."
     hide vincent mask icon at left onlayer mcsprite
 
-    stop music fadeout 1.0
-    play music susClub fadeout 1.0
-    play audio barAmbience loop fadein 1.0
+    stop music fadeout 2.0
+    #play music susClub loop fadein 1.0
+    #play audio barAmbience loop fadein 1.0
 
     hide vincent fullbody masked
 
@@ -645,23 +650,16 @@ label client_select:
     hide vincent fullbody
     with dissolve
 
+    play music susClub loop fadein 2.0 if_changed
+    play audio barAmbience loop fadein 2.0 if_changed
+
+
     $ drunk = 0
     $ sus = 0
     $ renpy.show_screen("mapClientSelect")
 
     $ renpy.pause ()
-    #menu:
-    #    "Vincent":
-    #        if (vincent_n2_intro_done == False):
-    #            jump vincent_n2_intro
-    #        elif (vincent_n2_intro_done == True):
-    #            jump vincent_n2_questions
-    #    "Gerard":
-    #        jump gerard_intro
-    #    "Richard":
-    #        jump richard_intro
-    #    "Malcolm":
-    #        jump malcolm_intro
+
 
 label vincent_n2_check:
     $ renpy.hide_screen("mapClientSelect")

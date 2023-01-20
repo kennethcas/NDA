@@ -52,7 +52,6 @@ label gerard_minigame:
     $ drunk = pointsdrunk
     $ sus = pointssus
 
-
 label richard_minigame:
     scene bg private room
     show richard fullbody
@@ -90,6 +89,7 @@ label malcolm_minigame:
 #POINTS CHECK FOR EACH CLIENT-----------------------------
 label vincent_points_check:
     $ just_talked = False
+
     if (turns <= 5 and drunk < 80 and sus < 60):
         jump vincent_minigame
     elif (drunk >= 80):
@@ -101,6 +101,7 @@ label vincent_points_check:
 
 label gerard_points_check:
     $ just_talked = False
+
     if (turns <= 5 and drunk < 80 and sus < 60):
         jump gerard_minigame
     elif (drunk >= 80):
@@ -112,6 +113,7 @@ label gerard_points_check:
 
 label richard_points_check:
     $ just_talked = False
+
     if (turns <= 5 and drunk < 80 and sus < 60):
         jump richard_minigame
     elif (drunk >= 80):
@@ -123,6 +125,7 @@ label richard_points_check:
 
 label malcolm_points_check:
     $ just_talked = False
+
     if (turns <= 5 and drunk < 80 and sus < 60):
         jump malcolm_minigame
     elif (drunk >= 80):
@@ -131,7 +134,7 @@ label malcolm_points_check:
         jump sus_full
     elif (turns > 5):
         jump malcolm_post_minigame
-#POINTS CHECK FOR EACH CLIENT END--------------------
+#POINTS CHECK FOR EACH CLIENT END-------------------------------------------------------------------------------------------------------------------------
 
 #TALK MECHANIC---------------------------------------
 label chattalk:
@@ -141,6 +144,7 @@ label chattalk:
     $ talk_turns += 1
     $ just_talked = True
 
+    #everytime you talk it raises suspicion, the more drunk he is the less suspicious he gets when you click TALK again
     if (drunk <= 20):
         $ sus += 20
     elif (drunk > 20 and <= 40):
@@ -404,7 +408,7 @@ label vincent_ev_1:
     $ v1_ev_1 = True;
 
     show sachi mask icon at left onlayer mcsprite
-    s "…How did you know my name?"
+    s "How did you know my name?"
     hide sachi mask icon at left onlayer mcsprite
 
     show vincent mask icon at left onlayer mcsprite
